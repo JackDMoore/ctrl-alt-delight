@@ -8,7 +8,7 @@ import { useRegisterMutation } from "../../slices/usersApiSlice.js";
 import { setCredentials } from "../../slices/authSlice.js";
 import { toast } from "react-toastify";
 
-const RegisterScreen = () => {
+const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -101,4 +101,4 @@ const RegisterScreen = () => {
   );
 };
 
-export default RegisterScreen;
+export default Register;
