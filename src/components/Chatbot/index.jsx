@@ -8,7 +8,7 @@ const systemMessage = {
   "role": "system", "content": "Translate my messages to Spanish as though I am learning French, provide the English too."
 }
 
-function App() {
+function Chatbot() {
   const [messages, setMessages] = useState([
     {
       message: "Hello, I am LinguaBot. I am here to help you translate your messages while you game. Type your language and let's get started!",
@@ -104,4 +104,4 @@ function App() {
   )
 }
 
-export default App
+export default Chatbot
