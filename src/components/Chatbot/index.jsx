@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import React, { useState, useEffect } from 'react'
+// import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
 
 const systemMessage = { 
-  "role": "system", "content": "Translate my messages to Spanish as though I am learning French, provide the English too."
+  "role": "system", 
+  "content": "Translate my messages to Spanish as though I am learning French, provide the English too."
 }
 
 function Chatbot() {
