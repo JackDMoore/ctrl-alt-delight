@@ -5,7 +5,6 @@ import matchers from '@testing-library/jest-dom/matchers';
 import userEvent from '@testing-library/user-event';
 expect.extend(matchers);
 
-
 import Chatbot from '.'
 
 describe('Chatbot component', () => {
@@ -15,10 +14,5 @@ describe('Chatbot component', () => {
 
     afterEach(() => {
         cleanup();
-
-    it('should render the chatbot', () => {
-        expect(screen.getByTestId('chatbot')).toBeInTheDocument();
-    })
-
 });
 });

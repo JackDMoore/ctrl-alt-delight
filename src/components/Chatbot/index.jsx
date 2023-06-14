@@ -13,7 +13,7 @@ function Chatbot() {
     {
       message: "Hello, I am LinguaBot. I am here to help you translate your messages while you game. Type your language and let's get started!",
       sentTime: "just now",
-      sender: "LinguaBot",
+      sender: "ChatGPT",
     }
   ]);
   const [isTyping, setIsTyping] = useState(false);
@@ -42,7 +42,7 @@ function Chatbot() {
 
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
-      if (messageObject.sender === "LinguaBot") {
+      if (messageObject.sender === "ChatGPT") {
         role = "assistant";
       } else {
         role = "user";
@@ -76,7 +76,7 @@ function Chatbot() {
       console.log(data);
       setMessages([...chatMessages, {
         message: data.choices[0].message.content,
-        sender: "LinguaBot"
+        sender: "ChatGPT"
       }]);
       setIsTyping(false);
     });
