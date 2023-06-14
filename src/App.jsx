@@ -5,17 +5,18 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./globalStyles";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
+import * as Pages from "./pages";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const [currentTheme, setCurrentTheme] = useState("light");
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setCurrentTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={currentTheme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <Header toggleTheme={toggleTheme} />
       <ToastContainer />
