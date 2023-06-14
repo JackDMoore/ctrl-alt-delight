@@ -1,6 +1,7 @@
 {
   "name": "ctrl-alt-delight",
   "private": true,
+  "proxy": "http://localhost:5000",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -8,13 +9,23 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest run —reporter verbose",
-    "coverage": "vitest run —coverage"
+    "test": "vitest run --reporter verbose",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.3.0",
+    "coverage": "^0.4.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.9.0",
+    "react-query": "^3.39.3",
     "react-redux": "^8.1.0",
+    "react-router-bootstrap": "^0.26.2",
+    "react-router-dom": "^6.12.1",
+    "react-toastify": "^9.1.3",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.2"
@@ -27,10 +38,16 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-c8": "^0.32.0",
+    "@vitest/coverage-v8": "^0.32.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "jest": "^29.5.0",
+    "jest-localstorage-mock": "^2.4.26",
+    "jsdom": "^22.1.0",
+    "mock-local-storage": "^1.1.24",
+    "redux-mock-store": "^1.5.4",
     "vite": "^4.3.9",
     "vitest": "^0.32.0"
   }
