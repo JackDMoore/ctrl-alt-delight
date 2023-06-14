@@ -1,18 +1,20 @@
-import React from 'react';
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { screen, render, cleanup } from '@testing-library/react';
-import matchers from '@testing-library/jest-dom/matchers';
-import userEvent from '@testing-library/user-event';
+import React from "react";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { screen, render, cleanup } from "@testing-library/react";
+import matchers from "@testing-library/jest-dom/matchers";
+import userEvent from "@testing-library/user-event";
 expect.extend(matchers);
 
-import Chatbot from '.'
+import Chatbot from "./Chatbot";
 
-describe('Chatbot component', () => {
-    beforeEach(() => {
-        render(<Chatbot />);
-    });
+describe("Chatbot component", () => {
+  beforeEach(() => {
+    render(<Chatbot />);
+  });
 
-    afterEach(() => {
-        cleanup();
-});
+  afterEach(() => {
+    cleanup();
+  });
+
+  
 });
