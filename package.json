@@ -1,8 +1,7 @@
 {
   "name": "ctrl-alt-delight",
   "private": true,
-  "proxy": "http://localhost:5000",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,10 +12,11 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@chatscope/chat-ui-kit-react": "^1.10.1",
+    "@chatscope/chat-ui-kit-styles": "^1.4.0",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
-    "coverage": "^0.4.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
@@ -33,7 +33,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
-    "@testing-library/user-event": "github:testing-library/user-event",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
@@ -48,7 +47,11 @@
     "jsdom": "^22.1.0",
     "mock-local-storage": "^1.1.24",
     "redux-mock-store": "^1.5.4",
-    "vite": "^4.3.9",
+    "vite": "^4.2.0",
     "vitest": "^0.32.0"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

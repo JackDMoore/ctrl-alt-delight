@@ -1,7 +1,15 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+<<<<<<< HEAD:src/pages/Profile/index.jsx
+import FormContainer from "../../components/FormContainer";
 import { toast } from "react-toastify";
+import Loader from "../../components/Loader";
+import { useUpdateUserMutation } from "../../slices/usersApiSlice";
+import { setCredentials } from "../../slices/authSlice";
+=======
+import { toast } from "react-toastify";
+>>>>>>> origin/sean_dev:src/pages/ProfilePage/index.jsx
 
 const ProfilePage = () => {
   const [email, setEmail] = useState("");
