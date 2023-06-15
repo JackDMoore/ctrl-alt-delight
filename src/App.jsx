@@ -1,28 +1,21 @@
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
-import { Outlet } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "./globalStyles";
-import Header from "./components/Header/Header";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import * as Pages from "./pages";
+import { PageWrapper } from "./components";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-  };
-
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <GlobalStyles />
-      <Header toggleTheme={toggleTheme} />
-      <ToastContainer />
-      <Container className="my-2">
-        <Outlet />
-      </Container>
-    </ThemeProvider>
+    <>
+      <Routes>
+        <Route path="/" element={<PageWrapper />} >
+          <Route index element={<Pages.HomePage />} />
+          <Route path="/register" element={<Pages.RegisterPage />} />
+          <Route path="/login" element={<Pages.LoginPage />} />
+          <Route path="/profile" element={<Pages.ProfilePage />} />
+          <Route path="*" element={<Pages.NotFoundPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 
