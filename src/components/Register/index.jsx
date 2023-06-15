@@ -54,18 +54,21 @@ const Register = () => {
         password: password,
         name: name,
         email: email,
-        languageUserSpeaks: languageUserSpeaks,
-        languageToLearn: languageToLearn,
-        games: games,
-        console: console,
+        // languageUserSpeaks: languageUserSpeaks,
+        // languageToLearn: languageToLearn,
+        // games: games,
+        // console: console,
       };
-      const response = await axios.post("https://linguaplaya-be.onrender.com/signup", options); //post URL needs to be added here
+      const response = await axios.post(
+        "https://linguaplaya-be.onrender.com/signup",
+        options
+      ); 
       if (response.status == 201) {
         alert("User created :)");
         navigate("/login");
       }
     } catch (error) {
-      alert(error.response.data.error);
+      // alert(response.error);
     }
   }
 
