@@ -1,19 +1,7 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
-import { Outlet } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "./globalStyles";
-import Header from "./components/Header/index";
-import "./styles.css";
-=======
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import * as Pages from "./pages";
 import { PageWrapper } from "./components";
->>>>>>> origin/sean_dev
 
 const App = () => {
   return (
