@@ -9,7 +9,6 @@ const Login = (props) => {
   const navigate = useNavigate();
 
   function handleUsername(e) {
-    // e.preventDefault()
     setUsername(e.target.value);
   }
 
@@ -21,13 +20,13 @@ const Login = (props) => {
     e.preventDefault();
     try {
       const options = { username: username, password: password };
-      const response = await axios.post("", options); //will need to add link here
+      const response = await axios.post("https://linguaplaya-be.onrender.com/login", options); //will need to add link here
       if (response.status == 200) {
         localStorage.setItem("token", response.data.token);
         navigate("/home");
       }
     } catch (error) {
-      alert(error.response.data.error);
+      // alert(error.response.data.error);
     }
   }
 
@@ -36,7 +35,6 @@ const Login = (props) => {
       <h1>Login Page</h1>
 
       <form className="inputs">
-        {/* <p>Username: </p> */}
         <input
           type="text"
           aria-label="username input"
@@ -45,7 +43,6 @@ const Login = (props) => {
           value={username}
           className="inputField"
         ></input>
-        {/* <p>Password: </p> */}
         <input
           type="password"
           aria-label="password input"
@@ -55,7 +52,6 @@ const Login = (props) => {
           className="inputField"
         ></input>
         <br />
-        {/* <input type='submit' onClick={gatherDetails} id='submitBtn' aria-label='submit button'></input> */}
         <button
           onClick={gatherDetails}
           id="submitBtn"
