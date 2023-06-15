@@ -1,5 +1,5 @@
-import { useState } from "react";
-import "./App.css";
+import React, { useState } from "react";
+import "../../App.css";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -9,6 +9,7 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
+
 const API_KEY = "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";
 
 const systemMessage = {
@@ -20,7 +21,8 @@ const systemMessage = {
 function Chatbot() {
   const [messages, setMessages] = useState([
     {
-      message:
+      role: "assistant",
+      content:
         "Hello, I am LinguaBot. I am here to help you translate your messages while you game. Type your language and let's get started!",
       sentTime: "just now",
       sender: "ChatGPT",
@@ -39,18 +41,11 @@ function Chatbot() {
 
     setMessages(newMessages);
 
-    // Initial system message to determine ChatGPT functionality
-    // How it responds, how it talks, etc.
     setIsTyping(true);
     await processMessageToChatGPT(newMessages);
   };
 
   async function processMessageToChatGPT(chatMessages) {
-    // messages is an array of messages
-    // Format messages for chatGPT API
-    // API is expecting objects in format of { role: "user" or "assistant", "content": "message here"}
-    // So we need to reformat
-
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
       if (messageObject.sender === "ChatGPT") {
@@ -61,15 +56,9 @@ function Chatbot() {
       return { role: role, content: messageObject.message };
     });
 
-    // Get the request body set up with the model we plan to use
-    // and the messages which we formatted above. We add a system message in the front to'
-    // determine how we want chatGPT to act.
     const apiRequestBody = {
       model: "gpt-3.5-turbo",
-      messages: [
-        systemMessage, // The system message DEFINES the logic of our chatGPT
-        ...apiMessages, // The messages from our chat with ChatGPT
-      ],
+      messages: [systemMessage, ...apiMessages],
     };
 
     await fetch("https://api.openai.com/v1/chat/completions", {
@@ -80,16 +69,14 @@ function Chatbot() {
       },
       body: JSON.stringify(apiRequestBody),
     })
-      .then((data) => {
-        return data.json();
-      })
+      .then((data) => data.json())
       .then((data) => {
         console.log(data);
         setMessages([
           ...chatMessages,
           {
-            message: data.choices[0].message.content,
-            sender: "ChatGPT",
+            role: "ChatGPT",
+            content: data.choices[0].message.content,
           },
         ]);
         setIsTyping(false);

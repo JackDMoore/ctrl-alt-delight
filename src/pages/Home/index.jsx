@@ -1,6 +1,13 @@
-import Hero from "../../components/Hero/index.jsx";
+// src/App.js
+import React from "react";
+import Home from "../Home";
 
-const Home = () => {
-  return <Hero />;
+const App = () => {
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 };
-export default Home;
+
+export default App;

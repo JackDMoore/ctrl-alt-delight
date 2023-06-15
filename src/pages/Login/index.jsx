@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { Form, Button, Row, Col } from "react-bootstrap";
-import FormContainer from "../../components/FormContainer/index.jsx";
+import React from "react";
+import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useLoginMutation } from "../../slices/usersApiSlice.js";
-import { setCredentials } from "../../slices/authSlice.js";
+import { Link, useNavigate } from "react-router-dom";
+import FormContainer from "../../components/FormContainer";
+import Loader from "../../components/Loader";
+import { useLoginMutation } from "../../slices/usersApiSlice";
+import { setCredentials } from "../../slices/authSlice";
 import { toast } from "react-toastify";
-import Loader from "../../components/Loader/index.jsx";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Login = () => {
 
   const { userInfo } = useSelector((state) => state.auth);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (userInfo) {
       navigate("/");
     }
@@ -29,7 +29,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await login({ email, password }).unwrap();
-      dispatch(setCredentials({ ...response }));
+      dispatch(setCredentials(response));
       navigate("/");
     } catch (error) {
       toast.error(error?.data?.message || error.error);
@@ -73,11 +73,10 @@ const Login = () => {
 
       {isLoading && <Loader />}
 
-      <Row className="py-3">
-        <Col>
-          New Customer? <Link to="/register">Register</Link>
-        </Col>
-      </Row>
+      <div className="py-3">
+        <span>New Customer? </span>
+        <Link to="/register">Register</Link>
+      </div>
     </FormContainer>
   );
 };
