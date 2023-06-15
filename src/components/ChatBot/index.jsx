@@ -18,7 +18,7 @@ function Chatbot() {
 
   const [isTyping, setIsTyping] = useState(false);
 //add use state so chat is visble on screen
-  const [chatVisable, setChatVisable] = useState(false);
+const [chatVisible, setChatVisible] = useState(false);
 
   const handleSend = async (message) => {
     const newMessage = {
