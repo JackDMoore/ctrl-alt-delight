@@ -27,8 +27,7 @@ const Hero = () => {
             Welcome to LinguaPlay: Where Language Learning and Gaming Unite!
           </h1>
           <p className="text-center mb-4">
-            Ready to level up your language skills? Join LinguaPlay and embark
-            on an immersive learning adventure through gaming.
+            Ready to level up your language skills? Join LinguaPlay and embark on an immersive learning adventure through gaming.
           </p>
           <Button variant="primary" className="get-started-button">
             Get Started

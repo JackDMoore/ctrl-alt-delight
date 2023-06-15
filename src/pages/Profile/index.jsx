@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import FormContainer from "../../components/FormContainer/index.jsx";
 import { toast } from "react-toastify";
+import Loader from "../../components/Loader/index.jsx";
+import { useUpdateUserMutation } from "../../slices/usersApiSlice.js";
+import { setCredentials } from "../../slices/authSlice.js";
 
-const ProfilePage = () => {
+const Profile = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -101,4 +105,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default Profile;
