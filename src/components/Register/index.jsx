@@ -10,6 +10,8 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [languageUserSpeaks, setLanguageUserSpeaks] = useState("");
   const [languageToLearn, setLanguageToLearn] = useState("");
+  const [games, setGames] = useState("");
+  const [console, setConsole] = useState("");
   const navigate = useNavigate();
 
   function handleUsername(e) {
@@ -36,6 +38,14 @@ const Register = () => {
     setLanguageToLearn(e.target.value);
   }
 
+  function handleGames(e) {
+    setGames(e.target.value);
+  }
+
+  function handleConsole(e) {
+    setConsole(e.target.value);
+  }
+
   async function gatherDetails(e) {
     e.preventDefault();
     try {
@@ -46,8 +56,10 @@ const Register = () => {
         email: email,
         languageUserSpeaks: languageUserSpeaks,
         languageToLearn: languageToLearn,
+        games: games,
+        console: console,
       };
-      const response = await axios.post("", options); //post URL needs to be added here
+      const response = await axios.post("https://linguaplaya-be.onrender.com/signup", options); //post URL needs to be added here
       if (response.status == 201) {
         alert("User created :)");
         navigate("/login");
@@ -119,6 +131,30 @@ const Register = () => {
           <option value="german">German</option>
           <option value="dutch">Dutch</option>
           <option value="italian">Italian</option>
+        </select>
+        <select
+          aria-label="Game you play"
+          className="gamesDropdown"
+          onChange={handleGames}
+          value={games}
+        >
+          <option value="">Select the game you play</option>
+          <option value="GTA5">GTA5</option>
+          <option value="CoD">CoD</option>
+          <option value="Total War">Total War</option>
+          <option value="FIFA">FIFA</option>
+          <option value="Squad">Squad</option>
+        </select>
+        <select
+          aria-label="Console you play"
+          className="consoleDropdown"
+          onChange={handleConsole}
+          value={console}
+        >
+          <option value="">Select the console you play</option>
+          <option value="PlayStation">PlayStation</option>
+          <option value="Xbox">Xbox</option>
+          <option value="PC">PC</option>
         </select>
         <br />
         <button
