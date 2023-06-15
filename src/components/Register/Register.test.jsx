@@ -26,4 +26,13 @@ describe("Register Component", () => {
     expect(heading).toBeInTheDocument();
   });
 
+  it("Displays text: Already registered?", () => {
+    const text = screen.getByText("Already registered?");
+    expect(text).toBeInTheDocument();
+  });
+
+  it("Displays text: Login here", () => {
+    const text = screen.getByText("Login here");
+    expect(text).toBeInTheDocument();
+  });
 });
