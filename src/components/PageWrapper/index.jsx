@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import ChatIcon from "../ChatIcon";
+import Chatbot from "../Chatbot";
 
 const styles = ({ isActive }) => ({
   textDecoration: isActive ? "underline" : "none",
@@ -11,6 +12,10 @@ const PageWrapper = () => {
 
   const handleChatIconClick = () => {
     setChatVisible(true);
+  };
+
+  const handleChatbotClose = () => {
+    setChatVisible(false);
   };
 
   return (
@@ -27,7 +32,11 @@ const PageWrapper = () => {
             Register
           </NavLink>
         </nav>
-        <ChatIcon onClick={handleChatIconClick} />
+        {chatVisible ? (
+          <Chatbot onClose={handleChatbotClose} />
+        ) : (
+          <ChatIcon onClick={handleChatIconClick} />
+        )}
       </header>
       <Outlet />
     </>

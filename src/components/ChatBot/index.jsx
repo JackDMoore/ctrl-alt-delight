@@ -1,17 +1,20 @@
 import React, { useState, useEffect} from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
+import ChatIcon from '../ChatIcon';
+import './Chatbot.css';
 
-const API_KEY = "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";
+const API_KEY = "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";
+// const API_KEY = process.env.REACT_APP_API_KEY;
 
 const systemMessage = { 
   "role": "system", "content": "Translate my messages to French, provide the English too."
 }
 
-function Chatbot() {
+function Chatbot({ onClose }) {
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I am LinguaBot. I am here to help you translate your messages while you game. Type your language and let's get started!",
+      message: "Hello, I am LinguaBot. I am here to help you translate your messages while you game.!",
       sentTime: "just now",
       sender: "ChatGPT",
     }
@@ -85,30 +88,33 @@ const [chatVisible, setChatVisible] = useState(false);
     });
   }
 
+  const handleChatIconClick = () => {
+    setChatVisible(true);
+  };
+
+  const handleClose = () => {
+    onClose();
+  };
+
 
   return (
     <div className="App">
       {chatVisible ? (
-        <div style={{ position: 'relative', height: '400px', width: '700px' }}>
+        <div style={{ position: 'fixed', bottom: '0', right: '20px' }}>
           <MainContainer>
-            <ChatContainer>
-              <MessageList
-                scrollBehavior="smooth"
-                typingIndicator={isTyping ? <TypingIndicator content="LinguaBot is typing" /> : null}
-              >
+            <ChatContainer className="chat-container">
+              <MessageList className="message-list" typingIndicator={isTyping ? <TypingIndicator className="typing-indicator" content="LinguaBot is typing" /> : null}>
                 {messages.map((message, i) => (
                   <Message key={i} model={message} />
                 ))}
               </MessageList>
-              <MessageInput placeholder="Type message here" onSend={handleSend} />
+              <MessageInput className="message-input" placeholder="Type message here" onSend={handleSend} />
             </ChatContainer>
           </MainContainer>
+          <button onClick={handleClose}>Close</button>
         </div>
       ) : (
-        <div
-          style={{ position: 'fixed', bottom: '20px', right: '20px', cursor: 'pointer' }}
-          onClick={() => setChatVisible(true)}
-        >
+        <div className="chat-icon-container" onClick={handleChatIconClick}>
           <ChatIcon />
         </div>
       )}
@@ -116,4 +122,4 @@ const [chatVisible, setChatVisible] = useState(false);
   );
 }
 
-export default Chatbot
+export default Chatbot;
