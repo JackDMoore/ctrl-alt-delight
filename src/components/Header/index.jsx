@@ -8,6 +8,7 @@ import { useLogoutMutation } from "../../slices/usersApiSlice";
 import { logout } from "../../slices/authSlice";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "../../globalStyles";
+import "../../styles.css";
 
 const Header = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -35,17 +36,16 @@ const Header = () => {
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <header>
+      <nav>
+        {" "}
+        {/* Change header element to nav */}
         <Navbar
           bg={theme === "light" ? "light" : "dark"}
           variant={theme === "light" ? "light" : "dark"}
           expand="lg"
           collapseOnSelect
-          style={{ justifyContent: "center", width: "100%" }}
         >
           <Container fluid="xl">
-            {" "}
-            {/* Use fluid="xl" for extra large container */}
             <LinkContainer to="/">
               <Navbar.Brand
                 className={theme === "light" ? "logo" : "logo react"}
@@ -90,7 +90,7 @@ const Header = () => {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </header>
+      </nav>
     </ThemeProvider>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../../App.css";
+import "../../styles.css";
+
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -85,7 +86,7 @@ function Chatbot() {
 
   return (
     <div className="App">
-      <div style={{ position: "relative", height: "400px", width: "700px" }}>
+      <div className="chatbot-container">
         <MainContainer>
           <ChatContainer>
             <MessageList
