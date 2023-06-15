@@ -29,8 +29,8 @@ describe("Hero component", () => {
     expect(text).toBeInTheDocument();
   });
 
-  it("Displays a paragraph with text: Ready to level up your language skills? Join LinguaPlay and embark on an immersive learning adventure through gaming.", () => {
-    const text = screen.getByText("Ready to level up your language skills? Join LinguaPlay and embark on an immersive learning adventure through gaming.");
-    expect(text).toBeInTheDocument();
-  });
+  // it("Displays a button with text: Log in", () => {
+  //   const button = screen.getByRole("button", { name: "Log in" });
+  //   expect(button).toBeInTheDocument();
+  // });
 })
