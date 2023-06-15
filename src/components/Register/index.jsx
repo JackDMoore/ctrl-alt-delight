@@ -11,6 +11,7 @@ const Register = () => {
   const [languageUserSpeaks, setLanguageUserSpeaks] = useState("");
   const [languageToLearn, setLanguageToLearn] = useState("");
   const [games, setGames] = useState("");
+  const [console, setConsole] = useState("");
   const navigate = useNavigate();
 
   function handleUsername(e) {
@@ -41,6 +42,10 @@ const Register = () => {
     setGames(e.target.value);
   }
 
+  function handleConsole(e) {
+    setConsole(e.target.value);
+  }
+
   async function gatherDetails(e) {
     e.preventDefault();
     try {
@@ -52,6 +57,7 @@ const Register = () => {
         languageUserSpeaks: languageUserSpeaks,
         languageToLearn: languageToLearn,
         games: games,
+        console: console,
       };
       const response = await axios.post("", options); //post URL needs to be added here
       if (response.status == 201) {
@@ -138,6 +144,17 @@ const Register = () => {
           <option value="Total War">Total War</option>
           <option value="FIFA">FIFA</option>
           <option value="Squad">Squad</option>
+        </select>
+        <select
+          aria-label="Console you play"
+          className="consoleDropdown"
+          onChange={handleConsole}
+          value={console}
+        >
+          <option value="">Select the console you play</option>
+          <option value="PlayStation">PlayStation</option>
+          <option value="Xbox">Xbox</option>
+          <option value="PC">PC</option>
         </select>
         <br />
         <button
