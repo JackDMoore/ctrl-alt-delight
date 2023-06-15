@@ -31,5 +31,4 @@ describe("PageWrapper", () => {
         })
         expect(login).toBeTruthy()
     })
-
 })
