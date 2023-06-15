@@ -5,7 +5,7 @@ import React from "react";
 //   return <>Hello World</>;
 // };
 
-const Home = () => {
+const HomePage = () => {
   return <Hero />;
 };
-export default Home;
+export default HomePage;

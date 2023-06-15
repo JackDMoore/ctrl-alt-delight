@@ -1,40 +1,45 @@
 import { useState, useEffect } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import FormContainer from "../../components/FormContainer/index.jsx";
-import Loader from "../../components/Loader/index.jsx";
-import { useRegisterMutation } from "../../slices/usersApiSlice.js";
-import { setCredentials } from "../../slices/authSlice.js";
 import { toast } from "react-toastify";
 
-const Register = () => {
-  const [name, setName] = useState("");
+const ProfilePage = () => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [register, { isLoading }] = useRegisterMutation();
   const { userInfo } = useSelector((state) => state.auth);
+
+  const [updateProfile, { isLoading }] = useUpdateUserMutation();
 
   useEffect(() => {
     if (userInfo) {
-      navigate("/");
+      setName(userInfo.name);
+      setEmail(userInfo.email);
     }
-  }, [navigate, userInfo]);
+  }, [userInfo]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
     } else {
       try {
-        const response = await register({ name, email, password }).unwrap();
+        const response = await updateProfile(
+          {
+            _id: userInfo._id,
+            name,
+            email,
+            password,
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+          }
+        ).unwrap();
         dispatch(setCredentials(response));
-        navigate("/");
+        toast.success("Profile updated successfully");
       } catch (error) {
         toast.error(error?.data?.message || error.error);
       }
@@ -43,7 +48,8 @@ const Register = () => {
 
   return (
     <FormContainer>
-      <h1>Register</h1>
+      <h1>Update Profile</h1>
+
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
@@ -86,19 +92,13 @@ const Register = () => {
         </Form.Group>
 
         <Button type="submit" variant="primary" className="mt-3">
-          {isLoading ? "Registering..." : "Register"}
+          {isLoading ? "Updating..." : "Update"}
         </Button>
 
         {isLoading && <Loader />}
       </Form>
-
-      <Row className="py-3">
-        <Col>
-          Already have an account? <Link to="/login">Login</Link>
-        </Col>
-      </Row>
     </FormContainer>
   );
 };
 
-export default Register;
+export default ProfilePage;
