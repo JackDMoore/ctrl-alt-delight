@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import ChatIcon from "../ChatIcon";
 
 const styles = ({ isActive }) => ({
   textDecoration: isActive ? "underline" : "none",
 });
 
 const PageWrapper = () => {
+  const [chatVisible, setChatVisible] = useState(false);
+
+  const handleChatIconClick = () => {
+    setChatVisible(true);
+  };
+
   return (
     <>
       <header>
@@ -20,6 +27,7 @@ const PageWrapper = () => {
             Register
           </NavLink>
         </nav>
+        <ChatIcon onClick={handleChatIconClick} />
       </header>
       <Outlet />
     </>
