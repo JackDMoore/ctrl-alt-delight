@@ -59,7 +59,7 @@ const Register = () => {
         games: games,
         console: console,
       };
-      const response = await axios.post("", options); //post URL needs to be added here
+      const response = await axios.post("https://linguaplaya-be.onrender.com/signup", options); //post URL needs to be added here
       if (response.status == 201) {
         alert("User created :)");
         navigate("/login");
