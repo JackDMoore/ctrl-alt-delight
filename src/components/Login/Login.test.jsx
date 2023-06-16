@@ -1,10 +1,11 @@
 import React from "react";
-import { expect, it, afterEach, beforeEach, describe } from "vitest";
-import { render, cleanup, screen } from "@testing-library/react";
+import { expect, it, afterEach, beforeEach, describe, vi } from "vitest";
+import { render, cleanup, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter as Router } from "react-router-dom";
 import matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
 import Login from "./index";
+import axios from "axios";
 
 describe("LoginPage", () => {
   beforeEach(() => {
@@ -50,16 +51,36 @@ describe("LoginPage", () => {
     expect(text).toBeInTheDocument();
   });
 
-  // it("Calls gatherDetails function on button click", () => {
-  //   const gatherDetailsMock = expect.createSpy();
+  it("Username changes state when input value changes", () => {
+    const usernameInput = screen.getByLabelText("username input");
+    fireEvent.change(usernameInput, { target: { value: "Panda" } });
+    expect(usernameInput.value).toEqual("Panda");
+  });
 
-  //   const submitButton = screen.getByLabelText("submit button");
+  it("Password changes state when the input value changes", () => {
+    const passwordInput = screen.getByLabelText("password input");
+    fireEvent.change(passwordInput, { target: { value: "areCool" } });
+    expect(passwordInput.value).toEqual("areCool");
+  });
 
-  //   submitButton.onclick = gatherDetailsMock;
+  it("is gatherDetails called after submit is clicked", () => {
+    vi.spyOn(axios, "post");
 
-  //   submitButton.dispatchEvent(new MouseEvent("click"));
+    const submitButton = screen.getByLabelText("submit button");
+    submitButton.click();
 
-  //   // Assertion for the mock function being called
-  //   expect(gatherDetailsMock).to.be.called();
-  //   });
+    expect(axios.post).toHaveBeenCalled();
+  });
+
+  it("is api called with button click?", () => {
+    const axiosspy = vi.spyOn(axios, "post");
+
+    const submitButton = screen.getByLabelText("submit button");
+    submitButton.click();
+
+    expect(axiosspy).toHaveBeenCalledWith(
+      "https://linguaplaya-be.onrender.com/login",
+      expect.any(Object)
+    );
+  });
 });
