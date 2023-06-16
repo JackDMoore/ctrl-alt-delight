@@ -23,7 +23,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  background-color: #8d8d8d;
+  background-color: #1f242d;
+  color: white;
 }
 
 .navbar {
@@ -31,7 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #5a5a5a;
+  background-color: #36404b;
   position: fixed;
   top: 0;
   left: 0;
@@ -543,7 +544,7 @@ button:focus-visible {
   .p-hero {
     font-size: 1.5rem;
     font-weight: 600;
-    color: black;
+    color: white;
     margin-bottom: 2rem;
     text-align: center;
     width: 100%;
@@ -555,4 +556,238 @@ button:focus-visible {
     font-size: 2.5rem;
     font-weight: 700;
   }
+}
+
+/* connectionspage */
+.left-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="radio"],
+label {
+  margin-right: 5px;
+}
+
+.connection-button {
+  position: absolute;
+  bottom: 20px; /* Adjust the value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 4rem;
+}
+
+.connection-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 768px) {
+  .left-navbar {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    position: relative;
+    align-items: center;
+  }
+
+  .section {
+    margin-bottom: 20px;
+  }
+
+  .connection-button {
+    position: static;
+    margin-bottom: 1rem;
+  }
+}
+
+/* register page  */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-box {
+  width: 400px;
+  padding: 20px;
+  background-color: #8e44ad;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 10px rgba(142, 68, 173, 0.8);
+  background-image: linear-gradient(
+    45deg,
+    rgba(142, 68, 173, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.register-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #40e0d0;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputField {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.languageDropdown {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.register-btn {
+  background-color: #9f7ff2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background-color: #9d53c3;
+  color: white;
+}
+
+/* login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  width: 400px;
+  padding: 20px;
+  background-color: #8e44ad;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 10px rgba(142, 68, 173, 0.8);
+  background-image: linear-gradient(
+    45deg,
+    rgba(142, 68, 173, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.login-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #40e0d0;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputField {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.login-btn {
+  background-color: #9f7ff2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #9d53c3;
+  color: white;
+}
+
+/* ProfilePage */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.profile-box {
+  width: 400px;
+  padding: 20px;
+  background-color: #8e44ad;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 10px rgba(142, 68, 173, 0.8);
+  background-image: linear-gradient(
+    45deg,
+    rgba(142, 68, 173, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.profile-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #40e0d0;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.inputField {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.profile-btn {
+  background-color: #9f7ff2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.profile-btn:hover {
+  background-color: #9d53c3;
+  color: white;
 }

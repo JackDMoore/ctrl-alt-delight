@@ -22,6 +22,7 @@ const PageWrapper = () => {
   return (
     <>
       <Navbar />
+
       <div
         style={{
           position: "fixed",
