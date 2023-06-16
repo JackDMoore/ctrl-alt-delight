@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -14,39 +13,39 @@ const Register = () => {
   const [console, setConsole] = useState("");
   const navigate = useNavigate();
 
-  function handleUsername(e) {
+  const handleUsername = (e) => {
     setUsername(e.target.value);
-  }
+  };
 
-  function handlePassword(e) {
+  const handlePassword = (e) => {
     setPassword(e.target.value);
-  }
+  };
 
-  function handleName(e) {
+  const handleName = (e) => {
     setName(e.target.value);
-  }
+  };
 
-  function handleEmail(e) {
+  const handleEmail = (e) => {
     setEmail(e.target.value);
-  }
+  };
 
-  function handleLanguageUserSpeaks(e) {
+  const handleLanguageUserSpeaks = (e) => {
     setLanguageUserSpeaks(e.target.value);
-  }
+  };
 
-  function handleLanguageToLearn(e) {
+  const handleLanguageToLearn = (e) => {
     setLanguageToLearn(e.target.value);
-  }
+  };
 
-  function handleGames(e) {
+  const handleGames = (e) => {
     setGames(e.target.value);
-  }
+  };
 
-  function handleConsole(e) {
+  const handleConsole = (e) => {
     setConsole(e.target.value);
-  }
+  };
 
-  async function gatherDetails(e) {
+  const gatherDetails = async (e) => {
     e.preventDefault();
     try {
       const options = {
@@ -59,15 +58,18 @@ const Register = () => {
         games: games,
         console: console,
       };
-      const response = await axios.post("https://linguaplaya-be.onrender.com/signup", options); //post URL needs to be added here
-      if (response.status == 201) {
+      const response = await axios.post(
+        "https://linguaplaya-be.onrender.com/signup",
+        options
+      );
+      if (response.status === 201) {
         alert("User created :)");
         navigate("/login");
       }
     } catch (error) {
       alert(error.response.data.error);
     }
-  }
+  };
 
   return (
     <div className="input-component">
@@ -81,7 +83,7 @@ const Register = () => {
           onChange={handleUsername}
           value={username}
           className="inputField"
-        ></input>
+        />
         <input
           type="password"
           aria-label="password input"
@@ -89,7 +91,7 @@ const Register = () => {
           onChange={handlePassword}
           value={password}
           className="inputField"
-        ></input>
+        />
         <input
           type="text"
           aria-label="name input"
@@ -97,7 +99,7 @@ const Register = () => {
           onChange={handleName}
           value={name}
           className="inputField"
-        ></input>
+        />
         <input
           type="email"
           aria-label="email input"
@@ -105,7 +107,7 @@ const Register = () => {
           onChange={handleEmail}
           value={email}
           className="inputField"
-        ></input>
+        />
         <select
           aria-label="language you speak"
           className="languageDropdown"
@@ -120,56 +122,38 @@ const Register = () => {
           <option value="italian">Italian</option>
         </select>
         <select
-          aria-label="language you'd like to learn"
+          aria-label="language you want to learn"
           className="languageDropdown"
           onChange={handleLanguageToLearn}
           value={languageToLearn}
         >
-          <option value="">Select the language you'd like to learn</option>
+          <option value="">Select the language you want to learn</option>
           <option value="english">English</option>
           <option value="french">French</option>
           <option value="german">German</option>
           <option value="dutch">Dutch</option>
           <option value="italian">Italian</option>
         </select>
-        <select
-          aria-label="Game you play"
-          className="gamesDropdown"
+        <input
+          type="text"
+          aria-label="games input"
+          placeholder="Enter Games"
           onChange={handleGames}
           value={games}
-        >
-          <option value="">Select the game you play</option>
-          <option value="GTA5">GTA5</option>
-          <option value="CoD">CoD</option>
-          <option value="Total War">Total War</option>
-          <option value="FIFA">FIFA</option>
-          <option value="Squad">Squad</option>
-        </select>
-        <select
-          aria-label="Console you play"
-          className="consoleDropdown"
+          className="inputField"
+        />
+        <input
+          type="text"
+          aria-label="console input"
+          placeholder="Enter Console"
           onChange={handleConsole}
           value={console}
-        >
-          <option value="">Select the console you play</option>
-          <option value="PlayStation">PlayStation</option>
-          <option value="Xbox">Xbox</option>
-          <option value="PC">PC</option>
-        </select>
-        <br />
-        <button
-          onClick={gatherDetails}
-          id="submitBtn"
-          aria-label="submit button"
-        >
-          Submit
+          className="inputField"
+        />
+
+        <button className="btn" onClick={gatherDetails}>
+          Register
         </button>
-        <p>
-          Already registered?{" "}
-          <a href="/login" style={{ color: "#FF8E3C" }}>
-            Login here
-          </a>
-        </p>
       </form>
     </div>
   );

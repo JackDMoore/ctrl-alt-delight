@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
   ChatContainer,
@@ -11,7 +10,7 @@ import {
 import ChatIcon from "../ChatIcon";
 import "../../styles.css";
 
-const API_KEY = "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";
+const API_KEY = "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";
 const systemMessage = {
   role: "system",
   content: "Translate my messages to French, provide the English too.",
@@ -88,18 +87,33 @@ function Chatbot({ onClose }) {
   const handleChatIconClick = () => {
     setChatVisible(true);
   };
+
   const handleClose = () => {
-    onClose();
+    setChatVisible(false);
   };
+
+  useEffect(() => {
+    // Close the chatbot when the component is unmounted
+    return () => {
+      setChatVisible(false);
+    };
+  }, []);
 
   return (
     <div className="App">
-      {chatVisible ? (
-        <div style={{ position: "fixed", bottom: "0", right: "20px" }}>
+      {chatVisible && (
+        <div
+          className="chat-container"
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            zIndex: "9999",
+          }}
+        >
           <MainContainer>
-            <ChatContainer className="chat-container">
+            <ChatContainer>
               <MessageList
-                className="message-list"
                 typingIndicator={
                   isTyping ? (
                     <TypingIndicator
@@ -119,11 +133,18 @@ function Chatbot({ onClose }) {
                 onSend={handleSend}
               />
             </ChatContainer>
+            <button className="chatbot-b" onClick={handleClose}>
+              Close
+            </button>
           </MainContainer>
-          <button onClick={handleClose}>Close</button>
         </div>
-      ) : (
-        <div className="chat-icon-container" onClick={handleChatIconClick}>
+      )}
+      {!chatVisible && (
+        <div
+          className="chat-icon-container"
+          style={{ position: "fixed", bottom: "20px", right: "20px" }}
+          onClick={handleChatIconClick}
+        >
           <ChatIcon />
         </div>
       )}

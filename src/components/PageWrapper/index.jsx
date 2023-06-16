@@ -20,18 +20,26 @@ const PageWrapper = () => {
 
   return (
     <>
-      <header>
-        <nav>
-          <NavLink to="/" id="link" style={styles}>
-            Home
-          </NavLink>
-          <NavLink to="login" id="link" style={styles}>
-            Login
-          </NavLink>
-          <NavLink to="register" id="link" style={styles}>
-            Register
-          </NavLink>
-        </nav>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage: "ctrl-alt-delight/src/assets/worldlang.png",
+          backgroundSize: "cover",
+          zIndex: -1,
+        }}
+      ></div>
+      <header
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: "9999",
+        }}
+      >
         {chatVisible ? (
           <Chatbot onClose={handleChatbotClose} />
         ) : (

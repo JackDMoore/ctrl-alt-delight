@@ -1,5 +1,5 @@
 import React from "react";
-import chaticon from "./chaticon.png";
+import chaticon from "./chatboticon.png";
 
 function ChatIcon({ onClick }) {
   return (
@@ -12,7 +12,7 @@ function ChatIcon({ onClick }) {
       }}
       onClick={onClick}
     >
-      <img src={chaticon} alt="Chat Icon" />
+      <img className="Chatboticon" src={chaticon} alt="Chat Icon" />
     </div>
   );
 }

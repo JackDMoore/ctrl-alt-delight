@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Card, Button } from "react-bootstrap";
 import "../../styles.css";
+import gamerroom from "../../assets/gamerroom.jpg";
 
 const Navbar = () => {
   return (
@@ -12,8 +13,22 @@ const Navbar = () => {
       <div className="navbar-links">
         <Link to="/login">Log In</Link>
         <Link to="/register">Register</Link>
+        <Link to="/profile">Profile</Link>
       </div>
     </nav>
+  );
+};
+
+const ParallaxImage = () => {
+  return (
+    <div className="parallax-image">
+      <div
+        className="parallax-image-layer"
+        style={{
+          backgroundImage: `url(${gamerroom})`,
+        }}
+      ></div>
+    </div>
   );
 };
 
@@ -21,13 +36,18 @@ const Hero = () => {
   return (
     <div className="hero-container">
       <Navbar />
-      <Container className="d-flex justify-content-center align-items-center flex-column">
+      <div className="parallax-container">
+        <ParallaxImage />
+      </div>
+      <Container className="container-hero">
         <Card className="p-5 d-flex flex-column align-items-center hero-card bg-light w-75">
-          <h1 className="text-center mb-4">
+          <div className="overlay"></div>
+          <h1 className="h1-hero">
             Welcome to LinguaPlay: Where Language Learning and Gaming Unite!
           </h1>
-          <p className="text-center mb-4">
-            Ready to level up your language skills? Join LinguaPlay and embark on an immersive learning adventure through gaming.
+          <p className="p-hero">
+            Ready to level up your language skills? Join LinguaPlay and embark
+            on an immersive learning adventure through gaming.
           </p>
           <Button variant="primary" className="get-started-button">
             Get Started

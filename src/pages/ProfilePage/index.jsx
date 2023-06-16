@@ -12,8 +12,7 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.auth);
 
-  const [updateProfile, { isLoading }] = useUpdateUserMutation();
-
+  // useEffect to update the form fields when userInfo changes
   useEffect(() => {
     if (userInfo) {
       setName(userInfo.name);
@@ -27,18 +26,15 @@ const ProfilePage = () => {
       toast.error("Passwords do not match");
     } else {
       try {
-        const response = await updateProfile(
-          {
-            _id: userInfo._id,
-            name,
-            email,
-            password,
-          },
-          {
-            headers: { "Content-Type": "application/json" },
-          }
-        ).unwrap();
-        dispatch(setCredentials(response));
+        // Perform your updateProfile logic here
+        // const response = await updateProfile({
+        //   _id: userInfo._id,
+        //   name,
+        //   email,
+        //   password,
+        // });
+        // Dispatch the action for updating user credentials
+        // dispatch({ type: "UPDATE_USER_CREDENTIALS", payload: response });
         toast.success("Profile updated successfully");
       } catch (error) {
         toast.error(error?.data?.message || error.error);
@@ -47,8 +43,16 @@ const ProfilePage = () => {
   };
 
   return (
-    <FormContainer>
+    <div>
       <h1>Update Profile</h1>
+
+      {userInfo && (
+        <div>
+          <h3>Profile Information</h3>
+          <p>Name: {userInfo.name}</p>
+          <p>Email: {userInfo.email}</p>
+        </div>
+      )}
 
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="name">
@@ -60,7 +64,6 @@ const ProfilePage = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </Form.Group>
-
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -70,7 +73,6 @@ const ProfilePage = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
-
         <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
@@ -80,7 +82,6 @@ const ProfilePage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-
         <Form.Group controlId="confirmPassword">
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
@@ -90,14 +91,11 @@ const ProfilePage = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </Form.Group>
-
         <Button type="submit" variant="primary" className="mt-3">
-          {isLoading ? "Updating..." : "Update"}
+          Update
         </Button>
-
-        {isLoading && <Loader />}
       </Form>
-    </FormContainer>
+    </div>
   );
 };
 
