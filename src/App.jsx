@@ -13,6 +13,7 @@ const App = () => {
           <Route path="/login" element={<Pages.LoginPage />} />
           <Route path="/profile" element={<Pages.ProfilePage />} />
           <Route path="*" element={<Pages.NotFoundPage />} />
+          <Route path="/chat" element={<Pages.ChatPage />}/>
         </Route>
       </Routes>
     </>
