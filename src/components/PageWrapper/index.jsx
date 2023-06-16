@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import ChatIcon from "../ChatIcon";
 import Chatbot from "../Chatbot";
+import Navbar from "../Navbar";
 
 const styles = ({ isActive }) => ({
   textDecoration: isActive ? "underline" : "none",
@@ -20,6 +21,7 @@ const PageWrapper = () => {
 
   return (
     <>
+      <Navbar />
       <div
         style={{
           position: "fixed",
@@ -27,7 +29,7 @@ const PageWrapper = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "ctrl-alt-delight/src/assets/worldlang.png",
+          backgroundImage: "url(./src/assets/worldlang.png)",
           backgroundSize: "cover",
           zIndex: -1,
         }}

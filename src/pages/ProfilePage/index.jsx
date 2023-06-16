@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const [email, setEmail] = useState("");
@@ -9,8 +9,8 @@ const ProfilePage = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const dispatch = useDispatch();
-  const { userInfo } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
   // useEffect to update the form fields when userInfo changes
   useEffect(() => {
