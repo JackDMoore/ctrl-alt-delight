@@ -1,0 +1,124 @@
+.cs-main-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    overflow: auto;
+    border: solid 1px #d1dbe3;
+    box-sizing: border-box;
+    color: rgba(0,0,0,.87);
+    background-color: #fff;
+    font-size: 1rem;
+  }
+  
+  .cs-main-container .cs-chat-container {
+    order: 1;
+    z-index: 1;
+    flex-grow: 1;
+    flex-basis: 65%;
+    border-right: solid 0px #d1dbe3;
+  }
+  
+  .cs-chat-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 180px;
+    color: rgba(0,0,0,.87);
+    background-color: #fff;
+  }
+  
+  .cs-message-list {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-height: 1.25em;
+    position: relative;
+    color: rgba(0,0,0,.87);
+    background-color: #fff;
+  }
+  
+  .scrollbar-container {
+    position: relative;
+    height: 100%;
+  }
+  
+  .cs-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Align bots on the left */
+    padding: 0;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 0;
+  }
+
+  .cs-message.bot {
+    justify-content: flex-end; /* Align senders on the right */
+  }
+
+  .cs-message__content {
+    box-sizing: border-box;
+    color: rgba(0,0,0,.87);
+    background-color: #c6e3fa;
+    margin-top: 0;
+    padding: 0.6em 0.9em;
+    border-radius: 0.7em 0.7em 0.7em 0.7em;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-family: Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    font-size: .91em;
+    font-variant: normal;
+}
+  .cs-chat-container .cs-message-input {
+    border-top: solid 1px #d1dbe3;
+    border-right: solid 0px #d1dbe3;
+    border-bottom: solid 0px #d1dbe3;
+    border-left: solid 0px #d1dbe3;
+    margin-top: auto;
+    padding: 0.3em 0 0.3em 0em;
+    color: rgba(0,0,0,.87);
+    background-color: #fff;
+}
+
+.cs-message-input__content-editor {
+    box-sizing: border-box;
+    flex-grow: 1;
+    background-color: #c6e3fa;
+    font-family: Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
+    outline: 0;
+    border-top: 0 none;
+    border-right: 0 none;
+    border-bottom: 0 none;
+    border-left: 0 none;
+    overflow: visible;
+    color: rgba(0,0,0,.87);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.cs-message-list__scroll-wrapper>.cs-message:nth-last-child(4) {
+  margin-bottom: 2.65em;
+}
+
+.user-message {
+  /* Your styles for the sender/user messages */
+  text-align: right;
+}
+
+.bot-message {
+  /* Your styles for the bot messages */
+  text-align: left;
+}
+
+.close-button-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em;
+  cursor: pointer;
+}

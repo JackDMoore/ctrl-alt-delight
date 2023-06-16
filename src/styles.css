@@ -232,7 +232,7 @@ button:focus-visible {
 }
 /* Override specific styles for the chatbot */
 
-/* Styling for the chatbot container */
+Styling for the chatbot container
 .chat-container {
   position: fixed;
   bottom: 0;
@@ -330,3 +330,20 @@ button:focus-visible {
 /* .cs-message-input {
   background-color: #654973;
 } */
+
+.cs-message__content {
+  box-sizing: border-box;
+  color : black;
+  background-color: pink;
+  background-color: #c6e3fa;
+  margin-top: 0;
+  padding: 0.6em 0.9em;
+  border-radius: 0.7em 0.7em 0.7em 0.7em;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-family: Helvetica Neue,Segoe UI,Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  font-size: .91em;
+  font-variant: normal;
+}
