@@ -485,6 +485,7 @@ button:focus-visible {
 
   .container-hero {
     position: relative;
+    margin-top: 5rem !important;
     background-image: linear-gradient(to bottom, #9f7ff2, #7a5bcf);
     border-radius: 3rem;
     padding: 0.5rem 1rem;
