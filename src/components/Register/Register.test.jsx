@@ -42,6 +42,18 @@ describe("Register Component", () => {
     expect(usernameInput.value).toEqual("Panda");
   });
 
+  it("Name changes state when input value changes", () => {
+    const usernameInput = screen.getByLabelText("name input");
+    fireEvent.change(usernameInput, { target: { value: "Panda" } });
+    expect(usernameInput.value).toEqual("Panda");
+  });
+
+  it("Email changes state when input value changes", () => {
+    const usernameInput = screen.getByLabelText("email input");
+    fireEvent.change(usernameInput, { target: { value: "Panda" } });
+    expect(usernameInput.value).toEqual("Panda");
+  });
+
   it("Password changes state when the input value changes", () => {
     const passwordInput = screen.getByLabelText("password input");
     fireEvent.change(passwordInput, { target: { value: "areCool" } });
