@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<PageWrapper />} >
+        <Route path="/" element={<PageWrapper />}>
           <Route index element={<Pages.HomePage />} />
           <Route path="/register" element={<Pages.RegisterPage />} />
           <Route path="/login" element={<Pages.LoginPage />} />

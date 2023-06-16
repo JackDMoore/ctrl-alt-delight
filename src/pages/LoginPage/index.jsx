@@ -1,6 +1,5 @@
 import React from "react";
 import { Login } from "../../components";
-
 const LoginPage = () => {
   return (
     <div className="input-container">
@@ -8,5 +7,4 @@ const LoginPage = () => {
     </div>
   );
 };
-
 export default LoginPage;
