@@ -63,7 +63,7 @@ const Register = () => {
         "https://linguaplaya-be.onrender.com/signup",
         options
       ); 
-      if (response.status == 201) {
+      if (response.status == 200) {
         alert("User created :)");
         navigate("/login");
       }

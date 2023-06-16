@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Login = (props) => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,10 +20,13 @@ const Login = (props) => {
     e.preventDefault();
     try {
       const options = { username: username, password: password };
-      const response = await axios.post("https://linguaplaya-be.onrender.com/login", options); //will need to add link here
+      const response = await axios.post(
+        "https://linguaplaya-be.onrender.com/login",
+        options
+      ); //will need to add link here
       if (response.status == 200) {
-        localStorage.setItem("token", response.data.token);
-        navigate("/home");
+        localStorage.setItem("token", response.data.access_token);
+        navigate("/");
       }
     } catch (error) {
       // alert(error.response.data.error);
