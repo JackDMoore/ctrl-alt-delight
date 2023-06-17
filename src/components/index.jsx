@@ -6,4 +6,5 @@ export {default as ChatIcon} from "./ChatIcon"
 export {default as Chatbot} from "./Chatbot"
 export { default as Navbar } from "./Navbar";
 export { default as ProfileCard } from "./ProfileCard";
-
+export { default as UserList} from "./userlist";
+export { default as SingleUser} from "./SingleUser";
