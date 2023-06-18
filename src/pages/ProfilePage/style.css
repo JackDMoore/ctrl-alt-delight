@@ -1,0 +1,13 @@
+#updateform{
+    display: none;
+}
+#userinfo{
+    display: block;
+}
+#editbtn{
+    display: block;
+}
+
+#backbtn{
+    display: none;
+}
