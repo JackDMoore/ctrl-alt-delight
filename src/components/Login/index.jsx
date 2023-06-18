@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +6,12 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const inputRef = useRef()
+
   const navigate = useNavigate();
+   useEffect(() => {
+      inputRef.current.focus()
+  },[])
 
   function handleUsername(e) {
     setUsername(e.target.value);
@@ -15,6 +20,8 @@ const Login = () => {
   function handlePassword(e) {
     setPassword(e.target.value);
   }
+
+ 
 
   async function gatherDetails(e) {
     e.preventDefault();
@@ -26,6 +33,9 @@ const Login = () => {
       ); //will need to add link here
       if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
+        localStorage.setItem('username', response.data.userinfo.user.username)
+        // setUser(username)
+        // setPassword(password)
         // dispatch(loginSuccess(users))
         // localStorage.setItem('user', JSON.stringify(data.users)
         navigate("/");
@@ -48,6 +58,7 @@ const Login = () => {
             onChange={handleUsername}
             value={username}
             className="inputField"
+            ref = {inputRef}
           ></input>
           <input
             type="password"
@@ -56,6 +67,7 @@ const Login = () => {
             onChange={handlePassword}
             value={password}
             className="inputField"
+            ref = {inputRef}
           ></input>
           <br />
           <button

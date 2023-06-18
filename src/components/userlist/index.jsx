@@ -5,7 +5,7 @@ import SingleUser from './'
 
 const UserList = () => {
     const [isLoading, setLoading] = useState(true);
-    const [users,setUser] = useState()
+    const [users,setUsers] = useState()
     const [response, setResponse] = useState([]);
 
     //need to splice current user from list
@@ -14,7 +14,7 @@ const UserList = () => {
         method:'GET'
         })
         .then((res)=>res.json())
-        .then((data)=>{setUser(data)})
+        .then((data)=>{setUsers(data)})
         // try{
         //     setResponse(async () => await fetch(`https://linguaplaya-be.onrender.com/users/all`))
         //     const json = await response.json();
@@ -49,10 +49,11 @@ const UserList = () => {
             newarr.map((user, user_id) => {
                 return (
                     <div classname = 'singleUsersCards' key ={user_id}>
-                        {/* <details> */}
-                            <summary> <h3>{user.username}<span>  {user.rating} Stars </span></h3></summary>
+                         
+                        <details>
+                        <summary> <h3>{user.username}<span>  {user.rating} Stars </span></h3></summary>
                             <p>{user.profile_bio}</p>
-                        {/* </details> */}
+                        </details>
                         {/* <span>{user.lang}</span> */}
                     </div>
                     // <SingleUser key={user_id} user={user} />
