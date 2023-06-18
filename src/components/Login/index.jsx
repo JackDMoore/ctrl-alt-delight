@@ -26,6 +26,8 @@ const Login = () => {
       ); //will need to add link here
       if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
+        // dispatch(loginSuccess(users))
+        // localStorage.setItem('user', JSON.stringify(data.users)
         navigate("/");
       }
     } catch (error) {

@@ -8,17 +8,37 @@ const ProfilePage = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  const [user,setUser] = useState([])
   const navigate = useNavigate();
-  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  const userInfo = user;
 
+  const Token = localStorage.getItem("Token")
+  
+  async function getCurrentUser(){
+    await fetch("https://linguaplaya-be.onrender.com/users",{
+    method:'GET',
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${Token}`,
+    },
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+      setUser(data)
+      console.log(data)
+    })
+  }
+  console.log(user)
   // useEffect to update the form fields when userInfo changes
   useEffect(() => {
-    if (userInfo) {
-      setName(userInfo.name);
-      setEmail(userInfo.email);
-    }
-  }, [userInfo]);
+    getCurrentUser()
+    // if (userInfo) {
+    //   setName(userInfo.name);
+    //   setEmail(userInfo.email);
+    // }
+  }, []);
+
+  const userarr = Array.from(user)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
