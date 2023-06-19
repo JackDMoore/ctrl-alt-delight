@@ -1,9 +1,13 @@
 import React from "react";
 
-const ProfileCard = () => {
+const ProfileCard = (onConnect) => {
+  const handleConnectClick = () => {
+    // call the onConnect prop
+    onConnect(profileId);
+  };
+
   return (
     <div className="profile-card">
-      <h1>Profile Card</h1>
       {/* Additional profile information */}
     </div>
   );
