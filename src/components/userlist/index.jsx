@@ -7,6 +7,7 @@ const UserList = () => {
     const [isLoading, setLoading] = useState(true);
     const [users,setUsers] = useState()
     const [response, setResponse] = useState([]);
+    const username = localStorage.getItem('username')
 
     //need to splice current user from list
     const loadUsers = async () => {
@@ -42,13 +43,19 @@ const UserList = () => {
     }
 
 //   console.log(users.users)
-  const newarr = users.users
+  const arr = users.users
+  function removeUser(arr) {
+    return (arr.username === username)
+  }
+  const userId = arr.findIndex(removeUser)
+ const newarr = arr.splice(userId, 1)
+    // console.log(newarr)
 
   return  <div className="outer-Container" onLoad={loadUsers}>
             <div className="alluser-container">{
-            newarr.map((user, user_id) => {
+            arr.map((user, user_id) => {
                 return (
-                    <div classname = 'singleUsersCards' key ={user_id}>
+                    <div className = 'singleUsersCards' key ={user_id}>
                          
                         <details>
                         <summary> <h3>{user.username}<span>  {user.rating} Stars </span></h3></summary>
