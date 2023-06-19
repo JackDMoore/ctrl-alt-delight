@@ -31,28 +31,16 @@ describe("Register2 Component", () => {
     expect(text).toBeInTheDocument();
   });
 
-  it("Username changes state when input value changes", () => {
-    const usernameInput = screen.getByLabelText("username input");
+  it("Games input changes state when input value changes", () => {
+    const usernameInput = screen.getByLabelText("games input");
     fireEvent.change(usernameInput, { target: { value: "Panda" } });
     expect(usernameInput.value).toEqual("Panda");
   });
 
-  it("Name changes state when input value changes", () => {
-    const nameInput = screen.getByLabelText("name input");
+  it("Console input changes state when input value changes", () => {
+    const nameInput = screen.getByLabelText("console input");
     fireEvent.change(nameInput, { target: { value: "Panda" } });
     expect(nameInput.value).toEqual("Panda");
-  });
-
-  it("Email changes state when input value changes", () => {
-    const emailInput = screen.getByLabelText("email input");
-    fireEvent.change(emailInput, { target: { value: "Panda" } });
-    expect(emailInput.value).toEqual("Panda");
-  });
-
-  it("Password changes state when the input value changes", () => {
-    const passwordInput = screen.getByLabelText("password input");
-    fireEvent.change(passwordInput, { target: { value: "areCool" } });
-    expect(passwordInput.value).toEqual("areCool");
   });
 
   it("is gatherDetails called after submit is clicked", () => {
@@ -67,7 +55,7 @@ describe("Register2 Component", () => {
     const submitButton = screen.getByLabelText("submit button");
     submitButton.click();
     expect(axiosspy).toHaveBeenCalledWith(
-      "https://linguaplaya-be.onrender.com/signup",
+      `https://linguaplaya-be.onrender.com/users/games/${username}`,
       expect.any(Object)
     );
   });
