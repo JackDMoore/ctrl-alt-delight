@@ -6,10 +6,12 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const usernameInputRef = useRef();
-  const passwordInputRef = useRef();
+  const inputRef = useRef();
 
   const navigate = useNavigate();
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   useEffect(() => {
     usernameInputRef.current.focus();
@@ -33,7 +35,11 @@ const Login = () => {
       );
       if (response.status === 200) {
         localStorage.setItem("token", response.data.access_token);
-        localStorage.setItem("username", response.data.userinfo.user.username);
+        localStorage.setItem("username", response.data.username);
+        // setUser(username)
+        // setPassword(password)
+        // dispatch(loginSuccess(users))
+        // localStorage.setItem('user', JSON.stringify(data.users)
         navigate("/");
       }
     } catch (error) {
@@ -54,8 +60,8 @@ const Login = () => {
             onChange={handleUsername}
             value={username}
             className="inputField"
-            ref={usernameInputRef}
-          />
+            ref={inputRef}
+          ></input>
           <input
             type="password"
             aria-label="password input"
@@ -63,8 +69,8 @@ const Login = () => {
             onChange={handlePassword}
             value={password}
             className="inputField"
-            ref={passwordInputRef}
-          />
+            ref={inputRef}
+          ></input>
           <br />
           <button
             onClick={gatherDetails}
