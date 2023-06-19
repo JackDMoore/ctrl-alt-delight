@@ -48,8 +48,7 @@ const UserList = () => {
     return (arr.username === username)
   }
   const userId = arr.findIndex(removeUser)
- const newarr = arr.splice(userId, 1)
-    console.log(newarr)
+  arr.splice(userId, 1)
 
   return  <div className="outer-Container" onLoad={loadUsers}>
             <div className="alluser-container">{

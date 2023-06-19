@@ -7,10 +7,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [languageUserSpeaks, setLanguageUserSpeaks] = useState("");
-  const [languageToLearn, setLanguageToLearn] = useState("");
-  const [games, setGames] = useState("");
-  const [console, setConsole] = useState("");
   const navigate = useNavigate();
 
   const handleUsername = (e) => {
@@ -29,22 +25,6 @@ const Register = () => {
     setEmail(e.target.value);
   };
 
-  const handleLanguageUserSpeaks = (e) => {
-    setLanguageUserSpeaks(e.target.value);
-  };
-
-  const handleLanguageToLearn = (e) => {
-    setLanguageToLearn(e.target.value);
-  };
-
-  const handleGames = (e) => {
-    setGames(e.target.value);
-  };
-
-  const handleConsole = (e) => {
-    setConsole(e.target.value);
-  };
-
   const gatherDetails = async (e) => {
     e.preventDefault();
     try {
@@ -60,7 +40,9 @@ const Register = () => {
       );
       if (response.status === 200) {
         alert("User created :)");
-        navigate("/login");
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("token", response.data.access_token);
+        navigate("/register2");
       }
     } catch (error) {
       // Handle error
@@ -105,49 +87,6 @@ const Register = () => {
             value={email}
             className="inputField"
           />
-          <select
-            aria-label="language you speak"
-            className="languageDropdown"
-            onChange={handleLanguageUserSpeaks}
-            value={languageUserSpeaks}
-          >
-            <option value="">Select the language you speak</option>
-            <option value="english">English</option>
-            <option value="french">French</option>
-            <option value="german">German</option>
-            <option value="dutch">Dutch</option>
-            <option value="italian">Italian</option>
-          </select>
-          <select
-            aria-label="language you want to learn"
-            className="languageDropdown"
-            onChange={handleLanguageToLearn}
-            value={languageToLearn}
-          >
-            <option value="">Select the language you want to learn</option>
-            <option value="english">English</option>
-            <option value="french">French</option>
-            <option value="german">German</option>
-            <option value="dutch">Dutch</option>
-            <option value="italian">Italian</option>
-          </select>
-          <input
-            type="text"
-            aria-label="games input"
-            placeholder="Enter Games"
-            onChange={handleGames}
-            value={games}
-            className="inputField"
-          />
-          <input
-            type="text"
-            aria-label="console input"
-            placeholder="Enter Console"
-            onChange={handleConsole}
-            value={console}
-            className="inputField"
-          />
-
           <button className="register-btn" onClick={gatherDetails}>
             Register
           </button>

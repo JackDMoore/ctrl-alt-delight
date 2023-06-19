@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1686928159738" clover="3.2.0">
-  <project timestamp="1686928159739" name="All files">
-    <metrics statements="583" coveredstatements="483" conditionals="30" coveredconditionals="26" methods="31" coveredmethods="21" elements="644" coveredelements="530" complexity="0" loc="583" ncloc="583" packages="12" files="12" classes="12"/>
+<coverage generated="1686930337003" clover="3.2.0">
+  <project timestamp="1686930337003" name="All files">
+    <metrics statements="601" coveredstatements="498" conditionals="30" coveredconditionals="26" methods="32" coveredmethods="21" elements="663" coveredelements="545" complexity="0" loc="601" ncloc="601" packages="13" files="13" classes="13"/>
     <package name="components">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\index.jsx">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/index.jsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.ChatIcon">
       <metrics statements="20" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\ChatIcon\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/ChatIcon/index.jsx">
         <metrics statements="20" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -42,7 +44,7 @@
     </package>
     <package name="components.Chatbot">
       <metrics statements="155" coveredstatements="100" conditionals="9" coveredconditionals="8" methods="5" coveredmethods="3"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\Chatbot\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/Chatbot/index.jsx">
         <metrics statements="155" coveredstatements="100" conditionals="9" coveredconditionals="8" methods="5" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -203,7 +205,7 @@
     </package>
     <package name="components.Hero">
       <metrics statements="47" coveredstatements="47" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\Hero\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/Hero/index.jsx">
         <metrics statements="47" coveredstatements="47" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -255,9 +257,9 @@
       </file>
     </package>
     <package name="components.Login">
-      <metrics statements="73" coveredstatements="67" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\Login\index.jsx">
-        <metrics statements="73" coveredstatements="67" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <metrics statements="79" coveredstatements="73" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/Login/index.jsx">
+        <metrics statements="79" coveredstatements="73" conditionals="6" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -332,13 +334,16 @@
         <line num="72" count="14" type="stmt"/>
         <line num="73" count="14" type="stmt"/>
         <line num="74" count="14" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
-        <line num="76" count="1" type="stmt"/>
+        <line num="75" count="14" type="stmt"/>
+        <line num="76" count="14" type="stmt"/>
+        <line num="77" count="14" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.Navbar">
       <metrics statements="20" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\Navbar\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/Navbar/index.jsx">
         <metrics statements="20" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -363,9 +368,9 @@
       </file>
     </package>
     <package name="components.PageWrapper">
-      <metrics statements="56" coveredstatements="49" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\PageWrapper\index.jsx">
-        <metrics statements="56" coveredstatements="49" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="1"/>
+      <metrics statements="57" coveredstatements="50" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="1"/>
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/PageWrapper/index.jsx">
+        <metrics statements="57" coveredstatements="50" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -410,9 +415,9 @@
         <line num="42" count="2" type="stmt"/>
         <line num="43" count="2" type="stmt"/>
         <line num="44" count="2" type="stmt"/>
-        <line num="45" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="46" count="0" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="47" count="0" type="stmt"/>
         <line num="48" count="2" type="stmt"/>
         <line num="49" count="2" type="stmt"/>
         <line num="50" count="2" type="stmt"/>
@@ -420,14 +425,32 @@
         <line num="52" count="2" type="stmt"/>
         <line num="53" count="2" type="stmt"/>
         <line num="54" count="2" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
         <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.ProfileCard">
+      <metrics statements="11" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/ProfileCard/index.jsx">
+        <metrics statements="11" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
     </package>
     <package name="components.Register">
-      <metrics statements="162" coveredstatements="130" conditionals="5" coveredconditionals="5" methods="10" coveredmethods="5"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\components\Register\index.jsx">
-        <metrics statements="162" coveredstatements="130" conditionals="5" coveredconditionals="5" methods="10" coveredmethods="5"/>
+      <metrics statements="160" coveredstatements="132" conditionals="5" coveredconditionals="5" methods="10" coveredmethods="5"/>
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/components/Register/index.jsx">
+        <metrics statements="160" coveredstatements="132" conditionals="5" coveredconditionals="5" methods="10" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -496,10 +519,10 @@
         <line num="66" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
-        <line num="72" count="0" type="stmt"/>
+        <line num="69" count="15" type="stmt"/>
+        <line num="70" count="15" type="stmt"/>
+        <line num="71" count="15" type="stmt"/>
+        <line num="72" count="15" type="stmt"/>
         <line num="73" count="15" type="stmt"/>
         <line num="74" count="15" type="stmt"/>
         <line num="75" count="15" type="stmt"/>
@@ -586,15 +609,13 @@
         <line num="156" count="15" type="stmt"/>
         <line num="157" count="15" type="stmt"/>
         <line num="158" count="15" type="stmt"/>
-        <line num="159" count="15" type="stmt"/>
-        <line num="160" count="15" type="stmt"/>
-        <line num="161" count="1" type="stmt"/>
-        <line num="162" count="1" type="stmt"/>
+        <line num="159" count="1" type="stmt"/>
+        <line num="160" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.HomePage">
       <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\pages\HomePage\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/pages/HomePage/index.jsx">
         <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -611,7 +632,7 @@
     </package>
     <package name="pages.LoginPage">
       <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\pages\LoginPage\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/pages/LoginPage/index.jsx">
         <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -627,7 +648,7 @@
     </package>
     <package name="pages.NotFoundPage">
       <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\pages\NotFoundPage\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/pages/NotFoundPage/index.jsx">
         <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -646,7 +667,7 @@
     </package>
     <package name="pages.RegisterPage">
       <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.jsx" path="C:\Users\Sean_\OneDrive\Desktop\lfa\LAP_4_Project\ctrl-alt-delight\src\pages\RegisterPage\index.jsx">
+      <file name="index.jsx" path="/Users/jack/ctrl-alt-delight_FE-true/ctrl-alt-delight/src/pages/RegisterPage/index.jsx">
         <metrics statements="10" coveredstatements="10" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
