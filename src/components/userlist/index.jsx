@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 //import axios from 'axios';
-import SingleUser from './'
+import ProfileCard from '../ProfileCard';
 
 
 const UserList = () => {
@@ -36,32 +36,32 @@ const UserList = () => {
    const userarr = Array.from(users)
     function displayUsers() {
         return users.users
-                .filter(user => !LanguageKnown|| user.Language_known)
-                .filter(user => !Platform || user.Platform)
-                .filter(user => !LangLearn || user.LangLearn)
-                .map(user => <SingleUser key={user.user_id} user_id={user.user_id} username={user.username}
+                // .filter(user => !LanguageKnown|| user.LanguageKnown)
+                // .filter(user => !Platform || user.Platform)
+                // .filter(user => !LangLearn || user.LangLearn)
+                .map(user => <ProfileCard key={user.user_id} user_id={user.user_id} username={user.username}
                             profile_bio={user.profile_bio} />)
     }
 
-//   console.log(users.users)
+  console.log(users.users)
   const arr = users.users
   function removeUser(arr) {
     return (arr.username === username)
   }
   const userId = arr.findIndex(removeUser)
   arr.splice(userId, 1)
-    // console.log(newarr)
 
   return  <div className="outer-Container" onLoad={loadUsers}>
             <div className="alluser-container">{
             arr.map((user, user_id) => {
                 return (
                     <div className = 'singleUsersCards' key ={user_id}>
+                        <ProfileCard key={user_id} user={user} username={user.username}></ProfileCard>
                          
-                        <details>
+                        {/* <details>
                         <summary> <h3>{user.username}<span>  {user.rating} Stars </span></h3></summary>
                             <p>{user.profile_bio}</p>
-                        </details>
+                        </details> */}
                         {/* <span>{user.lang}</span> */}
                     </div>
                     // <SingleUser key={user_id} user={user} />
