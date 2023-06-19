@@ -16,9 +16,6 @@ const ProfilePage = () => {
 
 
   const [user,setUser] = useState('')
-  // const {user, password} = useCurrentUser()
-  //const navigate = useNavigate();
-  // const userInfo = user;
 
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
@@ -47,17 +44,11 @@ const ProfilePage = () => {
     getCurrentUser()
 
   }, []);
-     // if (currentUser) {
-    //   setName(currentUser.name);
-    //   setEmail(currentUser.email);
-    //   setUsername(currentUser.username);
-    //   setBio(currentUser.profile_bio)
-    // }
+
   if (currentUser ===undefined){
     return null
 }
 
-  //setPassword(currentUser.password)
   console.log(currentUser)
 
   const deleteuseraccount = async () => {
@@ -107,10 +98,6 @@ const ProfilePage = () => {
               'username':username,
               'email': email,
               'profile_bio':profile_bio,
-              // 'games':games,
-              // 'languages_known' : languages_known,
-              // 'languages_learn': languages_learn,
-              // 'connections': connections
             })
           })
           .then((res)=>res.json())
@@ -119,15 +106,6 @@ const ProfilePage = () => {
             localStorage.username = data.users[0].username
             showupdate()
           })
-        // Perform your updateProfile logic here
-        // const response = await updateProfile({
-        //   _id: userInfo._id,
-        //   name,
-        //   email,
-        //   password,
-        // });
-        // Dispatch the action for updating user credentials
-        // dispatch({ type: "UPDATE_USER_CREDENTIALS", payload: response });
         toast.success("Profile updated successfully");
       } catch (error) {
         toast.error(error?.data?.message || error.error);
@@ -135,15 +113,13 @@ const ProfilePage = () => {
     }
   };
 
+
   return (
-    // <>
-    // <UserProfile />
-    // </>
-      <><div className="profile-container">
-        <div className="profile-box">
-          <h1 className="profile-heading">Your Profile</h1>
-          <div id = "userinfo">
-            {currentUser && (
+    <div className="profile-container">
+      <div className="profile-box">
+        <h1 className="profile-heading">Your Profile</h1>
+        <div id = "userinfo">
+          {currentUser && (
             <div>
               <h3>Profile Information</h3>
               <p>Name: {currentUser.name}</p>
@@ -151,21 +127,38 @@ const ProfilePage = () => {
               <p>Email: {currentUser.email}</p>
               <p>Bio: {currentUser.profile_bio}</p>
             </div>
-          )}
-          </div>
-          
+            )
+          }
           <button id = "editbtn" onClick= {showupdate}> update account</button>
           <div id="updateform">
-          <button id = "backbtn" onClick= {showupdate}>Go back</button>
-              <Form  onSubmit={handleSubmit}>
-              <Form.Group controlId="name">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="inputField"
-                />
+            <button id = "backbtn" onClick= {showupdate}>Go back</button>
+                <Form  onSubmit={handleSubmit}>
+                <Form.Group controlId="name">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="inputField"
+                  />
+                  </Form.Group>
+                  <Form.Group controlId="username">
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    className="inputField"
+                  />
+                  </Form.Group> 
+                  <Form.Group controlId="email">
+                  <Form.Label>Email Address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="inputField"
+                  />
                 </Form.Group>
                 <Form.Group controlId="username">
                 <Form.Label>Username</Form.Label>
@@ -195,42 +188,17 @@ const ProfilePage = () => {
                   className="inputField"
                 />
               </Form.Group>
-              {/* <Form.Group controlId="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter password"
-                  //value={currentUser.password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="inputField"
-                />
-              </Form.Group>
-              <Form.Group controlId="confirmPassword">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm password"
-                  // value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="inputField"
-                />
-              </Form.Group> */}
               <Button type="submit" variant="primary" className="profile-btn mt-3">
                 Update
               </Button>
             </Form>
           </div>
-          
-        </div>
         {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
+        </div>
+        <div className="friendlist-container"></div> 
       </div>
-      <div className="friendlist-container">
-        
-      </div>
-    </>
-    
-  );
-        
+    </div>
+  )      
 };
 
 export default ProfilePage;
