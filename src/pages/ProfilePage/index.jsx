@@ -16,9 +16,6 @@ const ProfilePage = () => {
 
 
   const [user,setUser] = useState('')
-  // const {user, password} = useCurrentUser()
-  //const navigate = useNavigate();
-  // const userInfo = user;
 
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
@@ -47,17 +44,11 @@ const ProfilePage = () => {
     getCurrentUser()
 
   }, []);
-     // if (currentUser) {
-    //   setName(currentUser.name);
-    //   setEmail(currentUser.email);
-    //   setUsername(currentUser.username);
-    //   setBio(currentUser.profile_bio)
-    // }
+
   if (currentUser ===undefined){
     return null
 }
 
-  //setPassword(currentUser.password)
   console.log(currentUser)
   const deleteuseraccount = async () => {
     await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
@@ -106,10 +97,6 @@ const ProfilePage = () => {
               'username':username,
               'email': email,
               'profile_bio':profile_bio,
-              // 'games':games,
-              // 'languages_known' : languages_known,
-              // 'languages_learn': languages_learn,
-              // 'connections': connections
             })
           })
           .then((res)=>res.json())
@@ -118,15 +105,6 @@ const ProfilePage = () => {
             localStorage.username = data.users[0].username
             showupdate()
           })
-        // Perform your updateProfile logic here
-        // const response = await updateProfile({
-        //   _id: userInfo._id,
-        //   name,
-        //   email,
-        //   password,
-        // });
-        // Dispatch the action for updating user credentials
-        // dispatch({ type: "UPDATE_USER_CREDENTIALS", payload: response });
         toast.success("Profile updated successfully");
       } catch (error) {
         toast.error(error?.data?.message || error.error);
@@ -134,17 +112,8 @@ const ProfilePage = () => {
     }
   };
 
-  // const editUser = () => {
-  //   if(contentEditable != contentEditable){
-  //     contentEditable = 'false'
-  //   }    
-  // }
 
-  //contentEditable="true"
   return (
-    // <>
-    // <UserProfile />
-    // </>
     <div className="profile-container">
       <div className="profile-box">
         <h1 className="profile-heading">Your Profile</h1>
@@ -201,26 +170,6 @@ const ProfilePage = () => {
                 className="inputField"
               />
             </Form.Group>
-            {/* <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Enter password"
-                //value={currentUser.password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="inputField"
-              />
-            </Form.Group>
-            <Form.Group controlId="confirmPassword">
-              <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Confirm password"
-                // value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="inputField"
-              />
-            </Form.Group> */}
             <Button type="submit" variant="primary" className="profile-btn mt-3">
               Update
             </Button>
@@ -228,7 +177,6 @@ const ProfilePage = () => {
         </div>
         
       </div>
-      {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
     </div>
   );
         

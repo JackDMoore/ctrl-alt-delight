@@ -15,6 +15,7 @@ const App = () => {
         <Route path="/" element={<PageWrapper />}>
           <Route index element={<Pages.HomePage />} />
           <Route path="/register" element={<Pages.RegisterPage />} />
+          <Route path="/register2" element={<Pages.RegisterPage2 />} />
           <Route path="/login" element={<Pages.LoginPage />} />
           <Route path="/profile" element={<Pages.ProfilePage />} />
           <Route path="/connections" element={<Pages.ConnectionsPage />} />

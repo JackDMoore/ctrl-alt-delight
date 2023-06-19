@@ -3,4 +3,5 @@ export { default as LoginPage } from "./LoginPage";
 export { default as NotFoundPage } from "./NotFoundPage";
 export { default as ProfilePage } from "./ProfilePage";
 export { default as RegisterPage } from "./RegisterPage";
+export { default as RegisterPage2 } from "./RegisterPage2";
 export { default as ConnectionsPage } from "./ConnectionsPage";
