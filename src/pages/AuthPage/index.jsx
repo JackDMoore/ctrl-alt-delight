@@ -3,7 +3,7 @@ import axios from "axios";
 const AuthPage = (props) => {
     const onSubmit = (e) => {
         e.preventDefault();
-        const { value } = e.target[0];
+        const { value } = localStorage.getItem('username')
         axios.post(
             'http://localhost:3001/authenticate',
             { username: value }

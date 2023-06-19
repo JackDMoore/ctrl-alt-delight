@@ -33,12 +33,13 @@ const Login = () => {
         localStorage.setItem("token", response.data.access_token);
         localStorage.setItem('username', response.data.username)
         navigate("/");
-        const value  = localStorage.getItem('username')
-        axios.post(
-            'http://localhost:3001/authenticate',
-            { username: value }
-        )
-        props.onAuth({ username: value, secret: value })
+        // const value  = localStorage.getItem('username')
+        // console.log(value)
+        // axios.post(
+        //     'http://localhost:3001/authenticate',
+        //     { username: value }
+        // )
+        // onAuth({ username: value, secret: value })
       }
     } catch (error) {
       // alert(error.response.data.error);
