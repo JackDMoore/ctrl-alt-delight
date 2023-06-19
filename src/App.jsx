@@ -5,6 +5,7 @@ import { PageWrapper } from "./components";
 import './App.css'
 
 const App = () => {
+  const user = localStorage.getItem('username');
   return (
     <>
       <Routes>
