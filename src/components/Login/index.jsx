@@ -28,12 +28,12 @@ const Login = () => {
     try {
       const options = { username: username, password: password };
       const response = await axios.post(
-        "https://linguaplaya-be.onrender.com/login",
+        "http://127.0.0.1:5000/login",
         options
       ); //will need to add link here
       if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
-        localStorage.setItem('username', response.data.userinfo.user.username)
+        localStorage.setItem('username', response.data.username)
         // setUser(username)
         // setPassword(password)
         // dispatch(loginSuccess(users))
