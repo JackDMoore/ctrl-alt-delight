@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './style.css'
+import { Avatar } from "@chatscope/chat-ui-kit-react";
 // import { useCurrentUser } from "../../context/AuthContext";
 
 const ProfilePage = () => {
@@ -65,7 +66,7 @@ const ProfilePage = () => {
       localStorage.removeItem('token')}) 
   }
   function showupdate() {
-    var x = document.getElementById("updateform");
+    var x = document.getElementById("updateform")
     var y = document.getElementById("userinfo")
     var z = document.getElementById("editbtn")
     var a = document.getElementById("backbtn")
@@ -119,16 +120,18 @@ const ProfilePage = () => {
       <div className="profile-box">
         <h1 className="profile-heading">Your Profile</h1>
         <div id = "userinfo">
-          {currentUser && (
-            <div>
-              <h3>Profile Information</h3>
-              <p>Name: {currentUser.name}</p>
-              <p>Username: {currentUser.username}</p>
-              <p>Email: {currentUser.email}</p>
-              <p>Bio: {currentUser.profile_bio}</p>
-            </div>
-            )
-          }
+              {currentUser && (
+                <div>
+                  <Avatar></Avatar>
+                  <h3>Profile Information</h3>
+                  <p>Name: {currentUser.name}</p>
+                  <p>Username: {currentUser.username}</p>
+                  <p>Email: {currentUser.email}</p>
+                  <p>Bio: {currentUser.profile_bio}</p>
+                </div>
+                )
+              }
+        </div>
           <button id = "editbtn" onClick= {showupdate}> update account</button>
           <div id="updateform">
             <button id = "backbtn" onClick= {showupdate}>Go back</button>
@@ -194,7 +197,7 @@ const ProfilePage = () => {
             </Form>
           </div>
         {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
-        </div>
+        
         <div className="friendlist-container"></div> 
       </div>
     </div>

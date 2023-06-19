@@ -61,6 +61,7 @@ const Register = () => {
             value={username}
             className="inputField"
           />
+          <p>{"error username already exists"}</p>
           <input
             type="password"
             aria-label="password input"

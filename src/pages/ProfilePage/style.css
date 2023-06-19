@@ -1,16 +1,16 @@
 #updateform{
     display: none;
     /* background-color: #e3dbf8; */
-    color: white;
+    /* color: white;
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
+    cursor: pointer; */
   }
-  
+/*   
   #updateform-btn:hover {
     background-color: #9d53c3;
     color: white;
-  }
+  } */
 #userinfo{
     display: block;
 }

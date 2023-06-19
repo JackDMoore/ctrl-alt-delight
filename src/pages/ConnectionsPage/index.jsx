@@ -15,7 +15,7 @@ const ConnectionsPage = () => {
 
   return (
     <div>
-      <h1>Connections Page</h1> 
+      <h1 className="connect">Connections Page</h1> 
       <UserList />
       <ProfileCard onConnect={connectProfiles} />
      

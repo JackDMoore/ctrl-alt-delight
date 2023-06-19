@@ -32,12 +32,13 @@ const UserList = () => {
     if (users ===undefined){
         return null
     }
+    console.log(users.users)
    const userarr = Array.from(users)
     function displayUsers() {
         return users.users
-                // .filter(user => !LanguageKnown|| user.LanguageKnown)
-                // .filter(user => !Platform || user.Platform)
-                // .filter(user => !LangLearn || user.LangLearn)
+                .filter(user => !LanguageKnown|| user.Language_known)
+                .filter(user => !Platform || user.Platform)
+                .filter(user => !LangLearn || user.LangLearn)
                 .map(user => <SingleUser key={user.user_id} user_id={user.user_id} username={user.username}
                             profile_bio={user.profile_bio} />)
     }
