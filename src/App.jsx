@@ -5,11 +5,7 @@ import { PageWrapper } from "./components";
 import './App.css'
 
 const App = () => {
-  const [user, setUser] = useState(undefined)
-
-  if (!user) {
-    return <Pages.AuthPage onAuth={user => setUser(user)} />
-  } else {
+  const user = localStorage.getItem('username');
     return (
       <>
         <Routes>
@@ -24,8 +20,7 @@ const App = () => {
         </Routes>
       </>
     );
-  }
-};
+  };
 
 
 export default App;
