@@ -32,6 +32,7 @@ const UserList = () => {
     if (users ===undefined){
         return null
     }
+    console.log(users.users)
    const userarr = Array.from(users)
     function displayUsers() {
         return users.users
