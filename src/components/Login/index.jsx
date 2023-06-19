@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +6,14 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const usernameInputRef = useRef();
+  const passwordInputRef = useRef();
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    usernameInputRef.current.focus();
+  }, []);
 
   function handleUsername(e) {
     setUsername(e.target.value);
@@ -23,9 +30,10 @@ const Login = () => {
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/login",
         options
-      ); //will need to add link here
-      if (response.status == 200) {
+      );
+      if (response.status === 200) {
         localStorage.setItem("token", response.data.access_token);
+        localStorage.setItem("username", response.data.userinfo.user.username);
         navigate("/");
       }
     } catch (error) {
@@ -46,7 +54,8 @@ const Login = () => {
             onChange={handleUsername}
             value={username}
             className="inputField"
-          ></input>
+            ref={usernameInputRef}
+          />
           <input
             type="password"
             aria-label="password input"
@@ -54,7 +63,8 @@ const Login = () => {
             onChange={handlePassword}
             value={password}
             className="inputField"
-          ></input>
+            ref={passwordInputRef}
+          />
           <br />
           <button
             onClick={gatherDetails}
