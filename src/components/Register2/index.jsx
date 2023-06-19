@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Register2 = () => {
   const [languageUserSpeaks, setLanguageUserSpeaks] = useState("");
   const [languageToLearn, setLanguageToLearn] = useState("");
   const [games, setGames] = useState("");
@@ -27,21 +27,55 @@ const Register = () => {
 
   const gatherDetails = async (e) => {
     e.preventDefault();
+    const User = localStorage.getItem("username");
+    const Token = localStorage.getItem("token");
+
     try {
-      const options = {
-        username: username,
-        password: password,
-        name: name,
-        email: email,
-      };
-      const response = await axios.post(
-        "https://linguaplaya-be.onrender.com/signup",
-        options
+      // Post request for game_name
+      await axios.post(
+        "https://linguaplaya-be.onrender.com/game",
+        {
+          game_name: games, //should I change this??
+          username: User, // Linking to the user based on their username - should this be dynamic and moved to headers?
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        }
       );
-      if (response.status === 200) {
-        alert("Profile updated :)");
-        navigate("/connections");
-      }
+
+      // Post request for platform
+      await axios.post(
+        "https://linguaplaya-be.onrender.com/platform",
+        {
+          platform: console,
+          username: User, // Linking to the user based on their username
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        }
+      );
+
+      // Post request for language_learn_name and language_known_name
+      await axios.post(
+        "https://linguaplaya-be.onrender.com/language",
+        {
+          language_learn_name: languageToLearn,
+          language_known_name: languageUserSpeaks,
+          username: User, // Linking to the user based on their username
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        }
+      );
+
+      alert("Profile updated :)"); //change to toast
+      navigate("/connections");
     } catch (error) {
       // Handle error
     }
@@ -50,7 +84,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <div className="register-box">
-        <h1 className="register-heading">Register Page</h1>
+        <h1 className="register-heading">Complete Registration</h1>
         <form className="register-form">
           <select
             aria-label="language you speak"
@@ -104,4 +138,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Register2;
