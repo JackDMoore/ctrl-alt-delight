@@ -1,7 +1,7 @@
 import React from "react";
 import ConnectionButton from "../ConnectionButton";
 
-const ProfileCard = ({username, profile_bio, rating, onConnect}) => {
+const ProfileCard = ({user, username, profile_bio, rating, onConnect}) => {
 
   const handleConnectClick = () => {
     // call the onConnect prop
@@ -12,9 +12,8 @@ const ProfileCard = ({username, profile_bio, rating, onConnect}) => {
     <div className="profile-card">
       <h3>{username}</h3>
       <p>{profile_bio}</p>
-      <h4>Stars</h4>
       <p>
-        <span className="rating"> {rating}</span>
+        <span className="rating"> Stars {user.rating}</span>
         </p>
       <h4>Languages known</h4>
       <h4>Languages learning</h4>

@@ -56,7 +56,7 @@ const UserList = () => {
             arr.map((user, user_id) => {
                 return (
                     <div className = 'singleUsersCards' key ={user_id}>
-                        <ProfileCard key={user_id} user_id={user.user_id} username={user.username}></ProfileCard>
+                        <ProfileCard key={user_id} user={user} username={user.username}></ProfileCard>
                          
                         {/* <details>
                         <summary> <h3>{user.username}<span>  {user.rating} Stars </span></h3></summary>
