@@ -33,7 +33,7 @@ const Register2 = () => {
     try {
       // Post request for game_name
       await axios.post(
-        "https://linguaplaya-be.onrender.com/game",
+        `https://linguaplaya-be.onrender.com/users/games/${username}`,
         {
           game_name: games, //should I change this??
           username: User, // Linking to the user based on their username - should this be dynamic and moved to headers?
@@ -47,7 +47,7 @@ const Register2 = () => {
 
       // Post request for platform
       await axios.post(
-        "https://linguaplaya-be.onrender.com/platform",
+        `https://linguaplaya-be.onrender.com/users/platform/${username}`,
         {
           platform: console,
           username: User, // Linking to the user based on their username
@@ -61,9 +61,21 @@ const Register2 = () => {
 
       // Post request for language_learn_name and language_known_name
       await axios.post(
-        "https://linguaplaya-be.onrender.com/language",
+        `https://linguaplaya-be.onrender.com/users/language_learn/${username}`,
         {
           language_learn_name: languageToLearn,
+          username: User, // Linking to the user based on their username
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        }
+      );
+
+      await axios.post(
+        `https://linguaplaya-be.onrender.com/users/language_known/${username}`,
+        {
           language_known_name: languageUserSpeaks,
           username: User, // Linking to the user based on their username
         },

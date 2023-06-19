@@ -40,7 +40,7 @@ const Register = () => {
       );
       if (response.status === 200) {
         alert("User created :)");
-        navigate("/login");
+        navigate("/register2");
       }
     } catch (error) {
       // Handle error
