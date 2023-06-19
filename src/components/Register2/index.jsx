@@ -31,12 +31,11 @@ const Register2 = () => {
     const Token = localStorage.getItem("token");
 
     try {
-      // Post request for game_name
       await axios.post(
         `https://linguaplaya-be.onrender.com/users/games/${username}`,
         {
-          game_name: games, //should I change this??
-          username: User, // Linking to the user based on their username - should this be dynamic and moved to headers?
+          game_name: games,
+          username: User,
         },
         {
           headers: {
@@ -45,12 +44,11 @@ const Register2 = () => {
         }
       );
 
-      // Post request for platform
       await axios.post(
         `https://linguaplaya-be.onrender.com/users/platform/${username}`,
         {
           platform: console,
-          username: User, // Linking to the user based on their username
+          username: User, 
         },
         {
           headers: {
@@ -59,12 +57,11 @@ const Register2 = () => {
         }
       );
 
-      // Post request for language_learn_name and language_known_name
       await axios.post(
         `https://linguaplaya-be.onrender.com/users/language_learn/${username}`,
         {
           language_learn_name: languageToLearn,
-          username: User, // Linking to the user based on their username
+          username: User, 
         },
         {
           headers: {
@@ -77,7 +74,7 @@ const Register2 = () => {
         `https://linguaplaya-be.onrender.com/users/language_known/${username}`,
         {
           language_known_name: languageUserSpeaks,
-          username: User, // Linking to the user based on their username
+          username: User, 
         },
         {
           headers: {
@@ -86,10 +83,10 @@ const Register2 = () => {
         }
       );
 
-      alert("Profile updated :)"); //change to toast
+      alert("Profile updated :)"); 
       navigate("/connections");
     } catch (error) {
-      // Handle error
+
     }
   };
 
