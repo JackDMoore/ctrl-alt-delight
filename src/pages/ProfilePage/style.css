@@ -1,0 +1,17 @@
+#updateform{
+    display: none;
+}
+#userinfo{
+    display: block;
+}
+#editbtn{
+    display: block;
+}
+#editbtn:hover{
+    box-shadow: 10px 10px 6px purple;
+    top: -5px;
+    left: -5px;
+}
+#backbtn{
+    display: none;
+}
