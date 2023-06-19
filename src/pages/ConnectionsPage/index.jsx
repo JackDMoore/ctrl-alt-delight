@@ -17,7 +17,6 @@ const ConnectionsPage = () => {
     <div>
       <h1>Connections Page</h1> 
       <UserList />
-      <ProfileCard onConnect={connectProfiles} />
      
       <LHNavbar />
     </div>

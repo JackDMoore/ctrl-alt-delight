@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 //import axios from 'axios';
-import SingleUser from './'
+import ProfileCard from '../ProfileCard';
 
 
 const UserList = () => {
@@ -38,7 +38,7 @@ const UserList = () => {
                 // .filter(user => !LanguageKnown|| user.LanguageKnown)
                 // .filter(user => !Platform || user.Platform)
                 // .filter(user => !LangLearn || user.LangLearn)
-                .map(user => <SingleUser key={user.user_id} user_id={user.user_id} username={user.username}
+                .map(user => <ProfileCard key={user.user_id} user_id={user.user_id} username={user.username}
                             profile_bio={user.profile_bio} />)
     }
 
@@ -56,11 +56,12 @@ const UserList = () => {
             arr.map((user, user_id) => {
                 return (
                     <div className = 'singleUsersCards' key ={user_id}>
+                        <ProfileCard key={user_id} user_id={user.user_id} username={user.username}></ProfileCard>
                          
-                        <details>
+                        {/* <details>
                         <summary> <h3>{user.username}<span>  {user.rating} Stars </span></h3></summary>
                             <p>{user.profile_bio}</p>
-                        </details>
+                        </details> */}
                         {/* <span>{user.lang}</span> */}
                     </div>
                     // <SingleUser key={user_id} user={user} />
