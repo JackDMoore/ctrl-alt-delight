@@ -50,6 +50,7 @@ const ProfilePage = () => {
 }
 
   console.log(currentUser)
+
   const deleteuseraccount = async () => {
     await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
       method:'DELETE',
@@ -126,21 +127,37 @@ const ProfilePage = () => {
             <p>Email: {currentUser.email}</p>
             <p>Bio: {currentUser.profile_bio}</p>
           </div>
-        )}
-        </div>
-        
-        <button id = "editbtn" onClick= {showupdate}> update account</button>
-        <div id="updateform">
-        <button id = "backbtn" onClick= {showupdate}>Go back</button>
-            <Form  onSubmit={handleSubmit}>
-            <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="inputField"
-              />
+          
+          <button id = "editbtn" onClick= {showupdate}> update account</button>
+          <div id="updateform">
+          <button id = "backbtn" onClick= {showupdate}>Go back</button>
+              <Form  onSubmit={handleSubmit}>
+              <Form.Group controlId="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="inputField"
+                />
+                </Form.Group>
+                <Form.Group controlId="username">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="inputField"
+                />
+                </Form.Group> 
+                <Form.Group controlId="email">
+                <Form.Label>Email Address</Form.Label>
+                <Form.Control
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="inputField"
+                />
               </Form.Group>
               <Form.Group controlId="username">
               <Form.Label>Username</Form.Label>
@@ -175,6 +192,9 @@ const ProfilePage = () => {
             </Button>
           </Form>
         </div>
+        {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
+      </div>
+      <div className="friendlist-container">
         
       </div>
     </div>
