@@ -96,7 +96,7 @@ const ProfilePage = () => {
       toast.error("Passwords do not match");
     } else {
       try {
-        await fetch(`https://linguaplaya-be.onrender.com//${User}`,{
+        await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
           method:'PATCH',
           headers: {
             "Content-Type":"application/json",

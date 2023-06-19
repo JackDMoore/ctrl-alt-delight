@@ -21,8 +21,6 @@ const Login = () => {
     setPassword(e.target.value);
   }
 
- 
-
   async function gatherDetails(e) {
     e.preventDefault();
     try {
