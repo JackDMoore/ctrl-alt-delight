@@ -1,14 +1,16 @@
 // Navbar/index.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
   const user = localStorage.getItem('username')
-
+  const navigate = useNavigate();
   const logoutbtn = () => {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
+   
+    navigate('/')
   }
   return (
     <nav className="navbar">

@@ -10,7 +10,7 @@ const UserList = () => {
 
     //need to splice current user from list
     const loadUsers = async () => {
-        await fetch("http://127.0.0.1:5000/users/all",{
+        await fetch("https://linguaplaya-be.onrender.com/users/all",{
         method:'GET'
         })
         .then((res)=>res.json())
