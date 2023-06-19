@@ -6,7 +6,7 @@ const Register2 = () => {
   const [languageUserSpeaks, setLanguageUserSpeaks] = useState("");
   const [languageToLearn, setLanguageToLearn] = useState("");
   const [games, setGames] = useState("");
-  const [console, setConsole] = useState("");
+  const [platform, setPlatform] = useState("");
   const navigate = useNavigate();
 
   const handleLanguageUserSpeaks = (e) => {
@@ -21,34 +21,20 @@ const Register2 = () => {
     setGames(e.target.value);
   };
 
-  const handleConsole = (e) => {
-    setConsole(e.target.value);
+  const handlePlatform = (e) => {
+    setPlatform(e.target.value);
   };
 
   const gatherDetails = async (e) => {
     e.preventDefault();
-    const User = localStorage.getItem("username");
+    const username = localStorage.getItem("username");
     const Token = localStorage.getItem("token");
-
     try {
       await axios.post(
         `https://linguaplaya-be.onrender.com/users/games/${username}`,
         {
           game_name: games,
-          username: User,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${Token}`,
-          },
-        }
-      );
-
-      await axios.post(
-        `https://linguaplaya-be.onrender.com/users/platform/${username}`,
-        {
-          platform: console,
-          username: User, 
+          platform: platform,
         },
         {
           headers: {
@@ -61,7 +47,6 @@ const Register2 = () => {
         `https://linguaplaya-be.onrender.com/users/language_learn/${username}`,
         {
           language_learn_name: languageToLearn,
-          username: User, 
         },
         {
           headers: {
@@ -74,7 +59,6 @@ const Register2 = () => {
         `https://linguaplaya-be.onrender.com/users/language_known/${username}`,
         {
           language_known_name: languageUserSpeaks,
-          username: User, 
         },
         {
           headers: {
@@ -102,11 +86,11 @@ const Register2 = () => {
             value={languageUserSpeaks}
           >
             <option value="">Select the language you speak</option>
-            <option value="english">English</option>
-            <option value="french">French</option>
-            <option value="german">German</option>
-            <option value="dutch">Dutch</option>
-            <option value="italian">Italian</option>
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Italian">Italian</option>
           </select>
           <select
             aria-label="language you want to learn"
@@ -115,11 +99,11 @@ const Register2 = () => {
             value={languageToLearn}
           >
             <option value="">Select the language you want to learn</option>
-            <option value="english">English</option>
-            <option value="french">French</option>
-            <option value="german">German</option>
-            <option value="dutch">Dutch</option>
-            <option value="italian">Italian</option>
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Italian">Italian</option>
           </select>
           <input
             type="text"
@@ -133,8 +117,8 @@ const Register2 = () => {
             type="text"
             aria-label="console input"
             placeholder="Enter Console"
-            onChange={handleConsole}
-            value={console}
+            onChange={handlePlatform}
+            value={platform}
             className="inputField"
           />
 
