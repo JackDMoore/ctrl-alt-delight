@@ -21,6 +21,13 @@
 #backbtn{
     display: none;
 }
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 /* 
 .profile-container{
     display: inline-Block;

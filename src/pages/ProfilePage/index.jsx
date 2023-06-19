@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './style.css'
-import { Avatar } from "@chatscope/chat-ui-kit-react";
+import avadef from '../../assets/pfp/avadef.jpg'
 // import { useCurrentUser } from "../../context/AuthContext";
 
 const ProfilePage = () => {
@@ -122,7 +122,7 @@ const ProfilePage = () => {
         <div id = "userinfo">
               {currentUser && (
                 <div>
-                  <Avatar></Avatar>
+                  <img src={avadef} alt="Avatar" class="avatar"></img>
                   <h3>Profile Information</h3>
                   <p>Name: {currentUser.name}</p>
                   <p>Username: {currentUser.username}</p>
