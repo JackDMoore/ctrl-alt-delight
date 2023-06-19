@@ -13,11 +13,15 @@ const ConnectionsPage = () => {
     setConnectedProfiles([...connectedProfiles, profileId]);
   };
 
+  const handleMessage = (profileId) => {
+    // add the connected profile to the state
+    console.log(`Sending message to ${profileId}`);
+  };
+
   return (
     <div>
       <h1>Connections Page</h1> 
       <UserList />
-     
       <LHNavbar />
     </div>
   );

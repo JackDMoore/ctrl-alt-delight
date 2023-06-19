@@ -1,11 +1,17 @@
 import React from "react";
 import ConnectionButton from "../ConnectionButton";
+import MessageButton from "../MessageButton";
 
 const ProfileCard = ({user, username, profile_bio, rating, onConnect}) => {
 
   const handleConnectClick = () => {
     // call the onConnect prop
     onConnect(user.id);
+  };
+
+  const handleMessageClick = () => {
+    // call the onMessage prop
+    onMessage(user.id);
   };
 
   return (
@@ -18,6 +24,7 @@ const ProfileCard = ({user, username, profile_bio, rating, onConnect}) => {
       <h4>Languages known</h4>
       <h4>Languages learning</h4>
       <ConnectionButton onClick={handleConnectClick} />
+      <MessageButton onClick={handleMessageClick} />
       <br/>
     </div>
   );
