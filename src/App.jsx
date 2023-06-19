@@ -15,9 +15,9 @@ const App = () => {
           <Route path="/login" element={<Pages.LoginPage />} />
           <Route path="/profile" element={<Pages.ProfilePage />} />
           <Route path="/connections" element={<Pages.ConnectionsPage />} />
-          <Route path="/chat" element={<Pages.ChatPage user={user} />} />
+          <Route path="/chat" element={<Pages.ChatPage onAuth={(user)} />} />
           <Route path="*" element={<Pages.NotFoundPage />} />
-        </Route>
+          </Route>
       </Routes>
     </>
   );
