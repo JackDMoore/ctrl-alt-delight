@@ -40,6 +40,8 @@ const Register = () => {
       );
       if (response.status === 200) {
         alert("User created :)");
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("token", response.data.access_token);
         navigate("/register2");
       }
     } catch (error) {
