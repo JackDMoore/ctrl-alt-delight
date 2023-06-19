@@ -23,7 +23,7 @@ const ProfilePage = () => {
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
   async function getCurrentUser(){
-    await fetch(`http://127.0.0.1:5000/users/${User}`,{
+    await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
     method:'GET',
     headers: {
       "Content-Type":"application/json",
@@ -60,7 +60,7 @@ const ProfilePage = () => {
   //setPassword(currentUser.password)
   console.log(currentUser)
   const deleteuseraccount = async () => {
-    await fetch(`http://127.0.0.1:5000/users/${User}`,{
+    await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
       method:'DELETE',
       headers: {
         "Content-Type":"application/json",
@@ -96,7 +96,7 @@ const ProfilePage = () => {
       toast.error("Passwords do not match");
     } else {
       try {
-        await fetch(`http://127.0.0.1:5000/users/${User}`,{
+        await fetch(`https://linguaplaya-be.onrender.com//${User}`,{
           method:'PATCH',
           headers: {
             "Content-Type":"application/json",
