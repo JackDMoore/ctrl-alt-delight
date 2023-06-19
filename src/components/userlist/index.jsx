@@ -42,14 +42,14 @@ const UserList = () => {
                             profile_bio={user.profile_bio} />)
     }
 
-//   console.log(users.users)
+  console.log(users.users)
   const arr = users.users
   function removeUser(arr) {
     return (arr.username === username)
   }
   const userId = arr.findIndex(removeUser)
  const newarr = arr.splice(userId, 1)
-    // console.log(newarr)
+    console.log(newarr)
 
   return  <div className="outer-Container" onLoad={loadUsers}>
             <div className="alluser-container">{
