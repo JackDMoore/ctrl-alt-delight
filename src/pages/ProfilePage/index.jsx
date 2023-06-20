@@ -4,14 +4,22 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './style.css'
+import avadef from '../../assets/pfp/avadef.jpg'
 // import { useCurrentUser } from "../../context/AuthContext";
 
 const ProfilePage = () => {
-  const [email, setEmail] = useState("");
+  const [learn, setLearn] = useState("");
+  const [known, setKnown] = useState("");
   const [name, setName] = useState("");
+  const [email,setEmail] = useState("")
   const [username, setUsername] = useState("");
+
   const [password, setPassword] = useState("");
   const [profile_bio, setBio] = useState("");
+
+  const [platform, setPlatform] = useState("");
+
+
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [user, setUser] = useState('');
@@ -21,14 +29,28 @@ const ProfilePage = () => {
   
   const navigate = useNavigate();
 
-  async function getCurrentUser() {
-    await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${Token}`,
-      },
-      params: {}
+  const User = localStorage.getItem("username")
+  const Token= localStorage.getItem("token")
+  async function getCurrentUser(){
+    await fetch(`https://linguaplaya-be.onrender.com/users/all/${User}`,{
+    method:'GET',
+    headers: {
+      "Content-Type":"application/json",
+       Authorization: `Bearer ${Token}`,
+    },
+    params: {}
+    })
+    .then((res)=>res.json())
+    .then((data)=>{
+      console.log(data)
+      setUser((data))
+      setPlatform(data.platform);
+      setLearn(data.language_learn)
+      setKnown(data.language_known)
+      // setEmail(data.users.email);
+      setUsername(data.username);
+      setBio(data.profile_bio)
+
     })
       .then((res) => res.json())
       .then((data) => {
@@ -40,6 +62,13 @@ const ProfilePage = () => {
       });
   }
 
+  // const userarr = Array.from(user)
+  const currentUser = user
+  // useEffect to update the form fields when userInfo changes
+  useEffect(() => {
+    getCurrentUser()
+
+
   const userarr = Array.from(user);
   const currentUser = userarr[0];
 
@@ -47,9 +76,11 @@ const ProfilePage = () => {
     getCurrentUser();
   }, []);
 
-  if (currentUser === undefined) {
-    return null;
-  }
+
+  // if (currentUser === undefined) {
+  //  return null;
+  // }
+
 
   const deleteuseraccount = async () => {
     await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
@@ -68,10 +99,12 @@ const ProfilePage = () => {
   };
 
   function showupdate() {
-    var x = document.getElementById("updateform");
-    var y = document.getElementById("userinfo");
-    var z = document.getElementById("editbtn");
-    var a = document.getElementById("backbtn");
+
+    var x = document.getElementById("updateform")
+    var y = document.getElementById("userinfo")
+    var z = document.getElementById("editbtn")
+    var a = document.getElementById("backbtn")
+
     if (x.style.display === "none") {
       x.style.display = "block";
       y.style.display = "none";
@@ -87,9 +120,9 @@ const ProfilePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      toast.error("Passwords do not match");
-    } else {
+    // if (password !== confirmPassword) {
+    //   toast.error("Passwords do not match");
+    // } else {
       try {
         await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
           method: 'PATCH',
@@ -113,7 +146,7 @@ const ProfilePage = () => {
       } catch (error) {
         toast.error(error?.data?.message || error.error);
       }
-    }
+    //}
   };
 
   const handleChatClick = () => {
@@ -124,30 +157,59 @@ const ProfilePage = () => {
     <div className="profile-container">
       <div className="profile-box">
         <h1 className="profile-heading">Your Profile</h1>
-        <div id="userinfo">
-          {currentUser && (
-            <div>
-              <h3>Profile Information</h3>
-              <p>Name: {currentUser.name}</p>
-              <p>Username: {currentUser.username}</p>
-              <p>Email: {currentUser.email}</p>
-              <p>Bio: {currentUser.profile_bio}</p>
-            </div>
-          )}
-          <button id="editbtn" onClick={showupdate}>Update Account</button>
+
+        <div id = "userinfo">
+              {currentUser && (
+                <div className="deets"> 
+                  <h3 className="minititle">Profile Information</h3><button id = "editbtn" onClick= {showupdate}> edit</button>
+                  <div className="pfpname">
+                    <img src={avadef} alt="Avatar" className="avatar"></img>
+                    {/* <p id = "currentName">Name: {currentUser.name}</p> */}
+                    <h3 id = "currentUsername">{currentUser.username}</h3>
+                  </div>
+                  <p id = "currentrating">Rating: {currentUser.rating}</p>
+                  <p id = "currentknown">Your Languages: {currentUser.language_known}</p>
+                  <p id = "currentlearn">Learning: {currentUser.language_learn}</p>
+                  <h2>Bio</h2>
+                  <p id = "currentBio">{currentUser.profile_bio}</p>
+                  {/* <p id = "currentLangKnwon">{currentUser.langugues_known}</p> */}
+                </div>
+                )
+              }
+        </div>
+        
           <div id="updateform">
-            <button id="backbtn" onClick={showupdate}>Go back</button>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group controlId="name">
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="inputField"
-                />
-              </Form.Group>
-              <Form.Group controlId="username">
+            <button id = "backbtn" onClick= {showupdate}>Go back</button>
+                <Form  onSubmit={handleSubmit}>
+                <Form.Group controlId="name">
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={username}
+                    onChange={(e) => setName(e.target.value)}
+                    className="inputField"
+                  />
+                  </Form.Group>
+                  <Form.Group controlId="name">
+                  <Form.Label></Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="inputField"
+                  />
+                  </Form.Group> 
+                  <Form.Group controlId="email">
+                  <Form.Label>Email Address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="inputField"
+                  />
+                </Form.Group>
+                <Form.Group controlId="username">
+
                 <Form.Label>Username</Form.Label>
                 <Form.Control
                   type="text"
@@ -180,12 +242,10 @@ const ProfilePage = () => {
               </Button>
             </Form>
           </div>
-          <button variant="primary" onClick={handleChatClick}>
-            Chat with them
-          </button>
-          {/* <button className="deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
-        </div>
-        <div className="friendlist-container"></div>
+
+        {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
+        
+        <div className="friendlist-container"></div> 
       </div>
     </div>
   );

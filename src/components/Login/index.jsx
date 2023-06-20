@@ -6,6 +6,8 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const [errorMessage,setErrorMessage] = useState('')
+
   const inputRef = useRef()
 
   const navigate = useNavigate();
@@ -24,16 +26,17 @@ const Login = () => {
   async function gatherDetails(e) {
     e.preventDefault();
     try {
-      const options = { username: username, password: password };
+      const options = {username: username, password: password };
       const response = await axios.post(
-        "https://linguaplaya-be.onrender.com/login",
-        options
+        "https://linguaplaya-be.onrender.com/login",options
+          // {header: {"Access-Control-Allow-Origin": "*"}}
       ); //will need to add link here
       if (response.status == 200) {
+
         localStorage.setItem("token", response.data.access_token);
         localStorage.setItem('username', response.data.username)
-        localStorage.setItem("userName", userName)
-        socket.emit("newUser", {userName, socketID: socket.id})
+        localStorage.setItem("username", username)
+        socket.emit("newUser", {username, socketID: socket.id})
         navigate("/");
         // const value  = localStorage.getItem('username')
         // console.log(value)
@@ -42,8 +45,10 @@ const Login = () => {
         //     { username: value }
         // )
         // onAuth({ username: value, secret: value })
+
       }
-    } catch (error) {
+    } catch (error) { 
+      setErrorMessage(error)
       // alert(error.response.data.error);
     }
   }
@@ -81,6 +86,7 @@ const Login = () => {
           >
             Submit
           </button>
+          {errorMessage && <div className="error"> {errorMessage}</div>}
           <p>
             Not registered?{" "}
             <a href="/register" style={{ color: "#FF8E3C" }}>

@@ -1,24 +1,28 @@
 // Navbar/index.jsx
-import React from "react";
-import { Link, NavLink, Outlet} from "react-router-dom";
+
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
 
+  const token = localStorage.getItem('token')
   const user = localStorage.getItem('username')
-  // const navigate = useNavigate();
+
   const logoutbtn = () => {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
-    // navigate('/')
   }
-  return (<>
+
+
+  return (
     <nav className="navbar">
       <NavLink to="/" className="navbar-logo">
         Logo
       </NavLink>
       <div className="navbar-links">
        
-        {!user &&
+        {(!token)  &&
           (
             <div>
               <NavLink to="/login"> LogIn </NavLink>
@@ -26,13 +30,15 @@ const Navbar = () => {
             </div>
           )
         }
-        {user &&
+        {(token) &&
           (
             <div>
-              <NavLink to="/profile">Profile</NavLink>
-              <NavLink to='/chat'>Chat</NavLink>
-              <NavLink onClick={logoutbtn} to="/" >Logout</NavLink>
-              <NavLink to="/profile">Connections</NavLink>
+
+              <Link to="/profile">Profile</Link>
+              <Link to='/chat'>Chat</Link>
+              <Link onClick={logoutbtn} to="/" >Logout</Link>
+              <Link to="/connections">Connections</Link>
+
             </div>
           )
         }

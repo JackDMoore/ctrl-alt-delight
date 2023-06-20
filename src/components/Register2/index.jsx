@@ -28,7 +28,7 @@ const Register2 = () => {
   const gatherDetails = async (e) => {
     e.preventDefault();
     const username = localStorage.getItem("username");
-    const Token = localStorage.getItem("token");
+    // const Token = localStorage.getItem("token");
     try {
       await axios.post(
         `https://linguaplaya-be.onrender.com/users/games/${username}`,
@@ -36,11 +36,11 @@ const Register2 = () => {
           game_name: games,
           platform: platform,
         },
-        {
-          headers: {
-            Authorization: `Bearer ${Token}`,
-          },
-        }
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${Token}`,
+        //   },
+        // }
       );
 
       await axios.post(
@@ -48,11 +48,11 @@ const Register2 = () => {
         {
           language_learn_name: languageToLearn,
         },
-        {
-          headers: {
-            Authorization: `Bearer ${Token}`,
-          },
-        }
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${Token}`,
+        //   },
+        // }
       );
 
       await axios.post(
@@ -60,11 +60,11 @@ const Register2 = () => {
         {
           language_known_name: languageUserSpeaks,
         },
-        {
-          headers: {
-            Authorization: `Bearer ${Token}`,
-          },
-        }
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${Token}`,
+        //   },
+        // }
       );
 
       alert("Profile updated :)"); 
