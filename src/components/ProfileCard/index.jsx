@@ -21,7 +21,7 @@ const ProfileCard = ({ user, username, profile_bio, rating, onConnect }) => {
           <div className="left-content">
             <h3>{username}</h3>
             <p>
-              <span className="rating"> Stars {user.rating}</span>
+              {/* <span className="rating"> Stars {user.rating}</span> */}
             </p>
             <h4>Bio</h4>
             <p>{profile_bio}</p>

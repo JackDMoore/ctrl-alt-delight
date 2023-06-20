@@ -1,58 +1,72 @@
 import React, {useEffect, useState} from 'react'
-//import axios from 'axios';
+import LearnLanguageFilter from "../LearnLanguageFilter"
 import ProfileCard from '../ProfileCard';
 
-
 const UserList = () => {
-    const [isLoading, setLoading] = useState(true);
-    const [users,setUsers] = useState()
-    const [response, setResponse] = useState([]);
-    const username = localStorage.getItem('username')
+    const [users, setUsers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [englishOnly, setEnglishOnly] = useState();
+    const [frenchOnly, setFrenchOnly] = useState();
+    const [germanOnly, setGermanOnly] = useState();
+    const [dutchOnly, setDutchOnly] = useState();
+    const [italianOnly, setItalianOnly] = useState();
 
-    const loadUsers = async () => {
-        await fetch("https://linguaplaya-be.onrender.com/users/all",{
-        method:'GET'
-        })
-        .then((res)=>res.json())
-        .then((data)=>{setUsers(data)})
-    }
     useEffect(() => {
-        loadUsers()
-        
+        async function loadUsers () {
+            const response = await fetch("https://linguaplaya-be.onrender.com/users/getall");
+            const userData = await response.json();
+            setUsers(userData)
+            setIsLoading(false);
+        }
+
+        loadUsers();
     }, []);
-    if (users ===undefined){
-        return null
-    }
-    console.log(users.users)
-   const userarr = Array.from(users)
+
+    // function displayUsers() {
+    //     if (isLoading) {
+    //       return <p>Loading...</p>;
+    //     }
+
     function displayUsers() {
-        return users.users
-                // .filter(user => !LanguageKnown|| user.LanguageKnown)
-                // .filter(user => !Platform || user.Platform)
-                // .filter(user => !LangLearn || user.LangLearn)
-                .map(user => <ProfileCard key={user.user_id} user_id={user.user_id} username={user.username}
-                            profile_bio={user.profile_bio} />)
+        return users
+            .filter((user) => !englishOnly || user.language_known == "English")
+            .filter((user) => !frenchOnly || user.language_known == "French")
+            .filter((user) => !germanOnly || user.language_known == "German")
+            .filter((user) => !dutchOnly || user.language_known == "Dutch")
+            .filter((user) => !italianOnly || user.language_known == "Italian")
+            .map((user, id) => (
+                <ProfileCard
+                key={id}
+                bio={user.bio}
+                game_name={user.game_name}
+                language_known={user.language_known}
+                language_learn={user.language_learn}
+                platform={user.platform}
+                // rating={user.rating}
+                username={user.username}
+                />
+            ))
     }
 
-  const arr = users.users
-  function removeUser(arr) {
-    return (arr.username === username)
-  }
-  const userId = arr.findIndex(removeUser)
-  arr.splice(userId, 1)
+    return (
+        <main>
+            <h1>Users</h1>
 
-  return  <div className="outer-Container" onLoad={loadUsers}>
-            <div className="alluser-container">{
-            arr.map((user, user_id) => {
-                return (
-                    <div className = 'singleUsersCards' key ={user_id}>
-                        <ProfileCard key={user_id} user={user} username={user.username}></ProfileCard>
-                         
-                    </div>
-                  )})
-                }
-            </div>
-        </div>    
-
+            <div className="user-holder">{displayUsers()}</div>
+            <LearnLanguageFilter
+                englishOnly={englishOnly}
+                frenchOnly={frenchOnly}
+                germanOnly={germanOnly}
+                dutchOnly={dutchOnly}
+                italianOnly={italianOnly}
+                setEnglishOnly={setEnglishOnly}
+                setFrenchOnly={setFrenchOnly}
+                setGermanOnly={setGermanOnly}
+                setDutchOnly={setDutchOnly}
+                setItalianOnly={setItalianOnly}
+            />
+        </main>
+    )
 }
+// }
 export default UserList
