@@ -19,8 +19,13 @@ app.add_middleware(
 class User(BaseModel):
     username: str
 
+<<<<<<< HEAD
 @app.post('/authenticate')
 async def authenticate(user: User):
+=======
+@app.post('/authenticate') 
+async def authenticate(user: User): 
+>>>>>>> 53c08c94a68b6eefdfde454b5abe7c7f562fb620
     response = requests.put('https://api.chatengine.io/users/',
         data={
             "username": user.username,
