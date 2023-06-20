@@ -13,10 +13,6 @@ const Login = () => {
     inputRef.current.focus();
   }, []);
 
-  useEffect(() => {
-    usernameInputRef.current.focus();
-  }, []);
-
   function handleUsername(e) {
     setUsername(e.target.value);
   }
@@ -32,10 +28,10 @@ const Login = () => {
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/login",
         options
-      );
-      if (response.status === 200) {
+      ); //will need to add link here
+      if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
-        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("username", response.data.userinfo.user.username);
         // setUser(username)
         // setPassword(password)
         // dispatch(loginSuccess(users))
