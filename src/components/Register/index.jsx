@@ -29,13 +29,16 @@ const Register = () => {
   };
 
   const gatherDetails = async (e) => {
-    e.preventDefault();
+    // e.preventDefault(); 
+   
+      
     try {
       const options = {
         username: username,
         password: password,
         name: name,
         email: email,
+        profile_bio: "your bio"
       };
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/signup",
@@ -47,15 +50,11 @@ const Register = () => {
         localStorage.setItem("username", response.data.username);
         // localStorage.setItem("token", response.data.access_token);
         navigate("/register2");
-      
       }
-      //else if (response.status === 404){
-      //   setErrorMessage('username already exists')
-      // }
     } catch (error) {
       // Handle error
 
-        setErrorMessage('username already exists')
+        setErrorMessage(error)
     }
   };
 
@@ -101,10 +100,9 @@ const Register = () => {
             className="inputField"
             required
           />
-          <button /*type="submit"*/ className="register-btn" onSubmit={gatherDetails}
-          >
-            Register
-          </button>
+          <input type = "button"  value = "Register" className="register-btn" onClick={gatherDetails}
+          />
+           
           <div>
             {errorMessage && <div className="error"> {errorMessage}</div>}
           </div>

@@ -19,15 +19,15 @@ const ProfilePage = () => {
 
   const [platform, setPlatform] = useState("");
 
-
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const [user, setUser] = useState('');
+  const [game,setGame] = useState("")
+  const [user,setUser] = useState()
   
-  const navigate = useNavigate();
+  const navagate = useNavigate()
 
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
+
+
   async function getCurrentUser(){
     await fetch(`https://linguaplaya-be.onrender.com/users/all/${User}`,{
     method:'GET',
@@ -41,13 +41,15 @@ const ProfilePage = () => {
     .then((data)=>{
       console.log(data)
       setUser((data))
+      setName(data.name)
+      setGame(data.game_name)
       setPlatform(data.platform);
       setLearn(data.language_learn)
       setKnown(data.language_known)
       // setEmail(data.users.email);
       setUsername(data.username);
       setBio(data.profile_bio)
-
+      setEmail(data.email)
     })
       .then((res) => res.json())
       .then((data) => {
@@ -61,24 +63,23 @@ const ProfilePage = () => {
 
   // const userarr = Array.from(user)
   const currentUser = user
+ 
   // useEffect to update the form fields when userInfo changes
-  useEffect(() => {
-    getCurrentUser()
+  // useEffect(() => {
+  //   getCurrentUser()
 
 
-  const userarr = Array.from(user);
-  const currentUser = userarr[0];
+  // const userarr = Array.from(user);
+  // const currentUser = userarr[0];
 
   useEffect(() => {
     getCurrentUser();
   }, []);
 
-
-  // if (currentUser === undefined) {
-  //  return null;
-  // }
-
-
+  if (currentUser ===undefined){
+    return null
+  }
+ console.log(currentUser)
   const deleteuseraccount = async () => {
     await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
       method: 'DELETE',
@@ -153,20 +154,20 @@ const ProfilePage = () => {
   return (
     <div className="profile-container">
       <div className="profile-box">
-        <h1 className="profile-heading">Your Profile</h1>
-
+        {/* <h1 className="profile-heading">Your Profile</h1> */}
         <div id = "userinfo">
               {currentUser && (
                 <div className="deets"> 
-                  <h3 className="minititle">Profile Information</h3><button id = "editbtn" onClick= {showupdate}> edit</button>
+                  <h3 className="minititle">Your Profile Information<button id = "editbtn" onClick= {showupdate}> edit</button></h3>
                   <div className="pfpname">
                     <img src={avadef} alt="Avatar" className="avatar"></img>
-                    {/* <p id = "currentName">Name: {currentUser.name}</p> */}
                     <h3 id = "currentUsername">{currentUser.username}</h3>
                   </div>
                   <p id = "currentrating">Rating: {currentUser.rating}</p>
                   <p id = "currentknown">Your Languages: {currentUser.language_known}</p>
+                  {/* <img src={atob(currentUser.flag_base64_known)} alt="Avatar" className="avatarknown"></img> */}
                   <p id = "currentlearn">Learning: {currentUser.language_learn}</p>
+                  {/* <img src={atob(currentUser.flag_base64_learn)} alt="Avatar" className="avatarlearn"></img> */}
                   <h2>Bio</h2>
                   <p id = "currentBio">{currentUser.profile_bio}</p>
                   {/* <p id = "currentLangKnwon">{currentUser.langugues_known}</p> */}

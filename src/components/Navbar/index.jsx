@@ -17,16 +17,16 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <NavLink to="/" className="navbar-logo">
+      <Link to="/" className="navbar-logo">
         Logo
-      </NavLink>
+      </Link>
       <div className="navbar-links">
        
         {(!token)  &&
           (
             <div>
-              <NavLink to="/login"> LogIn </NavLink>
-              <NavLink to="/register"> Register </NavLink>
+              <Link to="/login"> LogIn </Link>
+              <Link to="/register"> Register </Link>
             </div>
           )
         }
