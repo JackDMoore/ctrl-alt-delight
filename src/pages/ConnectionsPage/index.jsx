@@ -2,6 +2,7 @@ import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import LHNavbar from "../../components/LHNavbar";
 import { UserList } from "../../components";
+import './style.css'
 
 const ConnectionsPage = () => {
   //Stae to store connected profiles

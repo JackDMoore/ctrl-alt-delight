@@ -9,6 +9,9 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
+  const [errorMessage, setErrorMessage] = useState('');
+
+
   const handleUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -26,26 +29,32 @@ const Register = () => {
   };
 
   const gatherDetails = async (e) => {
-    e.preventDefault();
+    // e.preventDefault(); 
+   
+      
     try {
       const options = {
         username: username,
         password: password,
         name: name,
         email: email,
+        profile_bio: "your bio"
       };
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/signup",
         options
       );
       if (response.status === 200) {
-        alert("User created :)");
+        // alert("User created :)");
+        setErrorMessage("User created :)")
         localStorage.setItem("username", response.data.username);
-        localStorage.setItem("token", response.data.access_token);
+        // localStorage.setItem("token", response.data.access_token);
         navigate("/register2");
       }
     } catch (error) {
       // Handle error
+
+        setErrorMessage(error)
     }
   };
 
@@ -62,8 +71,8 @@ const Register = () => {
             onChange={handleUsername}
             value={username}
             className="inputField"
+            required
           />
-          <p>{"error username already exists"}</p>
           <input
             type="password"
             aria-label="password input"
@@ -71,6 +80,7 @@ const Register = () => {
             onChange={handlePassword}
             value={password}
             className="inputField"
+            required
           />
           <input
             type="text"
@@ -79,6 +89,7 @@ const Register = () => {
             onChange={handleName}
             value={name}
             className="inputField"
+            required
           />
           <input
             type="email"
@@ -87,10 +98,14 @@ const Register = () => {
             onChange={handleEmail}
             value={email}
             className="inputField"
+            required
           />
-          <button className="register-btn" onClick={gatherDetails}>
-            Register
-          </button>
+          <input type = "button"  value = "Register" className="register-btn" onClick={gatherDetails}
+          />
+           
+          <div>
+            {errorMessage && <div className="error"> {errorMessage}</div>}
+          </div>
         </form>
       </div>
     </div>

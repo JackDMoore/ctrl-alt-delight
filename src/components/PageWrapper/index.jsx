@@ -43,11 +43,11 @@ const PageWrapper = () => {
           zIndex: "9999",
         }}
       >
-        {chatVisible ? (
+        {/* {chatVisible ? (
           <Chatbot onClose={handleChatbotClose} />
         ) : (
           <ChatIcon onClick={handleChatIconClick} />
-        )}
+        )} */}
       </header>
       <Outlet />
     </>
