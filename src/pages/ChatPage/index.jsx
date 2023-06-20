@@ -21,22 +21,22 @@ const ChatPage = ({ socket }) => {
     lastMessageRef.current?.scrollIntoView({behavior: 'smooth'});
   }, [messages]);
 
-  // useEffect(() => {
-  //   socket.on('roomJoined', (room) => setCurrentRoom(room.name));
-  //   socket.on('roomLeft', () => setCurrentRoom(''));
-  // }, [socket]);
+  useEffect(() => {
+    socket.on('roomJoined', (room) => setCurrentRoom(room.name));
+    socket.on('roomLeft', () => setCurrentRoom(''));
+  }, [socket]);
 
-  // const handleJoinRoom = (roomName) => {
-  //   socket.emit('joinRoom', roomName);
-  // };
+  const handleJoinRoom = (roomName) => {
+    socket.emit('joinRoom', roomName);
+  };
 
-  // const handleLeaveRoom = (roomName) => {
-  //   socket.emit('leaveRoom', roomName);
-  // };
+  const handleLeaveRoom = (roomName) => {
+    socket.emit('leaveRoom', roomName);
+  };
 
   return (
     <div className="chat">
-      <component.ChatBar socket={socket}  />
+      {/* <component.ChatBar socket={socket}  /> */}
       <div className="chat__main">
         <component.ChatBody messages={messages} typingStatus={typingStatus} lastMessageRef={lastMessageRef}/>
         <component.ChatFooter socket={socket}  />

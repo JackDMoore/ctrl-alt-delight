@@ -24,10 +24,7 @@
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
-<<<<<<< HEAD
     "react-chat-engine": "^1.11.28",
-=======
->>>>>>> 53c08c94a68b6eefdfde454b5abe7c7f562fb620
     "react-chat-engine-pretty": "^0.1.8",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
