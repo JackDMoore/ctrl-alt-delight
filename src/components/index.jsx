@@ -10,3 +10,4 @@ export { default as ProfileCard } from "./ProfileCard";
 export { default as UserList} from "./userlist";
 export { default as ConnectionButton } from "./ConnectionButton";
 export { default as MessageButton } from "./MessageButton";
+export { default as LearnLanguageFilter } from "./LearnLanguageFilter"
