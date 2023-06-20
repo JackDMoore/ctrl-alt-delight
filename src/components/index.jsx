@@ -9,8 +9,7 @@ export { default as Navbar } from "./Navbar";
 export { default as ProfileCard } from "./ProfileCard";
 export { default as UserList} from "./userlist";
 
-export { default as SingleUser} from "./SingleUser";
-export { default as ChatBar } from "./ChatBar";
+// export { default as SingleUser} from "./SingleUser";
 export { default as ChatBody} from "./ChatBody";
 export { default as ChatFooter} from "./ChatFooter";
 

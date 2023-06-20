@@ -23,9 +23,6 @@ const ProfilePage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [user, setUser] = useState('');
-
-  const User = localStorage.getItem("username");
-  const Token = localStorage.getItem("token");
   
   const navigate = useNavigate();
 
@@ -249,6 +246,6 @@ const ProfilePage = () => {
       </div>
     </div>
   );
-};
+})}
 
-export default ProfilePage;
+export default ProfilePage
