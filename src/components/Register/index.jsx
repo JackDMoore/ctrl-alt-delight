@@ -36,6 +36,7 @@ const Register = () => {
         password: password,
         name: name,
         email: email,
+        profile_bio: "your bio"
       };
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/signup",
@@ -49,13 +50,10 @@ const Register = () => {
         navigate("/register2");
       
       }
-      //else if (response.status === 404){
-      //   setErrorMessage('username already exists')
-      // }
     } catch (error) {
       // Handle error
 
-        setErrorMessage('username already exists')
+        setErrorMessage(error)
     }
   };
 
@@ -101,7 +99,7 @@ const Register = () => {
             className="inputField"
             required
           />
-          <button /*type="submit"*/ className="register-btn" onSubmit={gatherDetails}
+          <button type="submit" className="register-btn" onSubmit={gatherDetails}
           >
             Register
           </button>

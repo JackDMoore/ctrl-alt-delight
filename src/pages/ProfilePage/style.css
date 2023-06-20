@@ -13,6 +13,8 @@
   } */
 #userinfo{
     display: block;
+    text-align: left;
+
    
 }
 #editbtn{
@@ -22,7 +24,7 @@
 
 #backbtn{
     display: none;
-    margin: auto;
+
 }
 
 .avatar {
@@ -30,6 +32,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  justify-content: left;
 }
 /* 
 .profile-container{
@@ -37,31 +40,33 @@
 } */
 
 /* ProfilePage */
-.profile-container {
-  display: flex;
-  
+/* .profile-container {
+  /* display: flex; */
+ /* margin-left: 10pc;*/
   /* justify-content: center;
   align-items: center; */
   /* height: 100vh; */
   /* background-color: white; */
-}
+/*} */
 .deets{
   display: flex;
   flex-direction: column;
 }
 .minititle{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .pfpname{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
 }
 
 .profile-box {
-  width: 400px;
-  margin: auto;
+  /* min-width: 400px; */
+  /* position: grid; */
+  /* min-height: 200px; */
+  margin: 0 10px 0 0;
   margin-left: 10px;
   padding: 20px;
   background-color: #313131;
@@ -73,6 +78,12 @@
     rgba(141, 68, 173, 0.548),
     rgba(67, 9, 90, 0.442)
   );
+}
+#currentrating{
+  margin: 0;
+}
+#currentlearn{
+  margin: 0;
 }
 
 .profile-heading {
@@ -99,4 +110,8 @@
 .profile-btn:hover {
   background-color: #9d53c3;
   color: white;
+}
+
+.maintitle{
+  margin:0
 }
