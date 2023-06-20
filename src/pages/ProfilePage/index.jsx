@@ -18,8 +18,11 @@ const ProfilePage = () => {
   const [profile_bio, setBio] = useState("");
 
   const [platform, setPlatform] = useState("");
+
   const [game,setGame] = useState("")
   const [user,setUser] = useState()
+  
+  const navagate = useNavigate()
 
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
@@ -244,6 +247,6 @@ const ProfilePage = () => {
       </div>
     </div>
   );
-};
+})}
 
-export default ProfilePage;
+export default ProfilePage
