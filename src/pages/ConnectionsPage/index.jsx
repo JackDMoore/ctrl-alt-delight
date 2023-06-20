@@ -22,7 +22,7 @@ const ConnectionsPage = () => {
     <div>
       <h1>Find a Connection</h1> 
       <UserList />
-      <LHNavbar />
+      {/* <LHNavbar /> */}
     </div>
   );
 };
