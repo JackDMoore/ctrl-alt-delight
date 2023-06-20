@@ -1,16 +1,17 @@
 // Navbar/index.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
+  const token = localStorage.getItem('token')
   const user = localStorage.getItem('username')
-  // const navigate = useNavigate();
+
   const logoutbtn = () => {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
-    // navigate('/')
   }
+
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo">
@@ -18,7 +19,7 @@ const Navbar = () => {
       </Link>
       <div className="navbar-links">
        
-        {!user &&
+        {(!token)  &&
           (
             <div>
               <Link to="/login"> LogIn </Link>
@@ -26,7 +27,7 @@ const Navbar = () => {
             </div>
           )
         }
-        {user &&
+        {(token) &&
           (
             <div>
               <Link to="/profile">Profile</Link>
