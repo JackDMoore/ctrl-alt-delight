@@ -12,7 +12,7 @@ function ChatIcon({ onClick }) {
       }}
       onClick={onClick}
     >
-      <img className="Chatboticon" src={chaticon} alt="Chat Icon" />
+      <img className="Chatboticon" src={chaticon} alt="Chat Icon"  width='350' height='350'/>
     </div>
   );
 }

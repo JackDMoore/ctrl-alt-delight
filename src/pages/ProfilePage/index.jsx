@@ -11,101 +11,104 @@ const ProfilePage = () => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [profile_bio,setBio] = useState("")
+  const [profile_bio, setBio] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const [user, setUser] = useState('');
 
-  const [user,setUser] = useState('')
+  const User = localStorage.getItem("username");
+  const Token = localStorage.getItem("token");
+  
+  const navigate = useNavigate();
 
-  const User = localStorage.getItem("username")
-  const Token= localStorage.getItem("token")
-  async function getCurrentUser(){
-    await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
-    method:'GET',
-    headers: {
-      "Content-Type":"application/json",
-       Authorization: `Bearer ${Token}`,
-    },
-    params: {}
+  async function getCurrentUser() {
+    await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
+      method: 'GET',
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Token}`,
+      },
+      params: {}
     })
-    .then((res)=>res.json())
-    .then((data)=>{
-      setUser((data.users))
-      setName(data.users[0].name);
-      setEmail(data.users[0].email);
-      setUsername(data.users[0].username);
-      setBio(data.users[0].profile_bio)
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUser((data.users));
+        setName(data.users[0].name);
+        setEmail(data.users[0].email);
+        setUsername(data.users[0].username);
+        setBio(data.users[0].profile_bio);
+      });
   }
-  const userarr = Array.from(user)
-  const currentUser = userarr[0]
-  // useEffect to update the form fields when userInfo changes
-  useEffect(() => {
-    getCurrentUser()
 
+  const userarr = Array.from(user);
+  const currentUser = userarr[0];
+
+  useEffect(() => {
+    getCurrentUser();
   }, []);
 
-  if (currentUser ===undefined){
-    return null
-}
-
-  console.log(currentUser)
+  if (currentUser === undefined) {
+    return null;
+  }
 
   const deleteuseraccount = async () => {
-    await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
-      method:'DELETE',
+    await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
+      method: 'DELETE',
       headers: {
-        "Content-Type":"application/json",
-         Authorization: `Bearer ${Token}`,
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Token}`,
       }
-      })
-      .then(res => res.json()) // or res.json()
-      .then(res => {console.log(res) 
-      localStorage.removeItem('username')
-      localStorage.removeItem('token')}) 
-  }
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        localStorage.removeItem('username');
+        localStorage.removeItem('token');
+      });
+  };
+
   function showupdate() {
     var x = document.getElementById("updateform");
-    var y = document.getElementById("userinfo")
-    var z = document.getElementById("editbtn")
-    var a = document.getElementById("backbtn")
+    var y = document.getElementById("userinfo");
+    var z = document.getElementById("editbtn");
+    var a = document.getElementById("backbtn");
     if (x.style.display === "none") {
       x.style.display = "block";
       y.style.display = "none";
       z.style.display = "none";
       a.style.display = "block";
-
-    } else{
-      x.style.display = "none"
+    } else {
+      x.style.display = "none";
       y.style.display = "block";
       z.style.display = "block";
-      a.style.display = "none"
+      a.style.display = "none";
     }
   }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
     } else {
       try {
-        await fetch(`https://linguaplaya-be.onrender.com/users/${User}`,{
-          method:'PATCH',
+        await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
+          method: 'PATCH',
           headers: {
-            "Content-Type":"application/json",
-            //  Authorization: `Bearer ${Token}`,
-          },body: JSON.stringify({
-              'name' : name,
-              'username':username,
-              'email': email,
-              'profile_bio':profile_bio,
-            })
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            'name': name,
+            'username': username,
+            'email': email,
+            'profile_bio': profile_bio,
           })
-          .then((res)=>res.json())
-          .then((data)=>{
-            setUser(data.users)
-            localStorage.username = data.users[0].username
-            showupdate()
-          })
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setUser(data.users);
+            localStorage.username = data.users[0].username;
+            showupdate();
+          });
         toast.success("Profile updated successfully");
       } catch (error) {
         toast.error(error?.data?.message || error.error);
@@ -113,12 +116,15 @@ const ProfilePage = () => {
     }
   };
 
+  const handleChatClick = () => {
+    navigate('/chat');
+  };
 
   return (
     <div className="profile-container">
       <div className="profile-box">
         <h1 className="profile-heading">Your Profile</h1>
-        <div id = "userinfo">
+        <div id="userinfo">
           {currentUser && (
             <div>
               <h3>Profile Information</h3>
@@ -127,40 +133,21 @@ const ProfilePage = () => {
               <p>Email: {currentUser.email}</p>
               <p>Bio: {currentUser.profile_bio}</p>
             </div>
-            )
-          }
-          <button id = "editbtn" onClick= {showupdate}> update account</button>
+          )}
+          <button id="editbtn" onClick={showupdate}>Update Account</button>
           <div id="updateform">
-            <button id = "backbtn" onClick= {showupdate}>Go back</button>
-                <Form  onSubmit={handleSubmit}>
-                <Form.Group controlId="name">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="inputField"
-                  />
-                  </Form.Group>
-                  <Form.Group controlId="username">
-                  <Form.Label>Username</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="inputField"
-                  />
-                  </Form.Group> 
-                  <Form.Group controlId="email">
-                  <Form.Label>Email Address</Form.Label>
-                  <Form.Control
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="inputField"
-                  />
-                </Form.Group>
-                <Form.Group controlId="username">
+            <button id="backbtn" onClick={showupdate}>Go back</button>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="inputField"
+                />
+              </Form.Group>
+              <Form.Group controlId="username">
                 <Form.Label>Username</Form.Label>
                 <Form.Control
                   type="text"
@@ -168,8 +155,8 @@ const ProfilePage = () => {
                   onChange={(e) => setUsername(e.target.value)}
                   className="inputField"
                 />
-                </Form.Group> 
-                <Form.Group controlId="email">
+              </Form.Group>
+              <Form.Group controlId="email">
                 <Form.Label>Email Address</Form.Label>
                 <Form.Control
                   type="email"
@@ -193,13 +180,15 @@ const ProfilePage = () => {
               </Button>
             </Form>
           </div>
-        {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
+          <button variant="primary" onClick={handleChatClick}>
+            Chat with them
+          </button>
+          {/* <button className="deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
         </div>
-        <div className="friendlist-container"></div> 
+        <div className="friendlist-container"></div>
       </div>
     </div>
-  )      
+  );
 };
 
 export default ProfilePage;
-

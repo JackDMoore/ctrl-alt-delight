@@ -1,6 +1,6 @@
 // Navbar/index.jsx
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet} from "react-router-dom";
 
 const Navbar = () => {
 
@@ -11,34 +11,36 @@ const Navbar = () => {
     localStorage.removeItem('token')
     // navigate('/')
   }
-  return (
+  return (<>
     <nav className="navbar">
-      <Link to="/" className="navbar-logo">
+      <NavLink to="/" className="navbar-logo">
         Logo
-      </Link>
+      </NavLink>
       <div className="navbar-links">
        
         {!user &&
           (
             <div>
-              <Link to="/login"> LogIn </Link>
-              <Link to="/register"> Register </Link>
+              <NavLink to="/login"> LogIn </NavLink>
+              <NavLink to="/register"> Register </NavLink>
             </div>
           )
         }
         {user &&
           (
             <div>
-              <Link to="/profile">Profile</Link>
-              <Link to='/chat'>Chat</Link>
-              <Link onClick={logoutbtn} to="/" >Logout</Link>
-              <Link to="/profile">Connections</Link>
+              <NavLink to="/profile">Profile</NavLink>
+              <NavLink to='/chat'>Chat</NavLink>
+              <NavLink onClick={logoutbtn} to="/" >Logout</NavLink>
+              <NavLink to="/profile">Connections</NavLink>
             </div>
           )
         }
         
       </div>
     </nav>
+    <Outlet/>
+    </>
   );
 };
 

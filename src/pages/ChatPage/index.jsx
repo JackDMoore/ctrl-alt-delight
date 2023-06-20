@@ -1,25 +1,24 @@
-import { PrettyChatWindow } from 'react-chat-engine-pretty';
-import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+import * as component from '../../components'
+import './index.css'
 
-const ChatsPage = () => {
-    const user = localStorage.getItem('username');
-    const value  = localStorage.getItem('username')
-        console.log(value)
-        axios.post(
-            'http://localhost:3001/authenticate',
-            { username: value, secret: value }
-        )
+const ChatPage = ({ socket }) => {
+    const [messages, setMessages] = useState([])
+    
+  
+    useEffect(() => {
+      socket.on('messageResponse', (data) => setMessages([...messages, data]));
+    }, [socket, messages]);
+  
     return (
-        <div className="background">
-            <div className='chat-wrapper'>
-                <PrettyChatWindow
-                    projectId={import.meta.env.VITE_CHAT_ENGINE_PROJECT_ID}
-                    username={user}
-                    secret={user}
-                />
-            </div>
+      <div className="chat">
+        <component.ChatBar socket={socket} />
+        <div className="chat__main">
+          <component.ChatBody messages={messages} />
+          <component.ChatFooter socket={socket} />
         </div>
+      </div>
     );
-}
-
-export default ChatsPage
+  };
+  
+  export default ChatPage;
