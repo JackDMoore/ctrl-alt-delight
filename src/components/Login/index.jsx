@@ -28,15 +28,19 @@ const Login = () => {
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/login",
         options
+        // {header: {"Access-Control-Allow-Origin": "*"}}
       ); //will need to add link here
       if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
-        localStorage.setItem("username", response.data.userinfo.user.username);
-        // setUser(username)
-        // setPassword(password)
-        // dispatch(loginSuccess(users))
-        // localStorage.setItem('user', JSON.stringify(data.users)
+        localStorage.setItem("username", response.data.username);
         navigate("/");
+        // const value  = localStorage.getItem('username')
+        // console.log(value)
+        // axios.post(
+        //     'http://localhost:3001/authenticate',
+        //     { username: value }
+        // )
+        // onAuth({ username: value, secret: value })
       }
     } catch (error) {
       // alert(error.response.data.error);

@@ -1,6 +1,6 @@
-// Hero/index.jsx
 import React from "react";
 import { Container, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../../styles.css";
 import gamerroom from "../../assets/gamerroom.jpg";
 import Navbar from "../Navbar";
@@ -35,9 +35,11 @@ const Hero = () => {
             Ready to level up your language skills? Join LinguaPlay and embark
             on an immersive learning adventure through gaming.
           </p>
-          <Button variant="primary" className="get-started-button">
-            Get Started
-          </Button>
+          <Link to="/connections">
+            <Button variant="primary" className="get-started-button">
+              Get Started
+            </Button>
+          </Link>
         </Card>
       </Container>
     </div>

@@ -5,12 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
 
   const user = localStorage.getItem('username')
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const logoutbtn = () => {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
-   
-    navigate('/')
+    // navigate('/')
   }
   return (
     <nav className="navbar">
@@ -31,8 +30,8 @@ const Navbar = () => {
           (
             <div>
               <Link to="/profile">Profile</Link>
-              <Link onClick={logoutbtn} >Logout</Link>
-              <Link to="/profile">Connections</Link>
+              <Link onClick={logoutbtn} to="/" >Logout</Link>
+              <Link to="/connections">Connections</Link>
             </div>
           )
         }

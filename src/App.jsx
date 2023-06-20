@@ -1,27 +1,28 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import PageWrapper from "./components/PageWrapper";
+import HomePage from "./pages/HomePage";
 import * as Pages from "./pages";
-import { PageWrapper } from "./components";
-// import {UserProvider} from './context/UserContext'
-
-//import { useAuthContext } from './hooks/useAuthContext'
+import "./App.css";
 
 const App = () => {
-
-  // const {user} = useAuthContext()
+  const [user, setUser] = useState(undefined);
+  const username = localStorage.getItem("username");
   return (
-    // <UserProvider>
+    <>
       <Routes>
         <Route path="/" element={<PageWrapper />}>
-          <Route index element={<Pages.HomePage />} />
+          <Route index element={<HomePage />} />
           <Route path="/register" element={<Pages.RegisterPage />} />
+          <Route path="/register2" element={<Pages.RegisterPage2 />} />
           <Route path="/login" element={<Pages.LoginPage />} />
           <Route path="/profile" element={<Pages.ProfilePage />} />
           <Route path="/connections" element={<Pages.ConnectionsPage />} />
+          <Route path="/chat" element={<Pages.ChatPage />} />
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
       </Routes>
-    // </UserProvider>
+    </>
   );
 };
 
