@@ -8,5 +8,12 @@ export {default as Chatbot} from "./Chatbot"
 export { default as Navbar } from "./Navbar";
 export { default as ProfileCard } from "./ProfileCard";
 export { default as UserList} from "./userlist";
+
+// export { default as SingleUser} from "./SingleUser";
+// export { default as ChatBar } from "./ChatBar";
+export { default as ChatBody} from "./ChatBody";
+export { default as ChatFooter} from "./ChatFooter";
+
 export { default as ConnectionButton } from "./ConnectionButton";
 export { default as MessageButton } from "./MessageButton";
+

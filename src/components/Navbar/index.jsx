@@ -1,6 +1,8 @@
 // Navbar/index.jsx
+
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
 
@@ -11,6 +13,7 @@ const Navbar = () => {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
   }
+
 
   return (
     <nav className="navbar">
@@ -30,9 +33,12 @@ const Navbar = () => {
         {(token) &&
           (
             <div>
+
               <Link to="/profile">Profile</Link>
+              <Link to='/chat'>Chat</Link>
               <Link onClick={logoutbtn} to="/" >Logout</Link>
               <Link to="/connections">Connections</Link>
+
             </div>
           )
         }

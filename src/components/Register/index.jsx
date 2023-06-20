@@ -29,7 +29,9 @@ const Register = () => {
   };
 
   const gatherDetails = async (e) => {
-    e.preventDefault();
+    // e.preventDefault(); 
+   
+      
     try {
       const options = {
         username: username,
@@ -48,7 +50,6 @@ const Register = () => {
         localStorage.setItem("username", response.data.username);
         // localStorage.setItem("token", response.data.access_token);
         navigate("/register2");
-      
       }
     } catch (error) {
       // Handle error
@@ -99,10 +100,9 @@ const Register = () => {
             className="inputField"
             required
           />
-          <button type="submit" className="register-btn" onSubmit={gatherDetails}
-          >
-            Register
-          </button>
+          <input type = "button"  value = "Register" className="register-btn" onClick={gatherDetails}
+          />
+           
           <div>
             {errorMessage && <div className="error"> {errorMessage}</div>}
           </div>
