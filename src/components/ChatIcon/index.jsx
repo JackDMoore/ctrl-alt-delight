@@ -1,5 +1,6 @@
 import React from "react";
 import chaticon from "./chatboticon.png";
+import "./ChatIcon.css"
 
 function ChatIcon({ onClick }) {
   return (

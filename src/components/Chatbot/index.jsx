@@ -8,9 +8,11 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 import ChatIcon from "../ChatIcon";
-import "../../styles.css";
+import "./Chatbot.css"
+import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 
 const API_KEY = "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";
+
 const systemMessage = {
   role: "system",
   content: "Translate my messages to French, provide the English too.",
