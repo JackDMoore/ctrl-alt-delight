@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import LearnLanguageFilter from "../LearnLanguageFilter"
+import ConsoleFilter from '../ConsoleFilter';
 import ProfileCard from '../ProfileCard';
 
 const UserList = () => {
@@ -10,6 +11,9 @@ const UserList = () => {
     const [germanOnly, setGermanOnly] = useState();
     const [dutchOnly, setDutchOnly] = useState();
     const [italianOnly, setItalianOnly] = useState();
+    const [pcOnly, setPCOnly] = useState();
+    const [playstationOnly, setPlaystationOnly] = useState();
+    const [xboxOnly, setXboxOnly] = useState();
 
     useEffect(() => {
         async function loadUsers () {
@@ -34,6 +38,9 @@ const UserList = () => {
             .filter((user) => !germanOnly || user.language_known == "German")
             .filter((user) => !dutchOnly || user.language_known == "Dutch")
             .filter((user) => !italianOnly || user.language_known == "Italian")
+            .filter((user) => !pcOnly || user.platform == "PC")
+            .filter((user) => !playstationOnly || user.platform == "PlayStation")
+            .filter((user) => !xboxOnly || user.platform == "Xbox")
             .map((user, id) => (
                 <ProfileCard
                 key={id}
@@ -64,6 +71,14 @@ const UserList = () => {
                 setGermanOnly={setGermanOnly}
                 setDutchOnly={setDutchOnly}
                 setItalianOnly={setItalianOnly}
+            />
+            <ConsoleFilter
+                pcOnly={pcOnly}
+                playstationOnly={playstationOnly}
+                xboxOnly={xboxOnly}
+                setPCOnly={setPCOnly}
+                setPlaystationOnly={setPlaystationOnly}
+                setXboxOnly={setXboxOnly}
             />
         </main>
     )
