@@ -9,6 +9,9 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
+  const [errorMessage, setErrorMessage] = useState('');
+
+
   const handleUsername = (e) => {
     setUsername(e.target.value);
   };
@@ -39,13 +42,20 @@ const Register = () => {
         options
       );
       if (response.status === 200) {
-        alert("User created :)");
+        // alert("User created :)");
+        setErrorMessage("User created :)")
         localStorage.setItem("username", response.data.username);
-        localStorage.setItem("token", response.data.access_token);
+        // localStorage.setItem("token", response.data.access_token);
         navigate("/register2");
+      
       }
+      //else if (response.status === 404){
+      //   setErrorMessage('username already exists')
+      // }
     } catch (error) {
       // Handle error
+
+        setErrorMessage('username already exists')
     }
   };
 
@@ -62,8 +72,8 @@ const Register = () => {
             onChange={handleUsername}
             value={username}
             className="inputField"
+            required
           />
-          <p>{"error username already exists"}</p>
           <input
             type="password"
             aria-label="password input"
@@ -71,6 +81,7 @@ const Register = () => {
             onChange={handlePassword}
             value={password}
             className="inputField"
+            required
           />
           <input
             type="text"
@@ -79,6 +90,7 @@ const Register = () => {
             onChange={handleName}
             value={name}
             className="inputField"
+            required
           />
           <input
             type="email"
@@ -87,10 +99,15 @@ const Register = () => {
             onChange={handleEmail}
             value={email}
             className="inputField"
+            required
           />
-          <button className="register-btn" onClick={gatherDetails}>
+          <button /*type="submit"*/ className="register-btn" onSubmit={gatherDetails}
+          >
             Register
           </button>
+          <div>
+            {errorMessage && <div className="error"> {errorMessage}</div>}
+          </div>
         </form>
       </div>
     </div>
