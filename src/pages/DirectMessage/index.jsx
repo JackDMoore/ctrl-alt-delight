@@ -4,7 +4,7 @@ import { ChatEngine, getOrCreateChat } from 'react-chat-engine'
 import './index.css'
 const DirectChatPage = () => {
 	const [username, setUsername] = useState('')
-	setUsername('Dad')
+	// setUsername('Dad')
 
 	function createDirectChat(creds) {
 		getOrCreateChat(

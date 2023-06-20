@@ -32,7 +32,8 @@ const Login = () => {
       if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
         localStorage.setItem('username', response.data.username)
-        socket.emit('newUser', { username, socketID: socket.id });
+        localStorage.setItem("userName", userName)
+        socket.emit("newUser", {userName, socketID: socket.id})
         navigate("/");
         // const value  = localStorage.getItem('username')
         // console.log(value)
