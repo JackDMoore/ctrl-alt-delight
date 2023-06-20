@@ -4,13 +4,10 @@ import commonjs from '@rollup/plugin-commonjs';
 // https://vitejs.dev/config/
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(),commonjs()],
   test: {
     environment: "jsdom",
   },
-  plugins: [
-    commonjs()
-  ]
 });
 
 
