@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from 'react'
 //import axios from 'axios';
+
+import SingleUser from '.'
+
 import ProfileCard from '../ProfileCard';
+
 
 
 const UserList = () => {
