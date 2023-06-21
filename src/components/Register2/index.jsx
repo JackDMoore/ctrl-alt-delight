@@ -9,6 +9,8 @@ const Register2 = () => {
   const [platform, setPlatform] = useState("");
   const navigate = useNavigate();
 
+  const [message, setMessage] = useState("")
+
   const handleLanguageUserSpeaks = (e) => {
     setLanguageUserSpeaks(e.target.value);
   };
@@ -66,9 +68,9 @@ const Register2 = () => {
         //   },
         // }
       );
-
-      alert("Profile updated :)"); 
-      navigate("/connections");
+      setMessage("Profile updated :)")
+      // alert("Profile updated :)"); 
+      navigate("/login");
     } catch (error) {
 
     }
@@ -125,6 +127,7 @@ const Register2 = () => {
           <button className="register-btn" onClick={gatherDetails}>
             Register
           </button>
+          {message && <div className="message"> {message}</div>}
         </form>
       </div>
     </div>

@@ -29,16 +29,16 @@ const Register = () => {
   };
 
   const gatherDetails = async (e) => {
-    // e.preventDefault(); 
+    e.preventDefault(); 
    
-      
+    const bio = "your bio"
     try {
       const options = {
         username: username,
         password: password,
         name: name,
         email: email,
-        profile_bio: "your bio"
+        profile_bio: bio
       };
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/signup",

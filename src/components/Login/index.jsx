@@ -26,13 +26,12 @@ const Login = () => {
   async function gatherDetails(e) {
     e.preventDefault();
     try {
-      const options = {username: username, password: password };
+    const options = {username: username, password: password };
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/login",options
           // {header: {"Access-Control-Allow-Origin": "*"}}
       ); //will need to add link here
       if (response.status == 200) {
-
         localStorage.setItem("token", response.data.access_token);
         localStorage.setItem('username', response.data.username)
         localStorage.setItem("username", username)
