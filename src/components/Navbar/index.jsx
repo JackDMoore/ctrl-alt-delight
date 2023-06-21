@@ -22,7 +22,7 @@ const Navbar = () => {
       </Link>
       <div className="navbar-links">
        
-        {(!token)  &&
+        {(!user)  &&
           (
             <div>
               <Link to="/login"> LogIn </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
             </div>
           )
         }
-        {(token) &&
+        {(user) &&
           (
             <div>
 
