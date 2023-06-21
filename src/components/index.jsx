@@ -17,3 +17,5 @@ export { default as MessageButton } from "./MessageButton";
 export { default as LearnLanguageFilter } from "./LearnLanguageFilter"
 export { default as ConsoleFilter } from "./ConsoleFilter";
 export { default as ChatQuiz } from "./ChatQuiz";
+export { default as FriendList} from "./FriendList"
+export { default as FriendCard} from "./FriendCard"

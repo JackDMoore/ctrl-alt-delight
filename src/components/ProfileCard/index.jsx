@@ -3,14 +3,16 @@ import ConnectionButton from "../ConnectionButton";
 import MessageButton from "../MessageButton";
 import "./ProfileCard.css";
 import { useNavigate } from "react-router-dom"
-
+import axios from "axios";
 
 
 const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform, language_known, language_learn, game_name }) => {
+
   const handleConnectClick = async (e) => {
+    console.log('before')
     try {
       await axios.post(
-        `https://linguaplaya-be.onrender.com/users/games/${localStorage.getItem("username")}`,
+        `https://linguaplaya-be.onrender.com/users/add_connections/${localStorage.getItem("username")}`,
         {
           connect_username: username,
         },
@@ -20,9 +22,11 @@ const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform,
         //   },
         // }
         alert("added :)")
+        
       );
+      console.log('after')
     } catch (error) {
-
+      console.log(error)
     }
   };
   
@@ -47,17 +51,16 @@ const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform,
         </div>
         <div className="card-body">
           <h4>Console</h4>
-          <h4>{platform}</h4>
+          <h5>{platform}</h5>
           <h4>Plays</h4>
-          <h4>{game_name}</h4>
+          <h5>{game_name}</h5>
           <div className="right-content">
             <br />
             <h4>Speaks</h4>
-            <h4>{language_known}</h4>
-            <br />
+            <h5>{language_known}</h5>
             <br />
             <h4>Learning</h4>
-            <h4>{language_learn}</h4>
+            <h5>{language_learn}</h5>
           </div>
         </div>
         <div className="card-footer">
