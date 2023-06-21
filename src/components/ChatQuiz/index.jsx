@@ -10,8 +10,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
-// "Explain things like you would to a 10 year old learning how to code."
+const API_KEY = "";
 
 function ChatQuiz() {
   const [messages, setMessages] = useState([
@@ -28,7 +27,7 @@ function ChatQuiz() {
 
   const systemMessage = {
     role: "system",
-    content: `Make a 3 question quiz that teaches individual words from${selectedLanguage} at the ${selectedDifficulty}.The quiz should be in English. Give a score out of 10 at the end. 1 question at a time that the user responds to and then generate the next question`,
+    content: `Make a 3 question quiz that teaches individual words from${selectedLanguage} at the ${selectedDifficulty}.The quiz should be in English. Give at the end. 1 question at a time that the user responds to and then generate the next question`,
   };
 
   const handleSend = async (message) => {
@@ -99,6 +98,9 @@ function ChatQuiz() {
   return (
     <div className="App">
       <div style={{ position: "relative", height: "800px", width: "700px" }}>
+        <br></br>
+        <br></br>
+        <br></br>
         <MainContainer>
           <div>
             <select value={selectedLanguage} onChange={handleLanguageChange}>
