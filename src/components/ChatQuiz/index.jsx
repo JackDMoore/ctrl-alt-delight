@@ -134,7 +134,6 @@ function ChatQuiz() {
           </select>
         </div>
         <MainContainer>
-<<<<<<< HEAD
           <div>
             <select aria-label="Select Language" className="consoleDropdown" value={selectedLanguage} onChange={handleLanguageChange}>
               <option value="English">English</option>
@@ -156,8 +155,6 @@ function ChatQuiz() {
               <option value="Advanced">Advanced</option>
             </select>
           </div>
-=======
->>>>>>> 4af55fcfd1a3410a6c6f59a57147bf4e4575dfb1
           <ChatContainer>
             <MessageList
               scrollBehavior="smooth"
