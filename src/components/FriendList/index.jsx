@@ -54,7 +54,7 @@ function displayUsers() {
 return (
   <main>
     <div className="friend-holder">
-      <h1>Connections</h1>
+      <h1>Friend list</h1>
       <div>{displayUsers()}</div>
       </div>
   </main>
