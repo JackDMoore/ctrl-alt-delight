@@ -3,7 +3,7 @@ import ConnectionButton from "../ConnectionButton";
 import MessageButton from "../MessageButton";
 import "./ProfileCard.css";
 
-const ProfileCard = ({ user, username, profile_bio, rating, onConnect }) => {
+const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform, language_known, language_learn, game_name }) => {
   const handleConnectClick = () => {
     // call the onConnect prop
     onConnect(user.id);
@@ -21,20 +21,25 @@ const ProfileCard = ({ user, username, profile_bio, rating, onConnect }) => {
           <div className="left-content">
             <h3>{username}</h3>
             <p>
-              <span className="rating"> Stars {user.rating}</span>
+              {/* <span className="rating"> Stars {user.rating}</span> */}
             </p>
             <h4>Bio</h4>
             <p>{profile_bio}</p>
           </div>
         </div>
         <div className="card-body">
-          <h4>Platforms</h4>
+          <h4>Console</h4>
+          <h4>{platform}</h4>
+          <h4>Plays</h4>
+          <h4>{game_name}</h4>
           <div className="right-content">
             <br />
-            <h4>Languages known</h4>
+            <h4>Speaks</h4>
+            <h4>{language_known}</h4>
             <br />
             <br />
-            <h4>Languages learning</h4>
+            <h4>Learning</h4>
+            <h4>{language_learn}</h4>
           </div>
         </div>
         <div className="card-footer">
