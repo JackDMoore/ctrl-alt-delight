@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import FriendCard from '../FriendCard';
 =======
@@ -21,7 +20,6 @@ const FriendList = () => {
     }
 
     loadUsers();
-<<<<<<< HEAD
   }, []);
 
   function displayUsers() {
