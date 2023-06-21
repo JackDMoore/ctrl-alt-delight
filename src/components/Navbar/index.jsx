@@ -39,10 +39,10 @@ const Navbar = () => {
               <Link onClick={logoutbtn} to="/" >Logout</Link>
               <Link to="/connections">Connections</Link>
               <Link to="/chatquiz">LinguaBot Quiz</Link>
+              <Link to="/chatlearningplan">LinguaBot Learning Plan</Link>
             </div>
           )
-        }
-        
+        }        
       </div>
     </nav>
   );
