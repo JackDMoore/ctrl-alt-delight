@@ -3,14 +3,16 @@ import ConnectionButton from "../ConnectionButton";
 import MessageButton from "../MessageButton";
 import "./ProfileCard.css";
 import { useNavigate } from "react-router-dom"
-
+import axios from "axios";
 
 
 const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform, language_known, language_learn, game_name }) => {
+
   const handleConnectClick = async (e) => {
+    console.log('before')
     try {
       await axios.post(
-        `https://linguaplaya-be.onrender.com/users/games/${localStorage.getItem("username")}`,
+        `https://linguaplaya-be.onrender.com/users/add_connections/${localStorage.getItem("username")}`,
         {
           connect_username: username,
         },
@@ -20,9 +22,11 @@ const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform,
         //   },
         // }
         alert("added :)")
+        
       );
+      console.log('after')
     } catch (error) {
-
+      console.log(error)
     }
   };
   
