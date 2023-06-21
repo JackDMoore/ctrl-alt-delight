@@ -39,7 +39,6 @@ const Navbar = () => {
               <Link onClick={logoutbtn} to="/" >Logout</Link>
               <Link to="/connections">Connections</Link>
               <Link to="/chatquiz">LinguaBot Quiz</Link>
-
             </div>
           )
         }
