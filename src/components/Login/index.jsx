@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './style.css'
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -83,7 +84,7 @@ const Login = () => {
             aria-label="submit button"
             className="login-btn"
           >
-            Submit
+           <span>Submit</span> 
           </button>
           {errorMessage && <div className="error"> {errorMessage}</div>}
           <p>

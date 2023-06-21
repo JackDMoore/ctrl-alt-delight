@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './style.css'
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -100,8 +101,10 @@ const Register = () => {
             className="inputField"
             required
           />
-          <input type = "button"  value = "Register" className="register-btn" onClick={gatherDetails}
-          />
+          <button type = "button"  value = "Register" className="register-btn" onClick={gatherDetails}><span>
+            Register
+            </span></button>
+
            
           <div>
             {errorMessage && <div className="error"> {errorMessage}</div>}

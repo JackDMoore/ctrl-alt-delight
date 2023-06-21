@@ -125,7 +125,7 @@ const Register2 = () => {
           />
 
           <button className="register-btn" onClick={gatherDetails}>
-            Register
+           <span> Register</span>
           </button>
           {message && <div className="message"> {message}</div>}
         </form>

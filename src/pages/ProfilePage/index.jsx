@@ -4,8 +4,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './style.css'
-import avadef from '../../assets/pfp/avadef.jpg'
-// import { useCurrentUser } from "../../context/AuthContext";
+// import avadef from '../../assets/pfp/avadef.jpg'
 
 const ProfilePage = () => {
   const [learn, setLearn] = useState("");
@@ -52,14 +51,6 @@ const ProfilePage = () => {
     })
   }
   const currentUser = user
- console.log(user)
-  // useEffect to update the form fields when userInfo changes
-  // useEffect(() => {
-  //   getCurrentUser()
-
-
-  // const userarr = Array.from(user);
-  // const currentUser = userarr[0];
 
   useEffect(() => {
     getCurrentUser();
@@ -151,12 +142,12 @@ const ProfilePage = () => {
         <div id = "userinfo">
               {currentUser && (
                 <div className="deets"> 
-                  <h3 className="minititle">Your Profile Information<button id = "editbtn" onClick= {showupdate}> edit</button></h3>
+                  <h3 className="minititle">Your Profile Information<button id = "edit-btn"className = "edit-btn" onClick= {showupdate}> <span>Edit</span></button></h3>
                   <div className="pfpname">
                     {/* <img src={avadef} alt="Avatar" className="avatar"></img> */}
                     <h3 id = "currentUsername">{currentUser.username}</h3>
                   </div>
-                  <p id = "currentrating">Your Rating: {currentUser.rating}</p>
+                  {/* <p id = "currentrating">Your Rating: {currentUser.rating}</p> */}
                   <p id = "currentknown">Your Languages: {currentUser.language_known}</p>
                   {/* <img src={atob(currentUser.flag_base64_known)} alt="Avatar" className="avatarknown"></img> */}
                   <p id = "currentlearn">Learning: {currentUser.language_learn}</p>
@@ -170,7 +161,7 @@ const ProfilePage = () => {
         </div>
         
           <div id="updateform">
-            <button id = "backbtn" onClick= {showupdate}>Go back</button>
+            <button id = "backbtn" className="back-btn" role = "button" onClick= {showupdate}><span>Go Back</span></button>
                  <Form  onSubmit={handleSubmit}>
                 {/*<Form.Group controlId="username">
                   <Form.Label>Username</Form.Label>
@@ -209,8 +200,10 @@ const ProfilePage = () => {
                   className="inputField"
                 />
               </Form.Group>
-              <Button className="button-49" role="button" type="submit" variant="primary" /*className="profile-btn mt-3"*/>
-                Update
+              <Button /*className="button-49"*/ role="button" type="submit" variant="primary"className="profile-btn mt-3"><span>
+                 Update
+              </span>
+               
               </Button>
             </Form>
           </div>
