@@ -9,13 +9,9 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
-<<<<<<< HEAD
+
 import './style.css'
 const API_KEY = "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";
-=======
-
-const API_KEY = "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";
->>>>>>> 4af55fcfd1a3410a6c6f59a57147bf4e4575dfb1
 
 function ChatQuiz() {
   const [messages, setMessages] = useState([
