@@ -80,6 +80,7 @@ const UserList = () => {
                 setXboxOnly={setXboxOnly}
             />
             <div className="user-holder">{displayUsers()}</div>
+
         </main>
     )
 }

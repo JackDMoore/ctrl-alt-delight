@@ -39,7 +39,6 @@ const ProfilePage = () => {
     })
     .then((res)=>res.json())
     .then((data)=>{
-      console.log(data)
       setUser((data))
       setName(data.name)
       setGame(data.game_name)
@@ -48,22 +47,12 @@ const ProfilePage = () => {
       setKnown(data.language_known)
       // setEmail(data.users.email);
       setUsername(data.username);
-      setBio(data.profile_bio)
+      setBio(data.bio)
       setEmail(data.email)
     })
-      .then((res) => res.json())
-      .then((data) => {
-        setUser((data.users));
-        setName(data.users[0].name);
-        setEmail(data.users[0].email);
-        setUsername(data.users[0].username);
-        setBio(data.users[0].profile_bio);
-      });
   }
-
-  // const userarr = Array.from(user)
   const currentUser = user
- 
+ console.log(user)
   // useEffect to update the form fields when userInfo changes
   // useEffect(() => {
   //   getCurrentUser()
@@ -79,7 +68,6 @@ const ProfilePage = () => {
   if (currentUser ===undefined){
     return null
   }
- console.log(currentUser)
   const deleteuseraccount = async () => {
     await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
       method: 'DELETE',
@@ -118,9 +106,6 @@ const ProfilePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (password !== confirmPassword) {
-    //   toast.error("Passwords do not match");
-    // } else {
       try {
         await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
           method: 'PATCH',
@@ -136,9 +121,15 @@ const ProfilePage = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            setUser(data.users);
-            localStorage.username = data.users[0].username;
+            // setUser(data.users[0].username)
+            setUser(data.users.name)
+            setUser(data.users.email)
+            setUser(data.users.profile_bio);
+            // localStorage.username = data.users[0].username;
+            window.location.reload()
             showupdate();
+              
+            
           });
         toast.success("Profile updated successfully");
       } catch (error) {
@@ -146,7 +137,9 @@ const ProfilePage = () => {
       }
     //}
   };
-
+  if (currentUser ===undefined){
+    return null
+  }
   const handleChatClick = () => {
     navigate('/chat');
   };
@@ -160,16 +153,16 @@ const ProfilePage = () => {
                 <div className="deets"> 
                   <h3 className="minititle">Your Profile Information<button id = "editbtn" onClick= {showupdate}> edit</button></h3>
                   <div className="pfpname">
-                    <img src={avadef} alt="Avatar" className="avatar"></img>
+                    {/* <img src={avadef} alt="Avatar" className="avatar"></img> */}
                     <h3 id = "currentUsername">{currentUser.username}</h3>
                   </div>
-                  <p id = "currentrating">Rating: {currentUser.rating}</p>
+                  <p id = "currentrating">Your Rating: {currentUser.rating}</p>
                   <p id = "currentknown">Your Languages: {currentUser.language_known}</p>
                   {/* <img src={atob(currentUser.flag_base64_known)} alt="Avatar" className="avatarknown"></img> */}
                   <p id = "currentlearn">Learning: {currentUser.language_learn}</p>
                   {/* <img src={atob(currentUser.flag_base64_learn)} alt="Avatar" className="avatarlearn"></img> */}
                   <h2>Bio</h2>
-                  <p id = "currentBio">{currentUser.profile_bio}</p>
+                  <p id = "currentBio">{currentUser.bio}</p>
                   {/* <p id = "currentLangKnwon">{currentUser.langugues_known}</p> */}
                 </div>
                 )
@@ -178,18 +171,18 @@ const ProfilePage = () => {
         
           <div id="updateform">
             <button id = "backbtn" onClick= {showupdate}>Go back</button>
-                <Form  onSubmit={handleSubmit}>
-                <Form.Group controlId="name">
+                 <Form  onSubmit={handleSubmit}>
+                {/*<Form.Group controlId="username">
                   <Form.Label>Username</Form.Label>
                   <Form.Control
                     type="text"
                     value={username}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                     className="inputField"
-                  />
-                  </Form.Group>
+                  /> 
+                  </Form.Group>*/}
                   <Form.Group controlId="name">
-                  <Form.Label></Form.Label>
+                  <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
                     value={name}
@@ -206,25 +199,6 @@ const ProfilePage = () => {
                     className="inputField"
                   />
                 </Form.Group>
-                <Form.Group controlId="username">
-
-                <Form.Label>Username</Form.Label>
-                <Form.Control
-                  type="text"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  className="inputField"
-                />
-              </Form.Group>
-              <Form.Group controlId="email">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="inputField"
-                />
-              </Form.Group>
               <Form.Group controlId="bio">
                 <Form.Label>Profile Bio</Form.Label>
                 <Form.Control
@@ -235,7 +209,7 @@ const ProfilePage = () => {
                   className="inputField"
                 />
               </Form.Group>
-              <Button type="submit" variant="primary" className="profile-btn mt-3">
+              <Button className="button-49" role="button" type="submit" variant="primary" /*className="profile-btn mt-3"*/>
                 Update
               </Button>
             </Form>

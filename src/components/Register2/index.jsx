@@ -9,6 +9,8 @@ const Register2 = () => {
   const [platform, setPlatform] = useState("");
   const navigate = useNavigate();
 
+  const [message, setMessage] = useState("")
+
   const handleLanguageUserSpeaks = (e) => {
     setLanguageUserSpeaks(e.target.value);
   };
@@ -66,9 +68,9 @@ const Register2 = () => {
         //   },
         // }
       );
-
-      alert("Profile updated :)"); 
-      navigate("/connections");
+      setMessage("Profile updated :)")
+      // alert("Profile updated :)"); 
+      navigate("/login");
     } catch (error) {
 
     }
@@ -105,6 +107,17 @@ const Register2 = () => {
             <option value="Dutch">Dutch</option>
             <option value="Italian">Italian</option>
           </select>
+          <select
+            aria-label="console you play"
+            className="consoleDropdown"
+            onChange={handlePlatform}
+            value={platform}
+          >
+            <option value="">Select the console you play</option>
+            <option value="PlayStation">PlayStation</option>
+            <option value="Xbox">Xbox</option>
+            <option value="PC">PC</option>
+          </select>
           <input
             type="text"
             aria-label="games input"
@@ -113,18 +126,18 @@ const Register2 = () => {
             value={games}
             className="inputField"
           />
-          <input
+          {/* <input
             type="text"
             aria-label="console input"
             placeholder="Enter Console"
             onChange={handlePlatform}
             value={platform}
             className="inputField"
-          />
-
+          /> */}
           <button className="register-btn" onClick={gatherDetails}>
             Register
           </button>
+          {message && <div className="message"> {message}</div>}
         </form>
       </div>
     </div>
