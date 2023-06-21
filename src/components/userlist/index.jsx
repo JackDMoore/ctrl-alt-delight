@@ -82,6 +82,7 @@ const UserList = () => {
                 setPlaystationOnly={setPlaystationOnly}
                 setXboxOnly={setXboxOnly}
             />
+            
         </main>
     )
 }
