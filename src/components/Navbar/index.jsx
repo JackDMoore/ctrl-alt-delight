@@ -22,15 +22,15 @@ const Navbar = () => {
       </Link>
       <div className="navbar-links">
        
-        {(!token)  &&
+        {(!user)  &&
           (
             <div>
-              <Link to="/login"> LogIn </Link>
-              <Link to="/register"> Register </Link>
+              <Link to="/login">  LogIn  </Link>
+              <Link to="/register">  Register  </Link>
             </div>
           )
         }
-        {(token) &&
+        {(user) &&
           (
             <div>
 
@@ -39,10 +39,12 @@ const Navbar = () => {
               <Link onClick={logoutbtn} to="/" >Logout</Link>
               <Link to="/connections">Connections</Link>
               <Link to="/chatquiz">LinguaBot Quiz</Link>
+              <Link to="/chatlearningplan">LinguaBot Learning Plan</Link>
+              <Link to="/profile">  Profile  </Link>
+              <Link onClick={logoutbtn} to="/" >  Logout  </Link>
             </div>
           )
-        }
-        
+        }        
       </div>
     </nav>
   );

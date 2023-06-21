@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-
 import LearnLanguageFilter from "../LearnLanguageFilter"
 import ConsoleFilter from '../ConsoleFilter';
 import ProfileCard from '../ProfileCard';
@@ -7,6 +6,7 @@ import ProfileCard from '../ProfileCard';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
+    const [username, setUsername] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [englishOnly, setEnglishOnly] = useState();
     const [frenchOnly, setFrenchOnly] = useState();
@@ -22,19 +22,21 @@ const UserList = () => {
             const response = await fetch("https://linguaplaya-be.onrender.com/users/getall");
             const userData = await response.json();
             setUsers(userData)
+            setUsername(userData.username)
             setIsLoading(false);
         }
 
         loadUsers();
     }, []);
 
-    // function displayUsers() {
-    //     if (isLoading) {
-    //       return <p>Loading...</p>;
-    //     }
-
+    const arr = users
+    function removeUser(arr) {
+      return (arr.username === username)
+    }
+    const userId = arr.findIndex(removeUser)
+    arr.splice(userId, 1)
     function displayUsers() {
-        return users
+        return arr
             .filter((user) => !englishOnly || user.language_known == "English")
             .filter((user) => !frenchOnly || user.language_known == "French")
             .filter((user) => !germanOnly || user.language_known == "German")

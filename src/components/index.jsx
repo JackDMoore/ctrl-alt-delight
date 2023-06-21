@@ -17,3 +17,4 @@ export { default as ConsoleFilter } from "./ConsoleFilter";
 export { default as ChatQuiz } from "./ChatQuiz";
 export { default as FriendList} from "./FriendList"
 export { default as FriendCard} from "./FriendCard"
+export { default as ChatLearningPlan } from "./ChatLearningPlan"

@@ -19,6 +19,7 @@ const App = () => {
           <Route path="/profile" element={<Pages.ProfilePage />} />
           <Route path="/connections" element={<Pages.ConnectionsPage />} />
           <Route path="/chat" element={<Pages.ChatPage socket={socket} />} />
+          <Route path="/chatlearningplan" element={<Pages.ChatLearningPlanPage/>} />
           <Route path="/chatquiz" element={<Pages.ChatQuizPage/>} />
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
