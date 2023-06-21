@@ -1,5 +1,4 @@
 .profile-card {
-    position: relative;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 24px;
@@ -10,9 +9,7 @@
     background-color: #36404B;
     box-sizing: border-box;
     height: 300px;
-    justify-content: space-between;
 
-    display: grid;
   }
   
   

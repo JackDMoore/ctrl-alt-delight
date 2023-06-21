@@ -44,7 +44,8 @@ body {
   left: 0;
   right: 0;
   width: 97.5%;
-  z-index: 999; /* This put the navbar on top of everything else */
+  z-index: 100; /* This put the navbar on top of everything else */
+  margin-bottom: 10px;
 }
 
 
@@ -825,12 +826,12 @@ label {
 /* Bug fix for overlapping navbar and content */
 
 .user-holder {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
-  
+  height: 150vh;
+
 }
 
 .user-holder h1 {
