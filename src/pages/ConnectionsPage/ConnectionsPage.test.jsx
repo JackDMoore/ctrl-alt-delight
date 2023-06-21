@@ -1,5 +1,5 @@
 import React from "react";
-import ConnectionsPage from "./index"
+import ConnectionsPage from "./index";
 import { MemoryRouter as Router } from "react-router-dom";
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { render, cleanup, screen } from "@testing-library/react";
@@ -24,12 +24,8 @@ describe("ConnectionsPage", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it("Renders the UserList component", () => {
-    const connectionsPage = render(
-      <Router>
-        <ConnectionsPage />
-      </Router>
-    );
-    expect(connectionsPage).toBeTruthy();
+  it("Renders the heading 'Find a Connection'", () => {
+    const headingElement = screen.getByText("Find a Connection");
+    expect(headingElement).toBeInTheDocument();
   });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/react';
+import { render, fireEvent, getByLabelText } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import ProfileCard from '../ProfileCard';
 
@@ -16,4 +16,5 @@ describe('ProfileCard compartment', () => {
     const usernameElement = queryByText(username);
     expect(usernameElement).toBeTruthy();
   });
+  
 });

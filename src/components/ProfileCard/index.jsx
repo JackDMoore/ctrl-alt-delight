@@ -64,8 +64,8 @@ const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform,
           </div>
         </div>
         <div className="card-footer">
-          <ConnectionButton onClick={handleConnectClick} />
-          <MessageButton onClick={handleMessageClick} />
+          <ConnectionButton aria-label="connect-button" onClick={handleConnectClick} />
+          <MessageButton aria-label="message-button" onClick={handleMessageClick} />
         </div>
       </div>
     </div>

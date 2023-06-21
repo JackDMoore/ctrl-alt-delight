@@ -18,7 +18,6 @@ describe('ChatPage', () => {
       </MemoryRouter>,
       div
     );
-    expect(div.innerHTML).toBeTruthy();
+    expect(div.querySelector('.chat')).not.toBeNull();
   });
 });
-
