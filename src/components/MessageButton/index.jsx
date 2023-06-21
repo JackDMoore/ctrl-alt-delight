@@ -3,7 +3,7 @@ import React from "react";
 const MessageButton = ({onClick}) => {
     return (
         <button className="message-button" onClick={onClick}>
-        Message
+        <span>Message</span>
         </button>
     );
 }

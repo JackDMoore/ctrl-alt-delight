@@ -135,7 +135,7 @@ const Register2 = () => {
             className="inputField"
           /> */}
           <button className="register-btn" onClick={gatherDetails}>
-            Register
+           <span> Register</span>
           </button>
           {message && <div className="message"> {message}</div>}
         </form>
