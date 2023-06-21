@@ -59,9 +59,6 @@ const UserList = () => {
 
     return (
         <main>
-            <h1>Users</h1>
-
-            <div className="user-holder">{displayUsers()}</div>
             <LearnLanguageFilter
                 englishOnly={englishOnly}
                 frenchOnly={frenchOnly}
@@ -82,6 +79,7 @@ const UserList = () => {
                 setPlaystationOnly={setPlaystationOnly}
                 setXboxOnly={setXboxOnly}
             />
+            <div className="user-holder">{displayUsers()}</div>
         </main>
     )
 }
