@@ -1,11 +1,5 @@
 .profile-card {
-
-
-
-
-
-
-    height: 600rem;
+    height: 700rem;
   }
   
   .left-content {
@@ -20,6 +14,7 @@
   
   .card-body {
     display: flex;
+    height: 200rem
   }
 
   .card-header {
@@ -58,7 +53,7 @@
     display: grid;
     position: absolute;
     left: 15.5rem;
-    top: 2cqi
+    top: 2rem
   }
 
   .platform-container {
