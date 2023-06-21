@@ -20,7 +20,7 @@ const ConnectionsPage = () => {
   };
 
   return (
-    <div>
+    <div className= "user-holder">
       <h1>Find a Connection</h1> 
       <UserList />
       {/* <LHNavbar /> */}

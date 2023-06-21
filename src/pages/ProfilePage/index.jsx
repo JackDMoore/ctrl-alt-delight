@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './style.css'
 // import avadef from '../../assets/pfp/avadef.jpg'
+// import { useCurrentUser } from "../../context/AuthContext";
+import { FriendList } from "../../components";
 
 const ProfilePage = () => {
   const [learn, setLearn] = useState("");
@@ -209,8 +211,10 @@ const ProfilePage = () => {
           </div>
         {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
         
-    </div>
-    <div className="friendlist-container"></div> 
+        <div className="friendlist-container">
+          <FriendList/>
+        </div> 
+      </div>
     </div>
   );
 }
