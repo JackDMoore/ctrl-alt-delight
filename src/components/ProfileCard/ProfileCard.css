@@ -1,4 +1,5 @@
 .profile-card {
+<<<<<<< HEAD
   position: relative;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -13,6 +14,51 @@
 .profile-card-content {
   margin: 16px;
 }
+=======
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+    background-color: #36404B;
+    box-sizing: border-box;
+    height: 300px;
+
+  }
+  
+  
+  .profile-card-content {
+    margin: 16px;
+  }
+  
+  .profile-header {
+    margin-bottom: 8px;
+  }
+  
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  
+  .left-content h3 {
+    margin-bottom: 8px;
+  }
+  
+  .card-body {
+    display: flex;
+    margin-bottom: 8px;
+    margin: 16px;
+  }
+  
+  .right-content {
+    position: absolute;
+    top: 16px;
+    right: 200px;
+  }
+>>>>>>> origin/staging
 
 .profile-header {
   margin-bottom: 8px;

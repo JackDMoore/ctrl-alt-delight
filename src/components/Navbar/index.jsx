@@ -1,16 +1,20 @@
 // Navbar/index.jsx
-import React from "react";
+
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
 
+  const token = localStorage.getItem('token')
   const user = localStorage.getItem('username')
-  // const navigate = useNavigate();
+
   const logoutbtn = () => {
     localStorage.removeItem('username')
     localStorage.removeItem('token')
-    // navigate('/')
   }
+
+
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo">
@@ -18,24 +22,29 @@ const Navbar = () => {
       </Link>
       <div className="navbar-links">
        
-        {!user &&
+        {(!user)  &&
           (
             <div>
-              <Link to="/login"> LogIn </Link>
-              <Link to="/register"> Register </Link>
+              <Link to="/login">  LogIn  </Link>
+              <Link to="/register">  Register  </Link>
             </div>
           )
         }
-        {user &&
+        {(user) &&
           (
             <div>
+
               <Link to="/profile">Profile</Link>
+              <Link to='/chat'>Chat</Link>
               <Link onClick={logoutbtn} to="/" >Logout</Link>
               <Link to="/connections">Connections</Link>
+              <Link to="/chatquiz">LinguaBot Quiz</Link>
+              <Link to="/chatlearningplan">LinguaBot Learning Plan</Link>
+              <Link to="/profile">  Profile  </Link>
+              <Link onClick={logoutbtn} to="/" >  Logout  </Link>
             </div>
           )
-        }
-        
+        }        
       </div>
     </nav>
   );

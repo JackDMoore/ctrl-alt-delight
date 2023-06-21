@@ -2,6 +2,7 @@ import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import LHNavbar from "../../components/LHNavbar";
 import { UserList } from "../../components";
+import "./style.css";
 
 const ConnectionsPage = () => {
   //Stae to store connected profiles
@@ -19,10 +20,10 @@ const ConnectionsPage = () => {
   };
 
   return (
-    <div>
-      <h1>Find a Connection</h1> 
+    <div className="user-holder">
+      <h1>Find a Connection</h1>
       <UserList />
-      <LHNavbar />
+      {/* <LHNavbar /> */}
     </div>
   );
 };

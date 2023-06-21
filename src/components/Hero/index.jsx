@@ -35,11 +35,9 @@ const Hero = () => {
             Ready to level up your language skills? Join LinguaPlay and embark
             on an immersive learning adventure through gaming.
           </p>
-          <Link to="/connections">
-            <Button variant="primary" className="get-started-button">
-              Get Started
-            </Button>
-          </Link>
+          <Button variant="primary" className="get-started-button">
+            <span>Get Started</span>
+          </Button>
         </Card>
       </Container>
     </div>

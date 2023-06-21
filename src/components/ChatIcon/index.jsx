@@ -1,5 +1,6 @@
 import React from "react";
 import chaticon from "./chatboticon.png";
+import "./chatbot.css"
 
 function ChatIcon({ onClick }) {
   return (
@@ -12,7 +13,7 @@ function ChatIcon({ onClick }) {
       }}
       onClick={onClick}
     >
-      <img className="Chatboticon" src={chaticon} alt="Chat Icon" />
+      <img className="Chatboticon" src={chaticon} alt="Chat Icon"  width='350' height='350'/>
     </div>
   );
 }

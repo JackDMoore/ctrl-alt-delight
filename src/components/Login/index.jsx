@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./style.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  // const [errorMessage,setErrorMessage] = useState('')
 
   const inputRef = useRef();
 
@@ -33,6 +36,8 @@ const Login = () => {
       if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
         localStorage.setItem("username", response.data.username);
+        localStorage.setItem("username", username);
+        // socket.emit("newUser", {username, socketID: socket.id})
         navigate("/");
         // const value  = localStorage.getItem('username')
         // console.log(value)
@@ -43,6 +48,7 @@ const Login = () => {
         // onAuth({ username: value, secret: value })
       }
     } catch (error) {
+      console.log(error);
       // alert(error.response.data.error);
     }
   }
@@ -78,8 +84,9 @@ const Login = () => {
             aria-label="submit button"
             className="login-btn"
           >
-            Submit
+            <span>Submit</span>
           </button>
+          {/* {errorMessage && <div className="error"> {errorMessage}</div>} */}
           <p>
             Not registered?{" "}
             <a href="/register" style={{ color: "#FF8E3C" }}>

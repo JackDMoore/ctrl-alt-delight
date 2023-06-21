@@ -1,12 +1,12 @@
 import React from "react";
-import ConnectionsPage from "./index";
+import ConnectionsPage from "./index"
 import { MemoryRouter as Router } from "react-router-dom";
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { render, cleanup, screen } from "@testing-library/react";
 import matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
 
-describe("ConnectionPage", () => {
+describe("ConnectionsPage", () => {
   beforeEach(() => {
     render(
       <Router>
@@ -19,8 +19,8 @@ describe("ConnectionPage", () => {
     cleanup();
   });
 
-  it("Displays a heading with text: Connections Page", () => {
-    const heading = screen.getByText("Connections Page");
+  it("Displays a heading with text: Find a Connection", () => {
+    const heading = screen.getByText("Find a Connection");
     expect(heading).toBeInTheDocument();
   });
 

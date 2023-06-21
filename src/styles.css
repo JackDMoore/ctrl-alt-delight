@@ -1,6 +1,28 @@
+/* *{
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+ } */
+
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
-  margin: 0;
+  /* min-height: 100vh; */
   display: flex;
   align-items: center;
   font-size: 1.2rem;
@@ -22,7 +44,8 @@ body {
   left: 0;
   right: 0;
   width: 97.5%;
-  z-index: 999;
+  z-index: 100; /* This put the navbar on top of everything else */
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -128,31 +151,53 @@ h1 {
   font-weight: 700;
 }
 
+/* CSS */
 button {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  /* min-width: 140px; */
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 
+button:active,
 button:hover {
-  border-color: #40e0d0;
+  outline: 0;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button span {
+  background-color: rgb(5, 6, 45);
+  padding: 10px 20px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
 }
 
-@media (max-width: 768px) {
+button:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
   button {
-    font-size: 0.9em;
-    padding: 0.5em 1em;
+    font-size: 24px;
+    min-width: 88px;
   }
 }
 
@@ -166,11 +211,168 @@ button:focus-visible {
     color: #747bff;
   }
 
-  button {
-    background-color: #9f7ff2;
+  /* button {
+    background-color: #40e0d0;
     color: white;
     border: none;
-    padding: 10px 20px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  } */
+
+  /* loader.css */
+  .loader {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: block;
+  }
+
+  .loader .inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top-color: #646cff;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* chatbot.css */
+
+  .Chatboticon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #646cff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.25s;
+    animation: floating 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  /* Override specific styles for the chatbot */
+
+  /* Styling for the chatbot container */
+  .chat-container {
+    position: fixed;
+    bottom: 10.8rem;
+    right: 1rem;
+    background-color: #c6b1fbf4; /* Lighter purple background color */
+    border-radius: 1rem;
+    box-shadow: 0px 4px 10px rgba(136, 27, 199, 0.5);
+    overflow: none;
+    width: 50%;
+    max-height: 50%;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes neonGlow {
+    0% {
+      box-shadow: 0px 4px 5px rgba(136, 27, 199, 0.791);
+    }
+    100% {
+      box-shadow: 0px 4px 5px rgba(136, 27, 199, 0.8);
+    }
+  }
+
+  .chat-container .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .flex-item-left {
+    flex: 50%;
+  }
+
+  .flex-item-right {
+    flex: 50%;
+  }
+
+  /* Responsive layout - makes a one column layout instead of a two-column layout */
+  @media (max-width: 800px) {
+    .flex-item-right,
+    .flex-item-left {
+      flex: 100%;
+    }
+  }
+
+  /* Styling for the message list */
+  .message-list {
+    max-height: 380px;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  /* Styling for the individual messages */
+  .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  /* Styling for the outgoing messages */
+  .message.outgoing {
+    background-color: #9f7ff2; /* Lighter purple outgoing message background color */
+    color: #ffffff; /* White outgoing message text color */
+    align-self: flex-end;
+  }
+
+  /* Styling for the incoming messages */
+  .message.incoming {
+    background-color: white; /* Dark purple incoming message background color */
+    color: #ffffff; /* White incoming message text color */
+    align-self: flex-start;
+  }
+
+  /* Styling for the message input */
+  .message-input {
+    padding: 10px;
+    border: 1px solid #ffffff; /* White border color */
+    background-color: #654973; /* Dark purple input background color */
+    color: #ffffff; /* White input text color */
+  }
+
+  /* Styling for the send button */
+  .message-input button {
+    background-color: #563d7c; /* Dark purple send button background color */
+    color: #ffffff; /* White send button text color */
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    border: none;
+    border-radius: 1rem;
     cursor: pointer;
   }
 
@@ -472,7 +674,7 @@ button:focus-visible {
 }
 
 /* connectionspage */
-.left-navbar {
+/* .left-navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -483,9 +685,9 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
+} */
 
-.section {
+/* .section {
   margin-bottom: 30px;
 }
 
@@ -502,9 +704,9 @@ h2 {
 label {
   font-weight: bold;
   margin-bottom: 5px;
-}
+} */
 
-input[type="radio"],
+/* input[type="radio"],
 label {
   margin-right: 5px;
 }
@@ -512,7 +714,7 @@ label {
 .connection-button {
   position: absolute;
   bottom: 20px; /* Adjust the value as needed */
-  left: 50%;
+/* left: 50%;
   transform: translateX(-50%);
   background-color: #007bff;
   color: #fff;
@@ -521,11 +723,11 @@ label {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 4rem;
-}
+} */
 
-.connection-button:hover {
+/*.connection-button:hover {
   background-color: #0056b3;
-}
+} */
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
@@ -726,13 +928,13 @@ label {
   .profile-box {
     width: 400px;
     padding: 20px;
-    background-color: #8e44ad;
+    background-color: #283044;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 0.3rem 0.3rem rgba(142, 68, 173, 0.8);
+    border-radius: 2rem;
+    box-shadow: 0 0 0.3rem 0.3rem rgba(79, 146, 255, 0.8);
     background-image: linear-gradient(
       45deg,
-      rgba(142, 68, 173, 0.8),
+      rgba(79, 146, 255, 0.8),
       rgba(0, 0, 0, 0)
     );
   }
@@ -764,7 +966,7 @@ label {
 }
 
 /* register page  */
-
+/* 
 .register-container {
   display: flex;
   justify-content: center;
@@ -819,17 +1021,17 @@ label {
 .register-btn:hover {
   background-color: #9d53c3;
   color: white;
-}
+} */
 
 /* login Page */
-.login-container {
+/* .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
-.login-box {
+/* .login-box {
   width: 400px;
   padding: 20px;
   background-color: #283044;
@@ -853,9 +1055,9 @@ label {
 .login-form {
   display: flex;
   flex-direction: column;
-}
+} */
 
-.inputField {
+/* .inputField {
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -871,10 +1073,10 @@ label {
 .login-btn:hover {
   background-color: #9d53c3;
   color: white;
-}
+} */
 
 /* ProfilePage */
-.profile-container {
+/* .profile-container {
   display: flex;
   margin-left: 10px;
   justify-content: center;
@@ -885,18 +1087,18 @@ label {
 .profile-box {
   width: 400px;
   padding: 20px;
-  background-color: #283044;
-  border: 1px solid #ccc;
-  border-radius: 2rem;
-  box-shadow: 0 0 0.3rem 0.3rem rgba(79, 146, 255, 0.8);
-  background-image: linear-gradient(
+  background-color: #313131;
+  /* border: 1px solid #cccccc; */
+/* border-radius: 5px; */
+/* box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8); */
+/* background-image: linear-gradient(
     45deg,
     rgba(79, 146, 255, 0.8),
     rgba(0, 0, 0, 0)
   );
-}
+} */
 
-.profile-heading {
+/* .profile-heading {
   text-align: center;
   margin-bottom: 20px;
   color: #d2d2d2;
@@ -920,6 +1122,16 @@ label {
 .profile-btn:hover {
   background-color: #9d53c3;
   color: white;
+} */
+
+/* Bug fix for overlapping navbar and content */
+
+.user-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  height: 150vh;
 }
 
 /* WhatisLinguaPlay */
@@ -1251,5 +1463,15 @@ label {
   .text-container {
     padding-left: 0;
     margin-top: 1rem;
+  }
+}
+
+.user-holder h1 {
+  margin-top: 23rem;
+}
+
+@media screen and (max-width: 768px) {
+  .user-holder h1 {
+    margin-top: 5rem;
   }
 }
