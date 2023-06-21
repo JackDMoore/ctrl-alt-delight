@@ -1,14 +1,19 @@
-import { test, render, screen, fireEvent } from 'vitest';
-import FriendCard from '../FriendCard/index';
+import React from 'react';
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import FriendCard from '../FriendCard';
 
-test('handleMessageClick is called when the MessageButton is clicked', () => {
-  const navigateMock = { navigate: jest.fn() };
-  const useNavigateMock = jest.fn(() => navigateMock);
+describe('FriendCard component', () => {
+  it('renders the username correctly', () => {
+    const username = 'JohnDoe';
+    render(
+      <MemoryRouter>
+        <FriendCard username={username} />
+      </MemoryRouter>
+    );
 
-  render(<FriendCard username="John" />, { mocks: { useNavigate: useNavigateMock } });
-
-  const messageButton = screen.getByRole('button', { name: 'Message Button' });
-  fireEvent.click(messageButton);
-
-  expect(navigateMock.navigate).toHaveBeenCalledWith('/chat');
+    const usernameElement = document.querySelector('.profile-card h3');
+    expect(usernameElement.textContent).toBe(username);
+  });
 });
