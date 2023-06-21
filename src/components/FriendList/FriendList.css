@@ -1,0 +1,10 @@
+  .friend-holder {
+    display: flex;
+    flex-direction: column;
+    max-width: 140px;
+    max-height: 50px;
+  }
+  
+  .friendlist-container {
+    display: flex;
+  }

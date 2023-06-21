@@ -14,50 +14,26 @@
 #userinfo{
     display: block;
     text-align: left;
-
-   
 }
+
 #editbtn{
     display: block;
+    margin-left: 15px;
+    
 }
 .edit-btn{
-  padding: 17px 3px 17px 3px;
+  padding: 18px 3px 18px 3px;
 }
 #backbtn{
     display: none;
     /* padding: 0; */
     /* padding: 15px 5px 15px 5px; */
-  
-  
 }
 .back-btn{
   
-  padding: 17px 5px 17px 5px;
+  padding: 18px 3px 18px 3px;
 }
 
-/* .avatar {
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  justify-content: left;
-} */
-
-
-/* 
-.profile-container{
-    display: inline-Block;
-} */
-
-/* ProfilePage */
-/* .profile-container {
-  /* display: flex; */
- /* margin-left: 10pc;*/
-  /* justify-content: center;
-  align-items: center; */
-  /* height: 100vh; */
-  /* background-color: white; */
-/*} */
 .deets{
   display: flex;
   flex-direction: column;
@@ -76,8 +52,10 @@
   /* min-width: 400px; */
   /* position: grid; */
   /* min-height: 200px; */
-  margin: 0 10px 0 0;
-  margin-left: 10px;
+  display: flex;
+  flex-direction: column; 
+  margin: 20px 100px 10px 0;
+  margin-left: 0px;
   padding: 20px;
   background-color: #313131;
   /* border: 1px solid #cccccc; */
@@ -98,9 +76,10 @@
 
 .profile-heading {
   text-align: center;
+  /* display: flex; */
   margin-bottom: 20px;
   color: #d2d2d2;
-  
+  /* flex-direction: row; */
   text-shadow: 4px 4px 4px #2f2f2f;
 }
 
@@ -109,19 +88,29 @@
   padding: 10px;
 }
 
-/* .profile-btn {
-  background-color: #9f7ff2;
-  color: white;
-  border: none;
-  /* padding: 10px 20px; 
-  cursor: pointer;
-}*/
-
-/*.profile-btn:hover {
-  background-color: #9d53c3;
-  color: white;
-} */
-
 .maintitle{
   margin:0
 }
+
+.profile-container {
+  display: flex;
+  position: relative;
+  /* flex-direction: row; */
+  margin: 0px 1000px 0px 0px;
+  align-items: flex-start;
+  height : 80vh;
+  /* margin: inherit; */
+  /* margin: initial; */
+  /* margin: unset; */
+  
+}
+
+/* .profile-box {
+  margin-right: 10px;
+  width: 100%;
+} */
+  .friendlist-container {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column; 
+  }

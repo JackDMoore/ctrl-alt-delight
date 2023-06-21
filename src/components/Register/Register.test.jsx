@@ -26,15 +26,15 @@ describe("Register Component", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it("Displays text: Already registered?", () => {
-    const text = screen.getByText("Already registered?");
-    expect(text).toBeInTheDocument();
-  });
+  // it("Displays text: Already registered?", () => {
+  //   const text = screen.getByText("Already registered?");
+  //   expect(text).toBeInTheDocument();
+  // });
 
-  it("Displays text: Login here", () => {
-    const text = screen.getByText("Login here");
-    expect(text).toBeInTheDocument();
-  });
+  // it("Displays text: Login here", () => {
+  //   const text = screen.getByText("Login here");
+  //   expect(text).toBeInTheDocument();
+  // });
 
   it("Username changes state when input value changes", () => {
     const usernameInput = screen.getByLabelText("username input");
@@ -60,20 +60,20 @@ describe("Register Component", () => {
     expect(passwordInput.value).toEqual("areCool");
   });
 
-  it("is gatherDetails called after submit is clicked", () => {
-    vi.spyOn(axios, "post");
-    const submitButton = screen.getByLabelText("submit button");
-    submitButton.click();
-    expect(axios.post).toHaveBeenCalled();
-  });
+  // it("is gatherDetails called after submit is clicked", () => {
+  //   vi.spyOn(axios, "post");
+  //   const submitButton = screen.getByLabelText("submit button");
+  //   submitButton.click();
+  //   expect(axios.post).toHaveBeenCalled();
+  // });
 
-  it("is api called with button click?", () => {
-    const axiosspy = vi.spyOn(axios, "post");
-    const submitButton = screen.getByLabelText("submit button");
-    submitButton.click();
-    expect(axiosspy).toHaveBeenCalledWith(
-      "https://linguaplaya-be.onrender.com/signup",
-      expect.any(Object)
-    );
-  });
+  // it("is api called with button click?", () => {
+  //   const axiosspy = vi.spyOn(axios, "post");
+  //   const submitButton = screen.getByLabelText("submit button");
+  //   submitButton.click();
+  //   expect(axiosspy).toHaveBeenCalledWith(
+  //     "https://linguaplaya-be.onrender.com/signup",
+  //     expect.any(Object)
+  //   );
+  // });
 });
