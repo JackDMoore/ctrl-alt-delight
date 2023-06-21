@@ -9,3 +9,4 @@ export { default as ChatPage } from "./ChatPage/";
 export { default as AuthPage } from "./AuthPage";
 export { default as DirectMessage} from "../pages/DirectMessage";
 export { default as ChatQuizPage} from "./ChatQuizPage";
+
