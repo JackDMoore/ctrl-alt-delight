@@ -10,7 +10,8 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+import "./style.css";
+const API_KEY = "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";
 
 function ChatQuiz() {
   const [messages, setMessages] = useState([
@@ -24,7 +25,7 @@ function ChatQuiz() {
   const [isTyping, setIsTyping] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
-  const [selectedNumQuestions, setSelectedNumQuestions] = useState("")
+  const [selectedNumQuestions, setSelectedNumQuestions] = useState("");
 
   const systemMessage = {
     role: "system",
@@ -125,7 +126,10 @@ function ChatQuiz() {
           </select>
         </div>
         <div>
-          <select value={selectedNumQuestions} onChange={handleNumQuestionsChange}>
+          <select
+            value={selectedNumQuestions}
+            onChange={handleNumQuestionsChange}
+          >
             <option value="">Select number of questions</option>
             <option value="3">3</option>
             <option value="5">5</option>

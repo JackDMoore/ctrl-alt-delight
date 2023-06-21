@@ -14,17 +14,12 @@ const ProfilePage = () => {
   const [name, setName] = useState("");
   const [email,setEmail] = useState("")
   const [username, setUsername] = useState("");
-
   const [password, setPassword] = useState("");
   const [profile_bio, setBio] = useState("");
-
   const [platform, setPlatform] = useState("");
-
   const [game,setGame] = useState("")
   const [user,setUser] = useState()
-  
   const navagate = useNavigate()
-
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
 
@@ -130,17 +125,15 @@ const ProfilePage = () => {
       }
     //}
   };
-  if (currentUser ===undefined){
-    return null
-  }
+
   const handleChatClick = () => {
     navigate('/chat');
   };
 
   return (
     <div className="profile-container">
+      {/* <h1 className="profile-heading">Your Profile</h1> */}
       <div className="profile-box">
-        {/* <h1 className="profile-heading">Your Profile</h1> */}
         <div id = "userinfo">
               {currentUser && (
                 <div className="deets"> 
@@ -211,9 +204,9 @@ const ProfilePage = () => {
           </div>
         {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
         
-        <div className="friendlist-container">
+      </div> 
+      <div className="friendlist-container">
           <FriendList/>
-        </div> 
       </div>
     </div>
   );

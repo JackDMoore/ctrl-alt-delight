@@ -44,3 +44,22 @@
   .connection-button:hover {
     background-color: #0056b3;
   }
+
+  .user-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+    height: 150vh;
+    width: 35rem;
+  }
+  
+  .user-holder h1 {
+    margin-top: 18rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .user-holder h1 {
+      margin-top: 5rem;
+    }
+  }

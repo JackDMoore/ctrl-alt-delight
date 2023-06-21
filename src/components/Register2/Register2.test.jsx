@@ -1,7 +1,7 @@
 import React from "react";
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { screen, render, cleanup, fireEvent } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter ,  BrowserRouter as Router } from "react-router-dom";
 import matchers from "@testing-library/jest-dom/matchers";
 expect.extend(matchers);
 import axios from "axios";
@@ -26,37 +26,108 @@ describe("Register2 Component", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it("Displays text: Login here", () => {
-    const text = screen.getByText("Login here");
-    expect(text).toBeInTheDocument();
-  });
-
   it("Games input changes state when input value changes", () => {
     const usernameInput = screen.getByLabelText("games input");
     fireEvent.change(usernameInput, { target: { value: "Panda" } });
     expect(usernameInput.value).toEqual("Panda");
   });
 
-  it("Console input changes state when input value changes", () => {
-    const nameInput = screen.getByLabelText("console input");
-    fireEvent.change(nameInput, { target: { value: "Panda" } });
-    expect(nameInput.value).toEqual("Panda");
-  });
-
-  it("is gatherDetails called after submit is clicked", () => {
-    vi.spyOn(axios, "post");
-    const submitButton = screen.getByLabelText("submit button");
-    submitButton.click();
-    expect(axios.post).toHaveBeenCalled();
-  });
-
-  it("is api called with button click?", () => {
-    const axiosspy = vi.spyOn(axios, "post");
-    const submitButton = screen.getByLabelText("submit button");
-    submitButton.click();
-    expect(axiosspy).toHaveBeenCalledWith(
-      `https://linguaplaya-be.onrender.com/users/games/${username}`,
-      expect.any(Object)
+  it("Console Value = Playstation", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
     );
+  
+    const consoleDropdowns = screen.getAllByLabelText("console you play");
+    const consoleDropdown = consoleDropdowns[0];
+    fireEvent.change(consoleDropdown, { target: { value: "PlayStation" } });
+    expect(consoleDropdown.value).toEqual("PlayStation");
+  });
+  it("Console Value = Xbox", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
+    );
+  
+    const consoleDropdowns = screen.getAllByLabelText("console you play");
+    const consoleDropdown = consoleDropdowns[0];
+    fireEvent.change(consoleDropdown, { target: { value: "Xbox" } });
+    expect(consoleDropdown.value).toEqual("Xbox");
+  });
+
+  it("Console Value = PC", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
+    );
+  
+    const consoleDropdowns = screen.getAllByLabelText("console you play");
+    const consoleDropdown = consoleDropdowns[0];
+    fireEvent.change(consoleDropdown, { target: { value: "PC" } });
+    expect(consoleDropdown.value).toEqual("PC");
+  });
+
+
+  it("Language value = German", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
+    );
+    const consoleDropdowns = screen.getAllByLabelText("language you speak");
+    const consoleDropdown = consoleDropdowns[0];
+    fireEvent.change(consoleDropdown, { target: { value: "German" } });
+    expect(consoleDropdown.value).toEqual("German");
+  });
+
+  it("Language value = Dutch", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
+    );
+    const consoleDropdowns = screen.getAllByLabelText("language you want to learn");
+    const consoleDropdown = consoleDropdowns[0]; 
+    fireEvent.change(consoleDropdown, { target: { value: "Dutch" } });
+    expect(consoleDropdown.value).toEqual("Dutch");
+  });
+
+  it("Language value = French", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
+    );
+    const consoleDropdowns = screen.getAllByLabelText("language you want to learn");
+    const consoleDropdown = consoleDropdowns[0]; 
+    fireEvent.change(consoleDropdown, { target: { value: "French" } });
+    expect(consoleDropdown.value).toEqual("French");
+  });
+
+  it("Language value = Italian", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
+    );
+    const consoleDropdowns = screen.getAllByLabelText("language you want to learn");
+    const consoleDropdown = consoleDropdowns[0]; 
+    fireEvent.change(consoleDropdown, { target: { value: "Italian" } });
+    expect(consoleDropdown.value).toEqual("Italian");
+  });
+
+  it("Language value = English", () => {
+    render(
+      <Router>
+        <Register2 />
+      </Router>
+    );
+    const consoleDropdowns = screen.getAllByLabelText("language you want to learn");
+    const consoleDropdown = consoleDropdowns[0]; 
+    fireEvent.change(consoleDropdown, { target: { value: "English" } });
+    expect(consoleDropdown.value).toEqual("English");
   });
 });

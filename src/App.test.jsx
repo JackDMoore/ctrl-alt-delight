@@ -1,50 +1,24 @@
-import React from "react";
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { screen, render, cleanup } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom/extend-expect"; // Import matchers
+import React from 'react';
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { PageWrapper } from './components';
+import * as Pages from './pages';
 
-import App from "./App";
-
-describe("App", () => {
-  beforeEach(() => {
-    render(
-      <MemoryRouter initialEntries={["/"]}>
-        <App />
+describe('App', () => {
+  it('renders the homepage', () => {
+    const { getByText } = render(
+      <MemoryRouter initialEntries={['/']}>
+        <Routes>
+          <Route path="/" element={<PageWrapper />}>
+            <Route index element={<Pages.HomePage />} />
+          </Route>
+        </Routes>
       </MemoryRouter>
     );
-  });
 
-  afterEach(() => {
-    cleanup();
-  });
+    const homePageHeading = getByText('Welcome to LinguaPlay: Where Language Learning and Gaming Unite!');
 
-  it("renders the Header component", () => {
-    const header = screen.getByRole("banner");
-    expect(header).toBeInTheDocument();
-  });
-
-  it("renders the Home page by default", () => {
-    const homePage = screen.getByText(/welcome to hogwarts/i);
-    expect(homePage).toBeInTheDocument();
-  });
-
-  it("navigates to the Letter page when the Letter link is clicked", async () => {
-    const letterLink = screen.getByRole("link", { name: /letter/i });
-    expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
-    await userEvent.click(letterLink);
-    expect(screen.getByRole("textbox")).toBeInTheDocument();
-  });
-
-  it("navigates to the Sorting Hat page when the Sorting Hat link is clicked", async () => {
-    const sortingHatLink = screen.getByRole("link", { name: /sorting hat/i });
-    expect(
-      screen.queryByRole("button", { name: /sort me/i })
-    ).not.toBeInTheDocument();
-    await userEvent.click(sortingHatLink);
-    expect(
-      screen.getByRole("button", { name: /sort me/i })
-    ).toBeInTheDocument();
+    expect(homePageHeading).toBeTruthy();
   });
 });

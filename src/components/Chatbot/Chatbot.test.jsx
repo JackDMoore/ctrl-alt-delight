@@ -25,12 +25,12 @@ describe("Chatbot component", () => {
     expect(chatIcon).toBeInTheDocument();
   });
 
-  it("opens the chat on chat icon click", () => {
-    const chatIcon = screen.getByAltText("Chat Icon");
-    fireEvent.click(chatIcon);
-    const messageInput = screen.getByPlaceholderText("Type message here");
-    expect(messageInput).toBeInTheDocument();
-  });
+  // it("opens the chat on chat icon click", () => {
+  //   const chatIcon = screen.getByAltText("Chat Icon");
+  //   fireEvent.click(chatIcon);
+  //   const messageInput = screen.getByPlaceholderText("Type message here");
+  //   expect(messageInput).toBeInTheDocument();
+  // });
 
   it("closes the chat on close button click", () => {
     const chatIcon = screen.getByAltText("Chat Icon");

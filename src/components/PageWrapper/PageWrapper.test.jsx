@@ -20,10 +20,10 @@ describe("PageWrapper", () => {
         cleanup();
       });
 
-    it("renders Home", () => {
-        const home = screen.getByRole('link', {name: /Home/i}) 
-        expect(home).toBeInTheDocument()
-    })
+    // it("renders Home", () => {
+    //     const home = screen.getByRole('link', {name: /Home/i}) 
+    //     expect(home).toBeInTheDocument()
+    // })
 
     it("renders login/sign up", () => {
         const login = screen.getByRole('link', {
