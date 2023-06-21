@@ -23,7 +23,6 @@ const App = () => {
           <Route path="/chat" element={<Pages.ChatPage socket={socket} />} />
           <Route path="/chatlearningplan" element={<Pages.ChatLearningPlanPage/>} />
           <Route path="/chatquiz" element={<Pages.ChatQuizPage/>} />
-          <Route path="/DM" element={<Pages.DirectMessage/>} />
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
       </Routes>

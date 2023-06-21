@@ -36,7 +36,7 @@ const Hero = () => {
             on an immersive learning adventure through gaming.
           </p>
           <Button variant="primary" className="get-started-button">
-            Get Started
+            <span>Get Started</span>
           </Button>
         </Card>
       </Container>
