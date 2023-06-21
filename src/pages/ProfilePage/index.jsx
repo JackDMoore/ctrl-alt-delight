@@ -142,7 +142,7 @@ const ProfilePage = () => {
         <div id = "userinfo">
               {currentUser && (
                 <div className="deets"> 
-                  <h3 className="minititle">Your Profile Information<button id = "edit-btn"className = "edit-btn" onClick= {showupdate}> <span>Edit</span></button></h3>
+                  <h3 className="minititle">Your Profile Information<button id = "editbtn" className = "edit-btn" onClick= {showupdate}> <span>Edit</span></button></h3>
                   <div className="pfpname">
                     {/* <img src={avadef} alt="Avatar" className="avatar"></img> */}
                     <h3 id = "currentUsername">{currentUser.username}</h3>
@@ -161,7 +161,7 @@ const ProfilePage = () => {
         </div>
         
           <div id="updateform">
-            <button id = "backbtn" className="back-btn" role = "button" onClick= {showupdate}><span>Go Back</span></button>
+            <button id = "backbtn" className="back-btn" role = "button" onClick= {showupdate} ><span>Go Back</span></button>
                  <Form  onSubmit={handleSubmit}>
                 {/*<Form.Group controlId="username">
                   <Form.Label>Username</Form.Label>
@@ -207,11 +207,10 @@ const ProfilePage = () => {
               </Button>
             </Form>
           </div>
-
         {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
         
-        <div className="friendlist-container"></div> 
-      </div>
+    </div>
+    <div className="friendlist-container"></div> 
     </div>
   );
 }
