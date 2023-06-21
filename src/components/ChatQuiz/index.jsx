@@ -1,5 +1,5 @@
 import { useState } from "react";
-import React from "react"
+import React from "react";
 import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import {
   MainContainer,
@@ -10,13 +10,13 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 function ChatQuiz() {
   const [messages, setMessages] = useState([
     {
       message:
-        "Hello, I'm ChatGPT! Please select the language you'd like to be quizzed on and the difficulty",
+        "Hello, I'm LinguaBot! Please select the language you'd like to be quizzed on and the difficulty",
       sentTime: "just now",
       sender: "ChatGPT",
     },
@@ -27,7 +27,7 @@ function ChatQuiz() {
 
   const systemMessage = {
     role: "system",
-    content: `Make a 3 question quiz that teaches individual words from${selectedLanguage} at the ${selectedDifficulty}.The quiz should be in English. Give at the end. 1 question at a time that the user responds to and then generate the next question`,
+    content: `Make a 3 question quiz that teaches individual words from${selectedLanguage} at the ${selectedDifficulty}.The quiz should be in English. Give a score at the end. 1 question at a time that the user responds to. Start as soon as the user says they're ready`,
   };
 
   const handleSend = async (message) => {
@@ -101,32 +101,31 @@ function ChatQuiz() {
         <br></br>
         <br></br>
         <br></br>
+        <div>
+          <select value={selectedLanguage} onChange={handleLanguageChange}>
+            <option value="">Select the language</option>
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Italian">Italian</option>
+          </select>
+        </div>
+        <div>
+          <select value={selectedDifficulty} onChange={handleDifficultyChange}>
+            <option value="">Select the difficulty</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
         <MainContainer>
-          <div>
-            <select value={selectedLanguage} onChange={handleLanguageChange}>
-              <option value="English">English</option>
-              <option value="French">French</option>
-              <option value="German">German</option>
-              <option value="Dutch">Dutch</option>
-              <option value="Italian">Italian</option>
-            </select>
-          </div>
-          <div>
-            <select
-              value={selectedDifficulty}
-              onChange={handleDifficultyChange}
-            >
-              <option value="Beginner">Beginner</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Advanced">Advanced</option>
-            </select>
-          </div>
           <ChatContainer>
             <MessageList
               scrollBehavior="smooth"
               typingIndicator={
                 isTyping ? (
-                  <TypingIndicator content="ChatGPT is typing" />
+                  <TypingIndicator content="LinguaBot is typing" />
                 ) : null
               }
             >
