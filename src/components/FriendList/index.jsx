@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
 import FriendCard from '../FriendCard'
+import './FriendList.css'
 
 const FriendList = () => {
   const [users, setUsers] = useState([])
@@ -28,9 +29,10 @@ function displayUsers() {
 }
 return (
   <main>
+    <div className="friend-holder">
       <h1>Connections</h1>
-      <div className="user-holder">{displayUsers()}</div>
-      
+      <div>{displayUsers()}</div>
+      </div>
   </main>
 )
 }
