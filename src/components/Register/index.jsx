@@ -7,7 +7,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [bio, setBio] = useState("");
   const navigate = useNavigate();
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -24,16 +23,13 @@ const Register = () => {
   const handleName = (e) => {
     setName(e.target.value);
   };
-  const handleBio = (e) => {
-    setBio(e.target.value);
-  };
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
 
   const gatherDetails = async (e) => {
-    // e.preventDefault(); 
+    e.preventDefault(); 
    
     const bio = "your bio"
     try {
@@ -101,15 +97,6 @@ const Register = () => {
             placeholder="Enter Email"
             onChange={handleEmail}
             value={email}
-            className="inputField"
-            required
-          />
-          <input
-            type="text"
-            aria-label="create a bio"
-            placeholder="Create a bio"
-            onChange={handleBio}
-            value={bio}
             className="inputField"
             required
           />

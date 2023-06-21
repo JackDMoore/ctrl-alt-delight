@@ -103,9 +103,6 @@ const ProfilePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (password !== confirmPassword) {
-    //   toast.error("Passwords do not match");
-    // } else {
       try {
         await fetch(`https://linguaplaya-be.onrender.com/users/${User}`, {
           method: 'PATCH',
@@ -121,12 +118,15 @@ const ProfilePage = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            setUser(data.users);
-            localStorage.username = data.users[0].username;
+            // setUser(data.users[0].username)
+            setUser(data.users.name)
+            setUser(data.users.email)
+            setUser(data.users.profile_bio);
+            // localStorage.username = data.users[0].username;
+            window.location.reload()
             showupdate();
-            if (response == 200){
-              location.reload();
-            }
+              
+            
           });
         toast.success("Profile updated successfully");
       } catch (error) {
@@ -134,7 +134,9 @@ const ProfilePage = () => {
       }
     //}
   };
-
+  if (currentUser ===undefined){
+    return null
+  }
   const handleChatClick = () => {
     navigate('/chat');
   };
@@ -166,16 +168,16 @@ const ProfilePage = () => {
         
           <div id="updateform">
             <button id = "backbtn" onClick= {showupdate}>Go back</button>
-                <Form  onSubmit={handleSubmit}>
-                <Form.Group controlId="name">
+                 <Form  onSubmit={handleSubmit}>
+                {/*<Form.Group controlId="username">
                   <Form.Label>Username</Form.Label>
                   <Form.Control
                     type="text"
                     value={username}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => setUsername(e.target.value)}
                     className="inputField"
-                  />
-                  </Form.Group>
+                  /> 
+                  </Form.Group>*/}
                   <Form.Group controlId="name">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
@@ -194,15 +196,6 @@ const ProfilePage = () => {
                     className="inputField"
                   />
                 </Form.Group>
-              <Form.Group controlId="email">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="inputField"
-                />
-              </Form.Group>
               <Form.Group controlId="bio">
                 <Form.Label>Profile Bio</Form.Label>
                 <Form.Control
