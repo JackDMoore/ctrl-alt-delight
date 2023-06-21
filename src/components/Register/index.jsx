@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import './style.css'
 
@@ -64,52 +65,57 @@ const Register = () => {
       <div className="register-box">
         <h1 className="register-heading">Register Page</h1>
 
-        <form className="register-form">
-          <input
+        <Form className="register-form" onSubmit={gatherDetails}>
+          <Form.Group controlId="username">
+          {/* <Form.Label>Username</Form.Label> */}
+          <Form.Control
             type="text"
-            aria-label="username input"
             placeholder="Enter Username"
-            onChange={handleUsername}
             value={username}
+            onChange={handleUsername}
             className="inputField"
             required
           />
-          <input
-            type="password"
-            aria-label="password input"
-            placeholder="Enter Password"
-            onChange={handlePassword}
-            value={password}
-            className="inputField"
-            required
-          />
-          <input
+          </Form.Group> 
+          <Form.Group controlId="password">
+          {/* <Form.Label>password</Form.Label> */}
+          <Form.Control
             type="text"
-            aria-label="name input"
+            placeholder="Enter Password"
+            value={password}
+            onChange={handlePassword}
+            className="inputField"
+            required
+          />
+          </Form.Group> 
+          <Form.Group controlId="name">
+          {/* <Form.Label>Name</Form.Label> */}
+          <Form.Control
+            type="text"
             placeholder="Enter Name"
-            onChange={handleName}
             value={name}
+            onChange={handleName}
             className="inputField"
             required
           />
-          <input
+          </Form.Group> 
+          <Form.Group controlId="email">
+          {/* <Form.Label>email</Form.Label> */}
+          <Form.Control
             type="email"
-            aria-label="email input"
-            placeholder="Enter Email"
-            onChange={handleEmail}
+            placeholder="Enter a email"
             value={email}
+            onChange={handleEmail}
             className="inputField"
             required
           />
-          <button type = "button"  value = "Register" className="register-btn" onClick={gatherDetails}><span>
-            Register
-            </span></button>
-
-           
+          </Form.Group> 
+          <Button /*className="button-49"*/ role="button" type="submit" variant="primary"className="profile-btn mt-3"><span> Register</span>
+          </Button>
           <div>
             {errorMessage && <div className="error"> {errorMessage}</div>}
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   );

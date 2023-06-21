@@ -139,7 +139,7 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-container">
-      <h1 className="profile-heading">Your Profile</h1>
+      {/* <h1 className="profile-heading">Your Profile</h1> */}
       <div className="profile-box">
         <div id = "userinfo">
               {currentUser && (
@@ -211,8 +211,8 @@ const ProfilePage = () => {
           </div>
         {/* <button className= "deletebutton" onClick={deleteuseraccount}>Delete account?</button> */}
         
-        </div> 
-        <div className="friendlist-container">
+      </div> 
+      <div className="friendlist-container">
           <FriendList/>
       </div>
     </div>
