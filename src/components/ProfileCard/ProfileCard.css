@@ -2,14 +2,19 @@
     position: relative;
     border: 1px solid #ccc;
     border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    width: 150%;
+    width: 200%;
     background-color: #36404B;
+    box-sizing: border-box;
+    height: 300px;
+    justify-content: space-between;
 
+    display: grid;
   }
+  
   
   .profile-card-content {
     margin: 16px;
@@ -22,6 +27,7 @@
   .left-content {
     display: flex;
     flex-direction: column;
+    margin-bottom: 8px;
   }
   
   .left-content h3 {
