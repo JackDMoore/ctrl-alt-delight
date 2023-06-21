@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './style.css'
 import avadef from '../../assets/pfp/avadef.jpg'
-// import { useCurrentUser } from "../../context/AuthContext";
+
 
 const ProfilePage = () => {
   const [learn, setLearn] = useState("");
@@ -13,17 +13,12 @@ const ProfilePage = () => {
   const [name, setName] = useState("");
   const [email,setEmail] = useState("")
   const [username, setUsername] = useState("");
-
   const [password, setPassword] = useState("");
   const [profile_bio, setBio] = useState("");
-
   const [platform, setPlatform] = useState("");
-
   const [game,setGame] = useState("")
   const [user,setUser] = useState()
-  
   const navagate = useNavigate()
-
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
 
@@ -145,10 +140,6 @@ const ProfilePage = () => {
         toast.error(error?.data?.message || error.error);
       }
     //}
-  };
-
-  const handleChatClick = () => {
-    navigate('/chat');
   };
 
   return (

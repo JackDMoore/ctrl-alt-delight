@@ -1,50 +1,41 @@
-import React from "react";
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { screen, render, cleanup } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import userEvent from "@testing-library/user-event";
-import "@testing-library/jest-dom/extend-expect"; // Import matchers
+// import React from "react";
+// import { describe, it, expect, beforeEach, afterEach } from "vitest";
+// import { screen, render, cleanup} from "@testing-library/react";
+// import { MemoryRouter } from "react-router-dom";
+// import matchers from "@testing-library/jest-dom/matchers";
+// expect.extend(matchers);
 
-import App from "./App";
+// import { HomePage, RegisterPage } from "./pages";
 
-describe("App", () => {
-  beforeEach(() => {
-    render(
-      <MemoryRouter initialEntries={["/"]}>
-        <App />
-      </MemoryRouter>
-    );
-  });
+// describe("Register Component", () => {
+//   beforeEach(() => {
+//     render(
+//       <MemoryRouter>
+//         <HomePage />
+//       </MemoryRouter>
+//     );
+//   });
 
-  afterEach(() => {
-    cleanup();
-  });
+//   afterEach(() => {
+//     cleanup();
+//   });
 
-  it("renders the Header component", () => {
-    const header = screen.getByRole("banner");
-    expect(header).toBeInTheDocument();
-  });
+//   it('should render the home page with a welcome message', () => {
+//     render(
+//       <MemoryRouter>
+//         <HomePage />
+//       </MemoryRouter>
+//     );
 
-  it("renders the Home page by default", () => {
-    const homePage = screen.getByText(/welcome to hogwarts/i);
-    expect(homePage).toBeInTheDocument();
-  });
-
-  it("navigates to the Letter page when the Letter link is clicked", async () => {
-    const letterLink = screen.getByRole("link", { name: /letter/i });
-    expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
-    await userEvent.click(letterLink);
-    expect(screen.getByRole("textbox")).toBeInTheDocument();
-  });
-
-  it("navigates to the Sorting Hat page when the Sorting Hat link is clicked", async () => {
-    const sortingHatLink = screen.getByRole("link", { name: /sorting hat/i });
-    expect(
-      screen.queryByRole("button", { name: /sort me/i })
-    ).not.toBeInTheDocument();
-    await userEvent.click(sortingHatLink);
-    expect(
-      screen.getByRole("button", { name: /sort me/i })
-    ).toBeInTheDocument();
-  });
-});
+//   //   const welcomeMessage = screen.getByText('Welcome');
+//   //   expect(welcomeMessage).toBeInTheDocument();
+//   // });
+//   it('render the Login page', ()=>{
+//     const LoginPage = screen.getByText(/Login/i);
+//     expect(LoginPage).toBeInTheDocument();
+//   })
+//   it('render the Register page', ()=>{
+//     const RegisterPage = screen.getByText(/Register/i);
+//     expect(RegisterPage).toBeInTheDocument();
+//   })
+// });

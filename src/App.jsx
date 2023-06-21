@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
+import { Routes, Route} from "react-router-dom";
 import * as Pages from "./pages";
 import { PageWrapper } from "./components";
 import socketIO from "socket.io-client";
@@ -8,8 +8,6 @@ import './App.css'
 const socket = socketIO.connect('http://localhost:4000')
 
 const App = () => {
-  const [user, setUser] = useState(undefined)
-  const username = localStorage.getItem('username')
   return (
     <>
       <Routes>
@@ -21,7 +19,6 @@ const App = () => {
           <Route path="/profile" element={<Pages.ProfilePage />} />
           <Route path="/connections" element={<Pages.ConnectionsPage />} />
           <Route path="/chat" element={<Pages.ChatPage socket={socket} />} />
-          <Route path="/DM" element={<Pages.DirectMessage/>} />
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
       </Routes>
