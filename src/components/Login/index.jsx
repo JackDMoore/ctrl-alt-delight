@@ -6,7 +6,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [errorMessage,setErrorMessage] = useState('')
+  // const [errorMessage,setErrorMessage] = useState('')
 
   const inputRef = useRef()
 
@@ -35,7 +35,7 @@ const Login = () => {
         localStorage.setItem("token", response.data.access_token);
         localStorage.setItem('username', response.data.username)
         localStorage.setItem("username", username)
-        socket.emit("newUser", {username, socketID: socket.id})
+        // socket.emit("newUser", {username, socketID: socket.id})
         navigate("/");
         // const value  = localStorage.getItem('username')
         // console.log(value)
@@ -47,7 +47,7 @@ const Login = () => {
 
       }
     } catch (error) { 
-      setErrorMessage(error)
+      console.log(error)
       // alert(error.response.data.error);
     }
   }
@@ -85,7 +85,7 @@ const Login = () => {
           >
             Submit
           </button>
-          {errorMessage && <div className="error"> {errorMessage}</div>}
+          {/* {errorMessage && <div className="error"> {errorMessage}</div>} */}
           <p>
             Not registered?{" "}
             <a href="/register" style={{ color: "#FF8E3C" }}>
