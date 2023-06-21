@@ -5,7 +5,7 @@ import { PageWrapper } from "./components";
 import socketIO from "socket.io-client";
 import './App.css'
 
-const socket = socketIO.connect('http://localhost:4000')
+const socket = socketIO.connect('https://chat-socket-api-lk2p.onrender.com/')
 
 const App = () => {
   const [user, setUser] = useState(undefined)
