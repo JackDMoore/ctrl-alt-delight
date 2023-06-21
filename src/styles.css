@@ -45,7 +45,6 @@ body {
   right: 0;
   width: 97.5%;
   z-index: 100; /* This put the navbar on top of everything else */
-  margin-bottom: 10px;
 }
 
 
