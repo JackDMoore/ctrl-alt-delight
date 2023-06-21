@@ -10,11 +10,7 @@ import {
 import ChatIcon from "../ChatIcon";
 import "../../styles.css";
 
-const API_KEY = "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";
-const systemMessage = {
-  role: "system",
-  content: "Translate my messages to French, provide the English too.",
-};
+const API_KEY = "";
 
 function Chatbot({ onClose }) {
   const [messages, setMessages] = useState([
@@ -28,6 +24,12 @@ function Chatbot({ onClose }) {
 
   const [isTyping, setIsTyping] = useState(false);
   const [chatVisible, setChatVisible] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("");
+
+  const systemMessage = {
+    role: "system",
+    content: `Translate the user input to ${selectedLanguage}. Also show the English translation in brackets after`,
+  };
 
   const handleSend = async (message) => {
     const newMessage = {
@@ -92,6 +94,10 @@ function Chatbot({ onClose }) {
     setChatVisible(false);
   };
 
+  const handleLanguageChange = (event) => {
+    setSelectedLanguage(event.target.value);
+  };
+
   useEffect(() => {
     // Close the chatbot when the component is unmounted
     return () => {
@@ -112,6 +118,16 @@ function Chatbot({ onClose }) {
           }}
         >
           <MainContainer>
+            <label>
+              Select language
+              <select value={selectedLanguage} onChange={handleLanguageChange}>
+                <option value="English">English</option>
+                <option value="French">French</option>
+                <option value="German">German</option>
+                <option value="Dutch">Dutch</option>
+                <option value="Italian">Italian</option>
+              </select>
+            </label>
             <ChatContainer>
               <MessageList
                 typingIndicator={

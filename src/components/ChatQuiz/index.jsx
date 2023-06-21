@@ -10,7 +10,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-const API_KEY = "";
+const API_KEY = "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";
 
 function ChatQuiz() {
   const [messages, setMessages] = useState([
