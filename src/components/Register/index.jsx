@@ -7,6 +7,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("");
   const navigate = useNavigate();
 
   const [errorMessage, setErrorMessage] = useState('');
@@ -23,6 +24,9 @@ const Register = () => {
   const handleName = (e) => {
     setName(e.target.value);
   };
+  const handleBio = (e) => {
+    setBio(e.target.value);
+  };
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -31,14 +35,14 @@ const Register = () => {
   const gatherDetails = async (e) => {
     // e.preventDefault(); 
    
-      
+    const bio = "your bio"
     try {
       const options = {
         username: username,
         password: password,
         name: name,
         email: email,
-        profile_bio: "your bio"
+        profile_bio: bio
       };
       const response = await axios.post(
         "https://linguaplaya-be.onrender.com/signup",
@@ -97,6 +101,15 @@ const Register = () => {
             placeholder="Enter Email"
             onChange={handleEmail}
             value={email}
+            className="inputField"
+            required
+          />
+          <input
+            type="text"
+            aria-label="create a bio"
+            placeholder="Create a bio"
+            onChange={handleBio}
+            value={bio}
             className="inputField"
             required
           />
