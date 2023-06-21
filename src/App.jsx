@@ -5,7 +5,7 @@ import { PageWrapper } from "./components";
 import socketIO from "socket.io-client";
 import './App.css'
 
-const socket = socketIO.connect('http://localhost:4000')
+const socket = socketIO.connect('https://chat-socket-api-lk2p.onrender.com/')
 
 const App = () => {
   return (
@@ -19,6 +19,7 @@ const App = () => {
           <Route path="/profile" element={<Pages.ProfilePage />} />
           <Route path="/connections" element={<Pages.ConnectionsPage />} />
           <Route path="/chat" element={<Pages.ChatPage socket={socket} />} />
+          <Route path="/chatquiz" element={<Pages.ChatQuizPage/>} />
           <Route path="*" element={<Pages.NotFoundPage />} />
         </Route>
       </Routes>
