@@ -18,9 +18,11 @@
 
 #editbtn{
     display: block;
+    margin-left: 15px;
+    
 }
 .edit-btn{
-  padding: 17px 3px 17px 3px;
+  padding: 18px 3px 18px 3px;
 }
 #backbtn{
     display: none;
@@ -29,7 +31,7 @@
 }
 .back-btn{
   
-  padding: 17px 5px 17px 5px;
+  padding: 18px 3px 18px 3px;
 }
 
 .deets{
@@ -50,8 +52,10 @@
   /* min-width: 400px; */
   /* position: grid; */
   /* min-height: 200px; */
-  margin: 0 10px 0 0;
-  margin-left: 10px;
+  display: flex;
+  flex-direction: column; 
+  margin: 20px 100px 10px 0;
+  margin-left: 0px;
   padding: 20px;
   background-color: #313131;
   /* border: 1px solid #cccccc; */
@@ -72,9 +76,10 @@
 
 .profile-heading {
   text-align: center;
+  /* display: flex; */
   margin-bottom: 20px;
   color: #d2d2d2;
-  
+  /* flex-direction: row; */
   text-shadow: 4px 4px 4px #2f2f2f;
 }
 
@@ -89,13 +94,23 @@
 
 .profile-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  position: relative;
+  /* flex-direction: row; */
+  margin: 0px 1000px 0px 0px;
   align-items: flex-start;
   height : 80vh;
+  /* margin: inherit; */
+  /* margin: initial; */
+  /* margin: unset; */
+  
 }
 
-.profile-box {
+/* .profile-box {
   margin-right: 10px;
   width: 100%;
-}
+} */
+  .friendlist-container {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column; 
+  }

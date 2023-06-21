@@ -1,5 +1,6 @@
 import React from 'react'
 import {useNavigate} from "react-router-dom"
+import './style.css'
 
 const ChatBody = ({messages, typingStatus, lastMessageRef}) => { 
   const navigate = useNavigate()
