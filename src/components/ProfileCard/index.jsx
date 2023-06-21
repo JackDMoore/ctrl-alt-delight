@@ -2,16 +2,34 @@ import React from "react";
 import ConnectionButton from "../ConnectionButton";
 import MessageButton from "../MessageButton";
 import "./ProfileCard.css";
+import { useNavigate } from "react-router-dom"
+
+
 
 const ProfileCard = ({ user, username, profile_bio, rating, onConnect, platform, language_known, language_learn, game_name }) => {
-  const handleConnectClick = () => {
-    // call the onConnect prop
-    onConnect(user.id);
-  };
+  const handleConnectClick = async (e) => {
+    try {
+      await axios.post(
+        `https://linguaplaya-be.onrender.com/users/games/${localStorage.getItem("username")}`,
+        {
+          connect_username: username,
+        },
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${Token}`,
+        //   },
+        // }
+        alert("added :)")
+      );
+    } catch (error) {
 
+    }
+  };
+  
+  const navigate = useNavigate()
   const handleMessageClick = () => {
     // call the onMessage prop
-    onMessage(user.id);
+    navigate('/chat');
   };
 
   return (
