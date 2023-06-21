@@ -1,24 +1,11 @@
 .profile-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-    width: 200%;
-    background-color: #36404B;
-    box-sizing: border-box;
-    height: 300px;
 
-  }
-  
-  
-  .profile-card-content {
-    margin: 16px;
-  }
-  
-  .profile-header {
-    margin-bottom: 8px;
+
+
+
+
+
+    height: 600rem;
   }
   
   .left-content {
@@ -33,26 +20,57 @@
   
   .card-body {
     display: flex;
-    margin-bottom: 8px;
-    margin: 16px;
-  }
-  
-  .right-content {
-    position: absolute;
-    top: 16px;
-    right: 200px;
   }
 
-  .right-content h4 {
-    margin-bottom: 8px;
+  .card-header {
+    display: grid;
+    position: absolute;
+    left: 60%;
+    top: 5rem;
+    font-size:140%
   }
   
+  
   .card-footer {
+    position:absolute;
     display: flex;
-    justify-content: flex-end;
-    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+    padding-top: 3rem;
+    right:0rem;
+    bottom:2rem;
+    margin: 1rem;
   }
   
   .rating {
     font-weight: bold;
+  }
+
+  .learning-container {
+    display: grid;
+    position: absolute;
+    left: 15.5rem;
+    top: 7.5rem
+  }
+
+  .speaking-container {
+    display: grid;
+    position: absolute;
+    left: 15.5rem;
+    top: 2cqi
+  }
+
+  .platform-container {
+    display: grid;
+    position: absolute;
+    left: 3.5rem;
+    top: 2rem
+  }
+
+  .game-container {
+    display: grid;
+    position: absolute;
+    left: 3.5rem;
+    top: 7.5rem
   }
