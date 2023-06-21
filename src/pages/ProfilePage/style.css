@@ -14,9 +14,8 @@
 #userinfo{
     display: block;
     text-align: left;
-
-   
 }
+
 #editbtn{
     display: block;
 }
@@ -27,37 +26,12 @@
     display: none;
     /* padding: 0; */
     /* padding: 15px 5px 15px 5px; */
-  
-  
 }
 .back-btn{
   
   padding: 17px 5px 17px 5px;
 }
 
-/* .avatar {
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  justify-content: left;
-} */
-
-
-/* 
-.profile-container{
-    display: inline-Block;
-} */
-
-/* ProfilePage */
-/* .profile-container {
-  /* display: flex; */
- /* margin-left: 10pc;*/
-  /* justify-content: center;
-  align-items: center; */
-  /* height: 100vh; */
-  /* background-color: white; */
-/*} */
 .deets{
   display: flex;
   flex-direction: column;
@@ -109,19 +83,19 @@
   padding: 10px;
 }
 
-/* .profile-btn {
-  background-color: #9f7ff2;
-  color: white;
-  border: none;
-  /* padding: 10px 20px; 
-  cursor: pointer;
-}*/
-
-/*.profile-btn:hover {
-  background-color: #9d53c3;
-  color: white;
-} */
-
 .maintitle{
   margin:0
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-items: flex-start;
+  height : 80vh;
+}
+
+.profile-box {
+  margin-right: 10px;
+  width: 100%;
 }

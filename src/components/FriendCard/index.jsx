@@ -1,6 +1,6 @@
 import React from "react";
 import MessageButton from "../MessageButton";
-import "./ProfileCard.css";
+import "./FriendCard.css";
 import { useNavigate } from "react-router-dom"
 
 const FriendCard = ({ username }) => {

@@ -9,31 +9,26 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
-<<<<<<< HEAD
-import './style.css'
-const API_KEY = "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";
-=======
 
 const API_KEY = "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";
->>>>>>> 4af55fcfd1a3410a6c6f59a57147bf4e4575dfb1
 
-function ChatQuiz() {
+function ChatLearningPlan() {
   const [messages, setMessages] = useState([
     {
       message:
-        "Hello, I'm LinguaBot! Please select the language you'd like to be quizzed on and the difficulty",
+        "Hello, I'm LinguaBot! Please select the language you'd like for your learning plan as well as your skill level and for how many days. Ready?",
       sentTime: "just now",
       sender: "ChatGPT",
     },
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
-  const [selectedDifficulty, setSelectedDifficulty] = useState("");
-  const [selectedNumQuestions, setSelectedNumQuestions] = useState("")
+  const [selectedSkillLevel, setSelectedSkillLevel] = useState("");
+  const [selectedNumDay, setSelectedNumDay] = useState("");
 
   const systemMessage = {
     role: "system",
-    content: `Make a ${selectedNumQuestions} question quiz that teaches individual words from${selectedLanguage} at the ${selectedDifficulty}.The quiz should be in English. Give a score at the end. 1 question at a time that the user responds to. Start as soon as the user says they're ready`,
+    content: `Make a learning plan for the user learning the language ${selectedLanguage}. Their skill level is ${selectedSkillLevel} day and the plan should be for ${selectedNumDay} days. Don't ask them for additional information, use the info in your system. Create the plan as soon as the user says they're ready.`,
   };
 
   const handleSend = async (message) => {
@@ -97,12 +92,12 @@ function ChatQuiz() {
     setSelectedLanguage(event.target.value);
   };
 
-  const handleDifficultyChange = (event) => {
-    setSelectedDifficulty(event.target.value);
+  const handleSkillChange = (event) => {
+    setSelectedSkillLevel(event.target.value);
   };
 
-  const handleNumQuestionsChange = (event) => {
-    setSelectedNumQuestions(event.target.value);
+  const handleNumDayChange = (event) => {
+    setSelectedNumDay(event.target.value);
   };
 
   return (
@@ -122,19 +117,19 @@ function ChatQuiz() {
           </select>
         </div>
         <div>
-          <select value={selectedDifficulty} onChange={handleDifficultyChange}>
-            <option value="">Select the difficulty</option>
+          <select value={selectedSkillLevel} onChange={handleSkillChange}>
+            <option value="">Select your skill level</option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advanced">Advanced</option>
           </select>
         </div>
         <div>
-          <select value={selectedNumQuestions} onChange={handleNumQuestionsChange}>
-            <option value="">Select number of questions</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
+          <select value={selectedNumDay} onChange={handleNumDayChange}>
+            <option value="">Select number of days</option>
             <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
           </select>
         </div>
         <MainContainer>
@@ -160,4 +155,4 @@ function ChatQuiz() {
   );
 }
 
-export default ChatQuiz;
+export default ChatLearningPlan;

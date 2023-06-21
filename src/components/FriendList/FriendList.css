@@ -1,0 +1,10 @@
+  .friend-holder {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .friendlist-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
