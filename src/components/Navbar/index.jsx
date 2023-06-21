@@ -34,14 +34,17 @@ const Navbar = () => {
           (
             <div>
 
+              <Link to="/profile">Profile</Link>
+              <Link to='/chat'>Chat</Link>
+              <Link onClick={logoutbtn} to="/" >Logout</Link>
+              <Link to="/connections">Connections</Link>
+              <Link to="/chatquiz">LinguaBot Quiz</Link>
+              <Link to="/chatlearningplan">LinguaBot Learning Plan</Link>
               <Link to="/profile">  Profile  </Link>
               <Link onClick={logoutbtn} to="/" >  Logout  </Link>
-              <Link to="/connections">  Connections  </Link>
-              <Link to="/chatquiz">  LinguaBot Quiz  </Link>
             </div>
           )
-        }
-        
+        }        
       </div>
     </nav>
   );
