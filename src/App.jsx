@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
+import { Routes, Route} from "react-router-dom";
 import * as Pages from "./pages";
 import { PageWrapper } from "./components";
 import socketIO from "socket.io-client";
@@ -8,8 +8,6 @@ import './App.css'
 const socket = socketIO.connect('https://chat-socket-api-lk2p.onrender.com/')
 
 const App = () => {
-  const [user, setUser] = useState(undefined)
-  const username = localStorage.getItem('username')
   return (
     <>
       <Routes>

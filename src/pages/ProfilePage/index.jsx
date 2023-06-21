@@ -14,17 +14,12 @@ const ProfilePage = () => {
   const [name, setName] = useState("");
   const [email,setEmail] = useState("")
   const [username, setUsername] = useState("");
-
   const [password, setPassword] = useState("");
   const [profile_bio, setBio] = useState("");
-
   const [platform, setPlatform] = useState("");
-
   const [game,setGame] = useState("")
   const [user,setUser] = useState()
-  
   const navagate = useNavigate()
-
   const User = localStorage.getItem("username")
   const Token= localStorage.getItem("token")
 
@@ -130,9 +125,7 @@ const ProfilePage = () => {
       }
     //}
   };
-  if (currentUser ===undefined){
-    return null
-  }
+
   const handleChatClick = () => {
     navigate('/chat');
   };
