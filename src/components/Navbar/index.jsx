@@ -22,7 +22,7 @@ const Navbar = () => {
       </Link>
       <div className="navbar-links">
        
-        {(!token)  &&
+        {(!user)  &&
           (
             <div>
               <Link to="/login"> LogIn </Link>
@@ -30,12 +30,11 @@ const Navbar = () => {
             </div>
           )
         }
-        {(token) &&
+        {(user) &&
           (
             <div>
 
               <Link to="/profile">Profile</Link>
-              <Link to='/chat'>Chat</Link>
               <Link onClick={logoutbtn} to="/" >Logout</Link>
               <Link to="/connections">Connections</Link>
               <Link to="/chatquiz">LinguaBot Quiz</Link>
