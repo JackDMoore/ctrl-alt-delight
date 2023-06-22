@@ -31,7 +31,7 @@ const PageWrapper = () => {
               href="https://codepen.io/P1N2O/full/pyBNzX"
               className="btn btn-outline-light"
             >
-              FULL SCREEN <i className="fas fa-expand ms-2"></i>
+              <i className="fas fa-expand ms-2"></i>
             </a>
           </div>
           <a

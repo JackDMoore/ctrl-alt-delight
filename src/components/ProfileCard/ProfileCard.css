@@ -1,49 +1,35 @@
 .profile-card {
-flex:grid;
-position:relative;
-padding:20rem
-}
-
-.card-header {
-  flex:grid;
-  position:relative;
-  font-size: 160%;
-  right:0
-}
-
-.card-footer {
-  flex:grid;
-  position:absolute;
-  top:0;
-  right:0;
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center
+  width: 150%;
+  background-color: #36404b;
 }
 
-
-
-.learning-container {
-  flex:grid;
-  position:absolute;
-  left:30rem
-
+.profile-card-content {
+  margin: 16px;
 }
 
 .speaking-container {
-  flex:grid;
-  position:absolute;
-  left: 22rem
+  flex: grid;
+  position: absolute;
+  left: 22rem;
 }
 
 .platform-container {
-  flex:grid;
-  position:absolute;
-  left:1rem
+  display: grid;
+  position: absolute;
+  left: 3.5rem;
+  top: 2rem;
 }
 
 .game-container {
-  flex:grid;
-  position:absolute;
-  left:8rem
+  display: grid;
+  position: absolute;
+  left: 3.5rem;
+  top: 7.5rem;
 }
