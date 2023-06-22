@@ -1,12 +1,7 @@
 .profile-card {
 flex:grid;
-position:relative
-
-}
-
-.profile-card {
-  flex:grid;
-  position:relative
+position:relative;
+padding:20rem
 }
 
 .card-header {
@@ -19,6 +14,7 @@ position:relative
 .card-footer {
   flex:grid;
   position:absolute;
+  top:0;
   right:0;
   flex-direction: column;
   justify-content: center;
