@@ -10,7 +10,7 @@ import {
 import ChatIcon from "../ChatIcon";
 import "../../styles.css";
 
-const API_KEY = "";
+const API_KEY = "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";
 
 function Chatbot({ onClose }) {
   const [messages, setMessages] = useState([
