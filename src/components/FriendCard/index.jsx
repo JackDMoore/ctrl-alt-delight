@@ -16,7 +16,7 @@ const FriendCard = ({ username }) => {
       <div className="profile-header">
         <div className="profile-card-content">
           <div className="left-content">
-            <h3>{username}<div className="card-footer"><MessageButton onClick={handleMessageClick} /></div></h3>
+            <h3>{username}<div className="friendcard-footer"><MessageButton onClick={handleMessageClick} /></div></h3>
           </div>
         </div>
         

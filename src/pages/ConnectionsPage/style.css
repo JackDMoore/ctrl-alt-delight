@@ -50,8 +50,9 @@
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
-    height: 150vh;
-    width: 35rem;
+    height: 140vh;
+    width: 30rem;
+    padding:1rem
   }
   
   .user-holder h1 {
