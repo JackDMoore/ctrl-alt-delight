@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import FriendCard from "../FriendCard";
-import "./FriendList.css";
+import React, {useEffect, useState} from 'react'
+
+import FriendCard from '../FriendCard'
+import './FriendList.css'
 
 const FriendList = () => {
   const [users, setUsers] = useState([]);
@@ -19,21 +20,25 @@ const FriendList = () => {
     }
 
     loadUsers();
-  }, []);
-
-  function displayUsers() {
-    return users.map((user, id) => (
-      <FriendCard key={id} username={user.child_user} />
-    ));
-  }
-  return (
-    <main>
-      <div className="friend-holder">
-        <h1>Friend list</h1>
-        <div>{displayUsers()}</div>
+}, []);
+ 
+function displayUsers() {
+  return users
+      .map((user, id) => (
+          <FriendCard
+          key={id}
+          username={user.child_user}
+          />
+      ))
+}
+return (
+  <main>
+    <div className="friend-holder">
+      <h1>Friend list</h1>
+      <div>{displayUsers()}</div>
       </div>
-    </main>
-  );
-};
+  </main>
+)
+}
 // }
-export default FriendList;
+export default FriendList

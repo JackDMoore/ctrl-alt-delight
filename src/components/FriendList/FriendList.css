@@ -5,6 +5,10 @@
     max-height: 50px;
   }
   
-  .friendlist-container {
+  .friendlist-container h1{
     display: flex;
+    width: 400px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 15px;
   }
