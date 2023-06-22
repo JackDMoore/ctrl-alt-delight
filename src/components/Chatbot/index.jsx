@@ -106,7 +106,7 @@ function Chatbot({ onClose }) {
   }, []);
 
   return (
-    <div className="App">
+    <div className="chatbot-container">
       {chatVisible && (
         <div
           className="chat-container"

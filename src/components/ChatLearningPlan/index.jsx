@@ -102,39 +102,58 @@ function ChatLearningPlan() {
   };
 
   return (
-      <div className="App">
-        <div style={{ position: "relative", height: "800px", width: "700px" }}>
+    <div className="App">
+      <div style={{ position: "relative", height: "800px", width: "700px" }}>
         <div className="dropdown-container">
-            <div className="dropdown-containers">
-              <select data-testid="language-select" value={selectedLanguage} onChange={handleLanguageChange} className="select-container" style={{ height: '40px', fontSize: '16px'}}>
-                <option value="">Language</option>
-                <option value="English">English</option>
-                <option value="French">French</option>
-                <option value="German">German</option>
-                <option value="Dutch">Dutch</option>
-                <option value="Italian">Italian</option>
-              </select>
-            </div>
-            <div className="dropdown-containers">
-              <select data-testid="skill" value={selectedSkillLevel} onChange={handleSkillChange} className="select-container" style={{ height: '40px', fontSize: '16px'}}>
-                <option value="">Skill level</option>
-                <option value="Beginner">Beginner</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Advanced">Advanced</option>
-              </select>
-            </div>
-            <div className="dropdown-containers">
-              <select data-testid="days" value={selectedNumDay} onChange={handleNumDayChange} className="select-container" style={{ height: '40px', fontSize: '16px'}}>
-                <option value="">Number of days</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-              </select>
-            </div>
+          <div className="dropdown-containers">
+            <select
+              data-testid="language-select"
+              value={selectedLanguage}
+              onChange={handleLanguageChange}
+              className="select-container"
+              style={{ height: "40px", fontSize: "16px" }}
+            >
+              <option value="">Language</option>
+              <option value="English">English</option>
+              <option value="French">French</option>
+              <option value="German">German</option>
+              <option value="Dutch">Dutch</option>
+              <option value="Italian">Italian</option>
+            </select>
           </div>
+          <div className="dropdown-containers">
+            <select
+              data-testid="skill"
+              value={selectedSkillLevel}
+              onChange={handleSkillChange}
+              className="select-container"
+              style={{ height: "40px", fontSize: "16px" }}
+            >
+              <option value="">Skill level</option>
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+          <div className="dropdown-containers">
+            <select
+              data-testid="days"
+              value={selectedNumDay}
+              onChange={handleNumDayChange}
+              className="select-container"
+              style={{ height: "40px", fontSize: "16px" }}
+            >
+              <option value="">Number of days</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+          </div>
+        </div>
         <MainContainer className="my-main-container">
-          <ChatContainer className='my-chat-container'>
-            <MessageList className='my-message-list'
+          <ChatContainer className="my-chat-container">
+            <MessageList
+              className="my-message-list"
               scrollBehavior="smooth"
               typingIndicator={
                 isTyping ? (
@@ -144,7 +163,9 @@ function ChatLearningPlan() {
             >
               {messages.map((message, i) => {
                 console.log(message);
-                return <Message className='my-message' key={i} model={message} />;
+                return (
+                  <Message className="my-message" key={i} model={message} />
+                );
               })}
             </MessageList>
             <MessageInput placeholder="Type message here" onSend={handleSend} />
