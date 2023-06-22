@@ -36,7 +36,6 @@ const ChatPage = ({ socket }) => {
 
   return (
     <div className="chat">
-      {/* <component.ChatBar socket={socket}  /> */}
       <div className="chat__main">
         <component.ChatBody messages={messages} typingStatus={typingStatus} lastMessageRef={lastMessageRef}/>
         <component.ChatFooter socket={socket}  />
