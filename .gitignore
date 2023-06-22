@@ -27,3 +27,4 @@ dist-ssr
 .package-lock.json
 .coverage
 jest.config.js
+.env
