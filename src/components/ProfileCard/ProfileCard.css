@@ -3,6 +3,40 @@
   position: relative;
 }
 
+
+  .card-footer h3 {
+    font-size: 160%;
+    padding-right: 5rem;
+    left:0
+  }
+  
+  
+  
+  .learning-container {
+    flex:grid;
+    position:absolute;
+    left:27rem
+  
+  }
+  
+  .speaking-container {
+    flex:grid;
+    position:absolute;
+    left: 22rem
+  }
+  
+  .platform-container {
+    flex:grid;
+    position:absolute;
+    left:41rem
+  }
+  
+  .game-container {
+    flex:grid;
+    position:absolute;
+    left:48rem
+  }
+=======
 .profile-card {
   flex: grid;
   position: relative;
@@ -53,6 +87,7 @@
   position: absolute;
   left: 46rem;
 }
+
 
 .underline {
   text-decoration: underline;

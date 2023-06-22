@@ -20,7 +20,11 @@ const ConnectionsPage = () => {
 
   return (
     <div className="user-holder">
+      <div className="title-holder">
       <h1>Find a Connection</h1>
+      </div>
+      <br/>
+      <h3>Filter by:</h3>
       <UserList />
     </div>
   );

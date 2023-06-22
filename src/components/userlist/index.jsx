@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import LearnLanguageFilter from "../LearnLanguageFilter"
 import ConsoleFilter from '../ConsoleFilter';
 import ProfileCard from '../ProfileCard';
+import "./style.css";
 
 
 const UserList = () => {
@@ -61,6 +62,7 @@ const UserList = () => {
 
     return (
         <main>
+            <div className='filter-connection'>
             <LearnLanguageFilter
                 englishOnly={englishOnly}
                 frenchOnly={frenchOnly}
@@ -81,6 +83,7 @@ const UserList = () => {
                 setPlaystationOnly={setPlaystationOnly}
                 setXboxOnly={setXboxOnly}
             />
+            </div>
             <div className="user-holder">{displayUsers()}</div>
 
         </main>
