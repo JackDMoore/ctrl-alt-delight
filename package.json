@@ -15,7 +15,6 @@
     "@chatscope/chat-ui-kit-react": "^1.10.1",
     "@chatscope/chat-ui-kit-styles": "^1.4.0",
     "@reduxjs/toolkit": "^1.9.5",
-    "@rollup/plugin-commonjs": "^25.0.2",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
     "cors": "^2.8.5",
@@ -30,6 +29,7 @@
     "react-chat-engine-pretty": "^0.1.8",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
+    "react-jest": "^0.2.1",
     "react-query": "^3.39.3",
     "react-redux": "^8.1.0",
     "react-router-bootstrap": "^0.26.2",
@@ -41,6 +41,7 @@
     "socket.io-client": "^4.6.2"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.37",

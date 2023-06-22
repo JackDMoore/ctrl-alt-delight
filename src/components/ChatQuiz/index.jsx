@@ -10,7 +10,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 
-import './style.css'
+import "./style.css";
 const API_KEY = "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";
 
 function ChatQuiz() {
@@ -25,7 +25,7 @@ function ChatQuiz() {
   const [isTyping, setIsTyping] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
-  const [selectedNumQuestions, setSelectedNumQuestions] = useState("")
+  const [selectedNumQuestions, setSelectedNumQuestions] = useState("");
 
   const systemMessage = {
     role: "system",
@@ -126,7 +126,10 @@ function ChatQuiz() {
           </select>
         </div>
         <div>
-          <select value={selectedNumQuestions} onChange={handleNumQuestionsChange}>
+          <select
+            value={selectedNumQuestions}
+            onChange={handleNumQuestionsChange}
+          >
             <option value="">Select number of questions</option>
             <option value="3">3</option>
             <option value="5">5</option>
@@ -134,6 +137,32 @@ function ChatQuiz() {
           </select>
         </div>
         <MainContainer>
+          <div>
+            <select
+              aria-label="Select Language"
+              className="consoleDropdown"
+              value={selectedLanguage}
+              onChange={handleLanguageChange}
+            >
+              <option value="English">English</option>
+              <option value="French">French</option>
+              <option value="German">German</option>
+              <option value="Dutch">Dutch</option>
+              <option value="Italian">Italian</option>
+            </select>
+          </div>
+          <div>
+            <select
+              aria-label="Select Difficulty"
+              className="consoleDropdown"
+              value={selectedDifficulty}
+              onChange={handleDifficultyChange}
+            >
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
           <ChatContainer>
             <MessageList
               scrollBehavior="smooth"

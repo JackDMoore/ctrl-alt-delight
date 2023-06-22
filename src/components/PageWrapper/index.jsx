@@ -3,6 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import ChatIcon from "../ChatIcon";
 import Chatbot from "../Chatbot";
 import Navbar from "../Navbar";
+import backgr from "../../assets/backgr.jpg";
 
 const styles = ({ isActive }) => ({
   textDecoration: isActive ? "underline" : "none",
@@ -30,7 +31,7 @@ const PageWrapper = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "url(./src/assets/worldlang.png)",
+          backgroundImage: `url(${backgr})`,
           backgroundSize: "cover",
           zIndex: -1,
         }}

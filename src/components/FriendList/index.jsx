@@ -9,7 +9,11 @@ const FriendList = () => {
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await fetch(`https://linguaplaya-be.onrender.com/users/get_connections/${localStorage.getItem("username")}`);
+      const response = await fetch(
+        `https://linguaplaya-be.onrender.com/users/get_connections/${localStorage.getItem(
+          "username"
+        )}`
+      );
       const userData = await response.json();
       setUsers(userData);
       setIsLoading(false);
@@ -32,7 +36,7 @@ return (
     <div className="friend-holder">
       <h1>Friend list</h1>
       <div>{displayUsers()}</div>
-    </div>
+      </div>
   </main>
 )
 }

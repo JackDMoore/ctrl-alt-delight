@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileCard from "../../components/ProfileCard";
 import { UserList } from "../../components";
-import './style.css'
+import "./style.css";
 
 const ConnectionsPage = () => {
   //Stae to store connected profiles
@@ -19,8 +19,8 @@ const ConnectionsPage = () => {
   };
 
   return (
-    <div className= "user-holder">
-      <h1>Find a Connection</h1> 
+    <div className="user-holder">
+      <h1>Find a Connection</h1>
       <UserList />
     </div>
   );
