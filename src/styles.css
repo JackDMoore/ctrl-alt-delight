@@ -584,7 +584,7 @@ button:hover span {
   align-items: center;
   border-radius: 1rem;
   width: 5.5rem;
-  height: 3.5rem;
+  height: 2.5rem;
   border: none;
   cursor: pointer;
   position: fixed;
@@ -592,6 +592,7 @@ button:hover span {
   right: 2%;
   z-index: 9999;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 16rem;
 }
 
 @media (max-width: 600px) {
