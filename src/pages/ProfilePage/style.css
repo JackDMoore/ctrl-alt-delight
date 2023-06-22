@@ -52,7 +52,7 @@
   /* position: grid; */
   min-height: 200px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin: 20px 60px 10px 0;
   margin-left: 0px;
   padding: 20px;
@@ -110,16 +110,16 @@
   margin-right: 10px;
   width: 100%;
 } */
-  .friendlist-container {
-    /* flex: 1; */
-    display: flex;
-    border-radius: 10px;
-    margin-top: 20px;    
-    width: 440px;
-    height: 500px;
-    background-color: rgb(38, 3, 44);
-    border: 1px;
-    padding-right: 300px;
-    border-style: solid;
-    border-color: rgb(119, 119, 119);
-  }
+.friendlist-container {
+  /* flex: 1; */
+  display: flex;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 440px;
+  height: 500px;
+  background-color: rgb(38, 3, 44);
+  border: 1px;
+  padding-right: 300px;
+  border-style: solid;
+  border-color: rgb(119, 119, 119);
+}
