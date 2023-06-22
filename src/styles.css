@@ -1,25 +1,28 @@
-.App {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 :root {
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -37,7 +40,7 @@ body {
   font-size: 1.2rem;
   background-color: #1f242d;
   background-size: cover;
-  min-height: 120vh;
+  min-height: 100vh;
   color: white;
   font-family: "Roboto", sans-serif;
 }
@@ -52,7 +55,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  width: 97.5%;
+  width: 100%;
   z-index: 100; /* This put the navbar on top of everything else, slay */
 }
 
@@ -65,9 +68,10 @@ body {
 }
 
 .navbar-logo {
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
+  display: flex;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 0.5rem;
 }
 
 .navbar-links {
@@ -84,14 +88,17 @@ body {
 
 .parallax-image {
   width: 100%;
-  height: 70vh;
+  height: 45vh;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .parallax-image-layer {
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   transform: translateZ(0);
@@ -102,7 +109,9 @@ body {
 .hero-container {
   position: relative;
   width: 100%;
-  margin-top: 125rem;
+  height: 10vh;
+  margin-top: 135rem;
+  padding: 1rem;
 }
 
 .hero-card {
@@ -1145,6 +1154,7 @@ label {
 /* WhatisLinguaPlay */
 .whatislinguaplay-container {
   display: flex;
+  margin-top: 40rem;
 }
 
 .whatislinguaplay-heading {
@@ -1168,6 +1178,7 @@ label {
   padding: 1.5rem;
   background-color: #ffffff;
   text-align: center;
+  margin-top: 1rem;
   margin-bottom: 2rem;
   border-radius: 1rem;
   background-color: #283044;
@@ -1176,11 +1187,11 @@ label {
 
 .whatislinguaplay-image-container {
   position: relative;
-  width: 100%;
-  max-width: 30rem;
+  width: 30rem;
+  height: 20rem;
   margin-bottom: 1.25rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
@@ -1216,6 +1227,11 @@ label {
   justify-content: center;
 }
 
+.whatislinguaplay-image-container:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
 .whatislinguaplay-image-text {
   color: #ffffff;
   font-size: 1rem;
@@ -1247,41 +1263,52 @@ label {
   }
 }
 
+.linguaplaya-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.linguaplaya-gif {
+  border-radius: 3rem;
+}
+
 .flag-container {
-  display: inline-block;
+  display: flex;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 1rem;
 }
 
 .flag-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
   object-fit: cover;
-  margin: 10px;
-}
-
-.modal-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
+  margin: 1rem;
 }
 
 .text-center {
+  display: relative;
+
   text-align: center;
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  color: #333333;
+  /* background-color: #283044;
+  border: 1px solid #9d53c3; */
+  color: white;
   padding: 15px;
   width: fit-content;
   max-width: 80vw;
-  margin: 0 auto;
 }
 
-.modal-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 15px;
+.justify-content-center {
+  display: flex;
+
+  justify-content: center;
+  padding: 1rem;
+  margin: 3rem;
 }
 
 .modal-content {
@@ -1337,8 +1364,9 @@ label {
   top: 100%;
   left: 0;
   z-index: 1;
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #283044;
+  border: 1px solid #9d53c3;
+  border-radius: 1rem;
   padding: 10px;
   max-height: 200px;
   overflow-y: auto;
@@ -1350,11 +1378,13 @@ label {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
-  color: black;
+  color: #ffffff;
 }
 
 .flag-container:hover .flag-dropdown {
   display: block;
+  justify-content: center;
+  width: 20vw;
 }
 
 .flag-container:hover {
@@ -1386,6 +1416,8 @@ label {
   justify-content: space-between;
 
   background-color: #1f242d;
+  border: 1px solid #9d53c3;
+
   /* background-repeat: no-repeat;
   background-position: center; */
   padding: 3rem;

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles.css";
-import gamerroom from "../../assets/gamerroom.jpg";
+import heroimg from "../../assets/heroimg.jpg";
 import Navbar from "../Navbar";
 
 const ParallaxImage = () => {
@@ -11,7 +11,7 @@ const ParallaxImage = () => {
       <div
         className="parallax-image-layer"
         style={{
-          backgroundImage: `url(${gamerroom})`,
+          backgroundImage: `url(${heroimg})`,
         }}
       ></div>
     </div>

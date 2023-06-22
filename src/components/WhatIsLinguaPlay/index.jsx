@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Modal } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "../../styles.css";
 import image1 from "../../assets/gamingpic2.jpeg";
 import image2 from "../../assets/gamingpic12.jpeg";
-import flag1 from "../../assets/french.png";
-import flag2 from "../../assets/germany.png";
-import flag3 from "../../assets/portugal.png";
+import flag1 from "../../assets/worldlang.png";
 
 const WhatIsLinguaPlay = () => {
   const [showModal, setShowModal] = useState(false);
@@ -64,10 +62,14 @@ const WhatIsLinguaPlay = () => {
           </Col>
         </Row>
         <Row className="justify-content-center mt-5">
-          <Col xs={12}>
-            <h2 className="text-center">I Want to Practice</h2>
-          </Col>
           <Col xs={12} className="text-center">
+            <div className="linguaplaya-container">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
+                alt="Linguaplaya"
+                className="linguaplaya-gif"
+              />
+            </div>
             <div className="flags-container">
               <div
                 className="flag-container"
@@ -78,179 +80,33 @@ const WhatIsLinguaPlay = () => {
                 {selectedFlag === "flag1" && (
                   <div className="flag-dropdown">
                     <p className="flag-dropdown-text">
-                      How to tell your language level Beginner Pick the Beginner
-                      level if you are making your first steps in the language.
-                      You might not speak a single word, or already know some
-                      basics, like how to introduce yourself or ask for
-                      directions. If you are familiar with the Common European
-                      Framework of Reference for Languages, this equals levels
-                      A1 and A2. Intermediate Pick the Intermediate level if you
-                      have basic confidence speaking the language. You can go
-                      shopping, make plans with others, talk about your travels
-                      and describe the plot of your favorite movie. If you are
-                      familiar with the Common European Framework of Reference
-                      for Languages, this equals level B1. Advanced Pick the
-                      Advanced level if you are very confident speaking the
-                      language. You can have spontaneous and fluent
-                      conversations with native speakers, understand the news
-                      and use the language effectively for work and studies. If
-                      you are familiar with the Common European Framework of
-                      Reference for Languages, this equals levels B2 and up.
-                    </p>
-                  </div>
-                )}
-              </div>
-              <div
-                className="flag-container"
-                onMouseEnter={() => setSelectedFlag("flag2")}
-                onMouseLeave={() => setSelectedFlag(null)}
-              >
-                <img src={flag2} alt="Flag 2" className="flag-image" />
-                {selectedFlag === "flag2" && (
-                  <div className="flag-dropdown">
-                    <p className="flag-dropdown-text">
-                      How to tell your language level Beginner Pick the Beginner
-                      level if you are making your first steps in the language.
-                      You might not speak a single word, or already know some
-                      basics, like how to introduce yourself or ask for
-                      directions. If you are familiar with the Common European
-                      Framework of Reference for Languages, this equals levels
-                      A1 and A2. Intermediate Pick the Intermediate level if you
-                      have basic confidence speaking the language. You can go
-                      shopping, make plans with others, talk about your travels
-                      and describe the plot of your favorite movie. If you are
-                      familiar with the Common European Framework of Reference
-                      for Languages, this equals level B1. Advanced Pick the
-                      Advanced level if you are very confident speaking the
-                      language. You can have spontaneous and fluent
-                      conversations with native speakers, understand the news
-                      and use the language effectively for work and studies. If
-                      you are familiar with the Common European Framework of
-                      Reference for Languages, this equals levels B2 and up.
-                    </p>
-                  </div>
-                )}
-              </div>
-              <div
-                className="flag-container"
-                onMouseEnter={() => setSelectedFlag("flag3")}
-                onMouseLeave={() => setSelectedFlag(null)}
-              >
-                <img src={flag3} alt="Flag 3" className="flag-image" />
-                {selectedFlag === "flag3" && (
-                  <div className="flag-dropdown">
-                    <p className="flag-dropdown-text">
-                      How to tell your language level Beginner Pick the Beginner
-                      level if you are making your first steps in the language.
-                      You might not speak a single word, or already know some
-                      basics, like how to introduce yourself or ask for
-                      directions. If you are familiar with the Common European
-                      Framework of Reference for Languages, this equals levels
-                      A1 and A2. Intermediate Pick the Intermediate level if you
-                      have basic confidence speaking the language. You can go
-                      shopping, make plans with others, talk about your travels
-                      and describe the plot of your favorite movie. If you are
-                      familiar with the Common European Framework of Reference
-                      for Languages, this equals level B1. Advanced Pick the
-                      Advanced level if you are very confident speaking the
-                      language. You can have spontaneous and fluent
-                      conversations with native speakers, understand the news
-                      and use the language effectively for work and studies. If
-                      you are familiar with the Common European Framework of
-                      Reference for Languages, this equals levels B2 and up.
-                    </p>
-                  </div>
-                )}
-              </div>
-              <div
-                className="flag-container"
-                onMouseEnter={() => setSelectedFlag("flag3")}
-                onMouseLeave={() => setSelectedFlag(null)}
-              >
-                <img src={flag3} alt="Flag 3" className="flag-image" />
-                {selectedFlag === "flag3" && (
-                  <div className="flag-dropdown">
-                    <p className="flag-dropdown-text">
-                      How to tell your language level Beginner Pick the Beginner
-                      level if you are making your first steps in the language.
-                      You might not speak a single word, or already know some
-                      basics, like how to introduce yourself or ask for
-                      directions. If you are familiar with the Common European
-                      Framework of Reference for Languages, this equals levels
-                      A1 and A2. Intermediate Pick the Intermediate level if you
-                      have basic confidence speaking the language. You can go
-                      shopping, make plans with others, talk about your travels
-                      and describe the plot of your favorite movie. If you are
-                      familiar with the Common European Framework of Reference
-                      for Languages, this equals level B1. Advanced Pick the
-                      Advanced level if you are very confident speaking the
-                      language. You can have spontaneous and fluent
-                      conversations with native speakers, understand the news
-                      and use the language effectively for work and studies. If
-                      you are familiar with the Common European Framework of
-                      Reference for Languages, this equals levels B2 and up.
-                    </p>
-                  </div>
-                )}
-              </div>
-              <div
-                className="flag-container"
-                onMouseEnter={() => setSelectedFlag("flag3")}
-                onMouseLeave={() => setSelectedFlag(null)}
-              >
-                <img src={flag3} alt="Flag 3" className="flag-image" />
-                {selectedFlag === "flag3" && (
-                  <div className="flag-dropdown">
-                    <p className="flag-dropdown-text">
-                      How to tell your language level Beginner Pick the Beginner
-                      level if you are making your first steps in the language.
-                      You might not speak a single word, or already know some
-                      basics, like how to introduce yourself or ask for
-                      directions. If you are familiar with the Common European
-                      Framework of Reference for Languages, this equals levels
-                      A1 and A2. Intermediate Pick the Intermediate level if you
-                      have basic confidence speaking the language. You can go
-                      shopping, make plans with others, talk about your travels
-                      and describe the plot of your favorite movie. If you are
-                      familiar with the Common European Framework of Reference
-                      for Languages, this equals level B1. Advanced Pick the
-                      Advanced level if you are very confident speaking the
-                      language. You can have spontaneous and fluent
-                      conversations with native speakers, understand the news
-                      and use the language effectively for work and studies. If
-                      you are familiar with the Common European Framework of
-                      Reference for Languages, this equals levels B2 and up.
-                    </p>
-                  </div>
-                )}
-              </div>
-              <div
-                className="flag-container"
-                onMouseEnter={() => setSelectedFlag("flag3")}
-                onMouseLeave={() => setSelectedFlag(null)}
-              >
-                <img src={flag3} alt="Flag 3" className="flag-image" />
-                {selectedFlag === "flag3" && (
-                  <div className="flag-dropdown">
-                    <p className="flag-dropdown-text">
-                      How to tell your language level Beginner Pick the Beginner
-                      level if you are making your first steps in the language.
-                      You might not speak a single word, or already know some
-                      basics, like how to introduce yourself or ask for
-                      directions. If you are familiar with the Common European
-                      Framework of Reference for Languages, this equals levels
-                      A1 and A2. Intermediate Pick the Intermediate level if you
-                      have basic confidence speaking the language. You can go
-                      shopping, make plans with others, talk about your travels
-                      and describe the plot of your favorite movie. If you are
-                      familiar with the Common European Framework of Reference
-                      for Languages, this equals level B1. Advanced Pick the
-                      Advanced level if you are very confident speaking the
-                      language. You can have spontaneous and fluent
-                      conversations with native speakers, understand the news
-                      and use the language effectively for work and studies. If
-                      you are familiar with the Common European Framework of
-                      Reference for Languages, this equals levels B2 and up.
+                      Language learning is a rewarding journey that can be
+                      pursued at various levels of proficiency. Beginner Level:
+                      At the beginner level, learners are introduced to the
+                      fundamentals of a language. They focus on building
+                      vocabulary, mastering basic grammar rules, and developing
+                      essential communication skills. Beginners often engage in
+                      activities such as simple conversations, reading basic
+                      texts, and practicing common phrases. Intermediate Level:
+                      As learners progress to the intermediate level, they
+                      expand their language skills further. They deepen their
+                      understanding of grammar and vocabulary, enhance their
+                      listening and speaking abilities, and begin to comprehend
+                      more complex texts. Intermediate learners can engage in
+                      discussions, express opinions, and understand the main
+                      ideas of moderately challenging content. Advanced Level:
+                      At the advanced level, learners have a high level of
+                      proficiency in the language. They have a wide vocabulary,
+                      strong grasp of grammar, and can understand and produce
+                      complex texts. Advanced learners can engage in nuanced
+                      conversations, express themselves fluently, and comprehend
+                      a variety of authentic materials, including literature,
+                      news, and academic texts. Regardless of the level,
+                      language learning requires dedication, practice, and
+                      exposure to authentic resources such as books, movies, and
+                      conversations with native speakers. It is a continuous
+                      process that opens doors to new cultures, opportunities,
+                      and connections with people from around the world
                     </p>
                   </div>
                 )}

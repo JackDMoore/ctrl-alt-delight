@@ -1,64 +1,63 @@
-#updateform{
-    display: none;
-    /* background-color: #e3dbf8; */
-    /* color: white;
+#updateform {
+  display: none;
+  /* background-color: #e3dbf8; */
+  /* color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer; */
-  }
+}
 /*   
   #updateform-btn:hover {
     background-color: #9d53c3;
     color: white;
   } */
-#userinfo{
-    display: block;
-    text-align: left;
+#userinfo {
+  display: block;
+  text-align: left;
 }
 
-#editbtn{
-    display: block;
-    margin-left: 15px;
-    
+#editbtn {
+  display: block;
+  margin-left: 45px;
 }
-.edit-btn{
+.edit-btn {
   padding: 18px 3px 18px 3px;
 }
-#backbtn{
-    display: none;
-    /* padding: 0; */
-    /* padding: 15px 5px 15px 5px; */
+#backbtn {
+  display: none;
+  /* padding: 0; */
+  /* padding: 15px 5px 15px 5px; */
 }
-.back-btn{
-  
+.back-btn {
   padding: 18px 3px 18px 3px;
 }
 
-.deets{
+.deets {
   display: flex;
   flex-direction: column;
 }
-.minititle{
+.minititle {
   display: flex;
   flex-direction: row;
 }
-.pfpname{
+.pfpname {
   display: flex;
   flex-direction: row;
   justify-content: left;
+  margin-bottom: 15px;
 }
 
 .profile-box {
-  /* min-width: 400px; */
+  min-width: 450px;
   /* position: grid; */
-  /* min-height: 200px; */
+  min-height: 200px;
   display: flex;
   flex-direction: column; 
-  margin: 20px 100px 10px 0;
+  margin: 20px 60px 10px 0;
   margin-left: 0px;
   padding: 20px;
-  background-color: #313131;
-  /* border: 1px solid #cccccc; */
+  background-color: #000000;
+  border: 1px solid #cccccc;
   border-radius: 5px;
   /* box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8); */
   background-image: linear-gradient(
@@ -67,11 +66,12 @@
     rgba(67, 9, 90, 0.442)
   );
 }
-#currentrating{
+#currentrating {
   margin: 0;
 }
-#currentlearn{
+#currentlearn {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .profile-heading {
@@ -88,21 +88,22 @@
   padding: 10px;
 }
 
-.maintitle{
-  margin:0
+.maintitle {
+  margin: 0;
+  font-weight: 200;
 }
 
 .profile-container {
   display: flex;
   position: relative;
   /* flex-direction: row; */
-  margin: 0px 1000px 0px 0px;
+  /* margin: 0px 800px 0px 0px; */
   align-items: flex-start;
-  height : 80vh;
+  height: 80vh;
+  margin-top: 20px;
   /* margin: inherit; */
   /* margin: initial; */
   /* margin: unset; */
-  
 }
 
 /* .profile-box {
@@ -112,5 +113,13 @@
   .friendlist-container {
     /* flex: 1; */
     display: flex;
-    flex-direction: column; 
+    border-radius: 10px;
+    margin-top: 20px;    
+    width: 440px;
+    height: 500px;
+    background-color: rgb(38, 3, 44);
+    border: 1px;
+    padding-right: 300px;
+    border-style: solid;
+    border-color: rgb(119, 119, 119);
   }

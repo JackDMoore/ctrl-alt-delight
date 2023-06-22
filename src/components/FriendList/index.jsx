@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+
 import FriendCard from '../FriendCard'
 import './FriendList.css'
 
@@ -8,15 +9,19 @@ const FriendList = () => {
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await fetch(`https://linguaplaya-be.onrender.com/users/get_connections/${localStorage.getItem("username")}`);
+      const response = await fetch(
+        `https://linguaplaya-be.onrender.com/users/get_connections/${localStorage.getItem(
+          "username"
+        )}`
+      );
       const userData = await response.json();
       setUsers(userData);
       setIsLoading(false);
     }
 
     loadUsers();
-  }, []);
-  
+}, []);
+ 
 function displayUsers() {
   return users
       .map((user, id) => (
