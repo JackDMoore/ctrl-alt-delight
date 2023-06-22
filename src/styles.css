@@ -4,7 +4,25 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -1257,7 +1275,7 @@ label {
 }
 
 .flag-container {
-  display: inline-block;
+  display: flex;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -1266,8 +1284,8 @@ label {
 }
 
 .flag-image {
-  width: 5rem;
-  height: 5rem;
+  width: 15rem;
+  height: 15rem;
   object-fit: cover;
   margin: 1rem;
 }
@@ -1277,8 +1295,8 @@ label {
 
   text-align: center;
   border-radius: 1rem;
-  background-color: #283044;
-  border: 1px solid #9d53c3;
+  /* background-color: #283044;
+  border: 1px solid #9d53c3; */
   color: white;
   padding: 15px;
   width: fit-content;
@@ -1365,6 +1383,8 @@ label {
 
 .flag-container:hover .flag-dropdown {
   display: block;
+  justify-content: center;
+  width: 20vw;
 }
 
 .flag-container:hover {
