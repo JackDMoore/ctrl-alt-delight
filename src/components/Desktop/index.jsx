@@ -9,18 +9,14 @@ const Desktop = () => {
         <img src={gifImage} alt="Gif" className="gif-image" />
       </div>
       <div className="text-container">
-        <h2>How to use LinguPlay</h2>
+        <h2>How to use LinguaPlaya</h2>
         <p>
-          As you can see we have a lot of features to help you learn a new
-          language. You can start by clicking on the "Start" button on the top
-          left corner of the screen. This will take you to the main page where
-          you can choose the language you want to learn. Once you have chosen
-          the language you want to learn, you can start learning by clicking on
-          the "Start" button. This will take you to the main page where you can
-          choose the language you want to learn. Once you have chosen the
-          language you want to learn, you can start learning by clicking on the
-          "Start" button. This will take you to the main page where you can
-          choose the language you want to learn.
+          Millions of language partners. Any language combination. Join the
+          community and start practicing with native speakers. Find people with
+          similar interests and learn together. Start practicing now. Register
+          for free. Login in and find a language partner. Ask our language
+          chatbot to help translate your messages. choose your level, beginner,
+          intermediate or advanced.
         </p>
       </div>
     </div>

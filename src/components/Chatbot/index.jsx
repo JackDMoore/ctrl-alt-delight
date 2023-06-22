@@ -10,7 +10,6 @@ import {
 import ChatIcon from "../ChatIcon";
 import "../../styles.css";
 
-
 const API_KEY = import.meta.env.VITE_SOME_API_KEY;
 
 function Chatbot({ onClose }) {

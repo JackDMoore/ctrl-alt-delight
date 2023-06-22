@@ -1,70 +1,66 @@
 .profile-card {
-  flex:grid;
-  position:relative
-  
-  }
-  
-  .profile-card {
-    flex:grid;
-    position:relative
-  }
-  
-  .card-header {
-    flex:grid;
-    position:relative;
-    font-size: 160%;
-    right:0
-  }
-  
-  .card-footer {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    right: 2rem;
-    justify-content: center;
-    align-items: center;
-  }
+  flex: grid;
+  position: relative;
+}
 
-  .card-footer h3 {
-    font-size: 160%;
-    padding-right: 5rem;
-    left:0
-  }
-  
-  
-  
-  .learning-container {
-    flex:grid;
-    position:absolute;
-    left:25rem
-  
-  }
-  
-  .speaking-container {
-    flex:grid;
-    position:absolute;
-    left: 20rem
-  }
-  
-  .platform-container {
-    flex:grid;
-    position:absolute;
-    left:39rem
-  }
-  
-  .game-container {
-    flex:grid;
-    position:absolute;
-    left:46rem
-  }
+.profile-card {
+  flex: grid;
+  position: relative;
+}
 
-  .underline {
-    text-decoration: underline;
-  }
+.card-header {
+  flex: grid;
+  position: relative;
+  font-size: 160%;
+  right: 0;
+}
 
-  .user-container {
-    flex:grid;
-    position:absolute;
-    left:2rem;
-    font-size: 160%;
-  }
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-footer h3 {
+  font-size: 160%;
+  padding-right: 5rem;
+  left: 0;
+}
+
+.learning-container {
+  flex: grid;
+  position: absolute;
+  left: 25rem;
+}
+
+.speaking-container {
+  flex: grid;
+  position: absolute;
+  left: 20rem;
+}
+
+.platform-container {
+  flex: grid;
+  position: absolute;
+  left: 39rem;
+}
+
+.game-container {
+  flex: grid;
+  position: absolute;
+  left: 46rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.user-container {
+  flex: grid;
+  position: absolute;
+  left: 2rem;
+  font-size: 160%;
+}
