@@ -14,10 +14,10 @@ const ChatBody = ({messages, typingStatus, lastMessageRef}) => {
   
   return (
     <>
-      <header className='chat__mainHeader'>
+      <div className='chat__mainHeader'>
           <p>Direct Message</p>
-          <button className='leaveChat__btn' onClick={handleLeaveChat}>LEAVE CHAT</button>
-        </header>
+          <button className='leaveChat__btn' role="button" onClick={handleLeaveChat}><span>Leave Chat</span></button>
+        </div>
 
 
         <div className='message__container'>
