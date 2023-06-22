@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import './style.css'
+import "./style.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -9,12 +9,12 @@ const Login = () => {
 
   // const [errorMessage,setErrorMessage] = useState('')
 
-  const inputRef = useRef()
+  const inputRef = useRef();
 
   const navigate = useNavigate();
-   useEffect(() => {
-      inputRef.current.focus()
-  },[])
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   function handleUsername(e) {
     setUsername(e.target.value);
@@ -27,15 +27,16 @@ const Login = () => {
   async function gatherDetails(e) {
     e.preventDefault();
     try {
-    const options = {username: username, password: password };
+      const options = { username: username, password: password };
       const response = await axios.post(
-        "https://linguaplaya-be.onrender.com/login",options
-          // {header: {"Access-Control-Allow-Origin": "*"}}
+        "https://linguaplaya-be.onrender.com/login",
+        options
+        // {header: {"Access-Control-Allow-Origin": "*"}}
       ); //will need to add link here
       if (response.status == 200) {
         localStorage.setItem("token", response.data.access_token);
-        localStorage.setItem('username', response.data.username)
-        localStorage.setItem("username", username)
+        localStorage.setItem("username", response.data.username);
+        localStorage.setItem("username", username);
         // socket.emit("newUser", {username, socketID: socket.id})
         navigate("/");
         // const value  = localStorage.getItem('username')
@@ -45,10 +46,9 @@ const Login = () => {
         //     { username: value }
         // )
         // onAuth({ username: value, secret: value })
-
       }
-    } catch (error) { 
-      console.log(error)
+    } catch (error) {
+      console.log(error);
       // alert(error.response.data.error);
     }
   }
@@ -66,7 +66,7 @@ const Login = () => {
             onChange={handleUsername}
             value={username}
             className="inputField"
-            ref = {inputRef}
+            ref={inputRef}
           ></input>
           <input
             type="password"
@@ -75,7 +75,7 @@ const Login = () => {
             onChange={handlePassword}
             value={password}
             className="inputField"
-            ref = {inputRef}
+            ref={inputRef}
           ></input>
           <br />
           <button
@@ -84,7 +84,7 @@ const Login = () => {
             aria-label="submit button"
             className="login-btn"
           >
-           <span>Submit</span> 
+            <span>Submit</span>
           </button>
           {/* {errorMessage && <div className="error"> {errorMessage}</div>} */}
           <p>

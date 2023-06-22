@@ -30,7 +30,8 @@ const PageWrapper = () => {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "url(./src/assets/worldlang.png)",
+          backgroundImage:
+            "url(https://media.gq-magazine.co.uk/photos/645b5c31d8c083bf85029042/3:2/w_1620,h_1080,c_limit/100-best-games-hp-b.jpg)",
           backgroundSize: "cover",
           zIndex: -1,
         }}
