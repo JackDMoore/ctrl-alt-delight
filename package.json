@@ -22,6 +22,7 @@
     "coverage": "^0.4.1",
     "express": "^4.18.2",
     "history": "^5.3.0",
+    "msw": "^1.2.2",
     "node": "^20.2.0",
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
@@ -44,6 +45,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
@@ -59,6 +61,7 @@
     "mock-local-storage": "^1.1.24",
     "redux-mock-store": "^1.5.4",
     "vite": "^4.2.0",
+    "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.32.0"
   },
   "keywords": [],

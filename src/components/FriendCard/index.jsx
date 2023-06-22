@@ -12,14 +12,13 @@ const FriendCard = ({ username }) => {
   };
 
   return (
-    <div className="profile-card">
+    <div className="profile-card" data-testid="profile-card">
       <div className="profile-header">
         <div className="profile-card-content">
           <div className="left-content">
             <h3>{username}<div className="card-footer"><MessageButton onClick={handleMessageClick} /></div></h3>
           </div>
         </div>
-        
       </div>
     </div>
   );

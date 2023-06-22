@@ -69,6 +69,7 @@ const Register = () => {
           <Form.Group controlId="username">
           {/* <Form.Label>Username</Form.Label> */}
           <Form.Control
+            aria-label = "Username"
             type="text"
             placeholder="Enter Username"
             value={username}
@@ -80,6 +81,7 @@ const Register = () => {
           <Form.Group controlId="password">
           {/* <Form.Label>password</Form.Label> */}
           <Form.Control
+            aria-label = "Password"
             type="text"
             placeholder="Enter Password"
             value={password}
@@ -91,6 +93,7 @@ const Register = () => {
           <Form.Group controlId="name">
           {/* <Form.Label>Name</Form.Label> */}
           <Form.Control
+            aria-label = "Name"
             type="text"
             placeholder="Enter Name"
             value={name}
@@ -102,6 +105,7 @@ const Register = () => {
           <Form.Group controlId="email">
           {/* <Form.Label>email</Form.Label> */}
           <Form.Control
+            aria-label = "Email"
             type="email"
             placeholder="Enter a email"
             value={email}

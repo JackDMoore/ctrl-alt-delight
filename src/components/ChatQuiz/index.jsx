@@ -108,7 +108,7 @@ function ChatQuiz() {
         <br></br>
         <br></br>
         <div>
-          <select value={selectedLanguage} onChange={handleLanguageChange}>
+          <select id="languageDropdown" aria-label="Select Language" value={selectedLanguage} onChange={handleLanguageChange}>
             <option value="">Select the language</option>
             <option value="English">English</option>
             <option value="French">French</option>
@@ -118,7 +118,7 @@ function ChatQuiz() {
           </select>
         </div>
         <div>
-          <select value={selectedDifficulty} onChange={handleDifficultyChange}>
+          <select id="difficultyDropdown" aria-label="Select Difficulty" value={selectedDifficulty} onChange={handleDifficultyChange}>
             <option value="">Select the difficulty</option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
@@ -126,7 +126,7 @@ function ChatQuiz() {
           </select>
         </div>
         <div>
-          <select value={selectedNumQuestions} onChange={handleNumQuestionsChange}>
+          <select id="numQuestionsDropdown" aria-label="Select Number of Questions" value={selectedNumQuestions} onChange={handleNumQuestionsChange}>
             <option value="">Select number of questions</option>
             <option value="3">3</option>
             <option value="5">5</option>

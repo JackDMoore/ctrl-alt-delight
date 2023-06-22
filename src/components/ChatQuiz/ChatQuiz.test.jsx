@@ -10,6 +10,19 @@ describe('ChatQuiz component', () => {
         render(<ChatQuiz />);
     });
 
+    it('should have empty initial selectedLanguage state', () => {
+        const consoleDropdowns = screen.getAllByLabelText('Select Language')
+        const consoleDropdown = consoleDropdowns[0]
+        expect(consoleDropdown.value).toEqual('English')
+    });
+      
+    it('should have empty initial selectedDifficulty state', () => {
+        const consoleDropdowns = screen.getAllByLabelText('Select Difficulty')
+        const consoleDropdown = consoleDropdowns[0]
+        expect(consoleDropdown.value).toEqual('Beginner')
+    });
+
+
     it('selectedLanguage state should be German updated when language is changed', () => {
         const consoleDropdowns = screen.getAllByLabelText('Select Language');
         const consoleDropdown = consoleDropdowns[0];
@@ -72,6 +85,29 @@ describe('ChatQuiz component', () => {
         fireEvent.change(consoleDropdown, { target: { value: 'Advanced' } });
         expect(consoleDropdown.value).toEqual('Advanced');
     });
+
+    it('should display the correct system message content after selecting language, difficulty, and number of questions', () => {
+        render(<ChatQuiz />);
+        const languageDropdowns = screen.getAllByLabelText('Select Language');
+        const difficultyDropdown = screen.getByRole('difficultyDropdown');
+        const numQuestionsDropdown = screen.getByLabelText('Select Number of Questions');
+        const languageDropdown = languageDropdowns[0];
+      
+        // Select the desired options in the language dropdown
+        fireEvent.change(languageDropdown, { target: { value: 'Italian' } });
+      
+        // Select the desired options in the difficulty and number of questions dropdowns
+        fireEvent.change(difficultyDropdown, { target: { value: 'Advanced' } });
+        fireEvent.change(numQuestionsDropdown, { target: { value: '5' } });
+      
+        // Perform assertions on the system message content
+        const systemMessage = screen.getByText("Hello, I'm LinguaBot! Please select the language"); // Update the expected system message content here
+        expect(systemMessage).toBeInTheDocument();
+      });
+      
+      
+      
+      
   });
   
 
