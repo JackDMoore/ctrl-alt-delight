@@ -1,3 +1,24 @@
 Link{
     margin: 30px;
 }
+  
+.navbar-links {
+    display: flex;
+    align-items: center;
+    color: #823FFF
+  }
+  
+  .navbar-links a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #823FFF
+
+  }
+  
+  .navbar-links .navbar-divider {
+    margin: 0 0.5rem; /* Adjust the margin to add spacing between words */
+    color: #823FFF
+  }
+
+
+  
