@@ -18,7 +18,7 @@
 
 #editbtn {
   display: block;
-  margin-left: 15px;
+  margin-left: 45px;
 }
 .edit-btn {
   padding: 18px 3px 18px 3px;
@@ -88,6 +88,7 @@
 
 .maintitle {
   margin: 0;
+  font-weight: 200;
 }
 
 .profile-container {
@@ -97,6 +98,7 @@
   margin: 0px 800px 0px 0px;
   align-items: flex-start;
   height: 80vh;
+  margin-top: 20px;
   /* margin: inherit; */
   /* margin: initial; */
   /* margin: unset; */

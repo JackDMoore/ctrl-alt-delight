@@ -40,13 +40,15 @@
     margin-bottom: 8px;
     margin: 16px;
   }*/
-  .card-footer {
+  .friendcard-footer {
     display: flex;
     flex-direction: row;
-    float:right;
-    justify-content: flex;
+    /*float:right;
+    justify-content: flex; */
     /* gap: 8px; */
     margin: auto;
+    margin-right: 10px;
+
     /* margin-bottom: 15px; */
   }
   
