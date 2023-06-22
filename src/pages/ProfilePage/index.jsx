@@ -131,7 +131,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="profile-container">
+    <div className="profilepage-container">
       {/* <h1 className="profile-heading">Your Profile</h1> */}
       <div className="profile-box">
         <div id = "userinfo">
@@ -143,11 +143,11 @@ const ProfilePage = () => {
                     <h3 id = "currentUsername">{currentUser.username}</h3>
                   </div>
                   {/* <p id = "currentrating">Your Rating: {currentUser.rating}</p> */}
-                  <p id = "currentknown">Your Languages: {currentUser.language_known}</p>
+                  <p id = "currentknown"><h2>Your Languages:  </h2> {currentUser.language_known}</p>
                   {/* <img src={atob(currentUser.flag_base64_known)} alt="Avatar" className="avatarknown"></img> */}
-                  <p id = "currentlearn">Learning: {currentUser.language_learn}</p>
+                  <p id = "currentlearn"><h2>Learning: </h2> {currentUser.language_learn}</p>
                   {/* <img src={atob(currentUser.flag_base64_learn)} alt="Avatar" className="avatarlearn"></img> */}
-                  <h2>Bio</h2>
+                  <h2 className="biochange">Bio</h2>
                   <p id = "currentBio">{currentUser.bio}</p>
                   {/* <p id = "currentLangKnwon">{currentUser.langugues_known}</p> */}
                 </div>
@@ -157,7 +157,7 @@ const ProfilePage = () => {
         
           <div id="updateform">
             <button id = "backbtn" className="back-btn" role = "button" onClick= {showupdate} ><span>Go Back</span></button>
-                 <Form  onSubmit={handleSubmit}>
+                 <Form className="updateformform"  onSubmit={handleSubmit}>
                 {/*<Form.Group controlId="username">
                   <Form.Label>Username</Form.Label>
                   <Form.Control
@@ -167,8 +167,8 @@ const ProfilePage = () => {
                     className="inputField"
                   /> 
                   </Form.Group>*/}
-                  <Form.Group controlId="name">
-                  <Form.Label>Name</Form.Label>
+                  <Form.Group className="tagname" controlId="name">
+                  <Form.Label >Name</Form.Label>
                   <Form.Control
                     type="text"
                     value={name}
@@ -176,8 +176,8 @@ const ProfilePage = () => {
                     className="inputField"
                   />
                   </Form.Group> 
-                  <Form.Group controlId="email">
-                  <Form.Label>Email Address</Form.Label>
+                  <Form.Group className="tagemail" controlId="email">
+                  <Form.Label >Email</Form.Label>
                   <Form.Control
                     type="email"
                     value={email}
@@ -185,8 +185,8 @@ const ProfilePage = () => {
                     className="inputField"
                   />
                 </Form.Group>
-              <Form.Group controlId="bio">
-                <Form.Label>Profile Bio</Form.Label>
+              <Form.Group className="tagbio" controlId="bio">
+                <Form.Label >Profile Bio</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Enter a bio"
@@ -195,7 +195,7 @@ const ProfilePage = () => {
                   className="inputField"
                 />
               </Form.Group>
-              <Button /*className="button-49"*/ role="button" type="submit" variant="primary"className="profile-btn mt-3"><span>
+              <Button className="upbtn" role="button" type="submit" variant="primary"><span>
                  Update
               </span>
                
