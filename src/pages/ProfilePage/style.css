@@ -5,6 +5,8 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer; */
+  justify-content: center;
+  align-items: center;
 }
 /*   
   #updateform-btn:hover {
@@ -21,7 +23,7 @@
   margin-left: 45px;
 }
 .edit-btn {
-  padding: 18px 3px 18px 3px;
+  padding: 18px 0px 18px 0px;
 }
 #backbtn {
   display: none;
@@ -30,21 +32,60 @@
 }
 .back-btn {
   padding: 18px 3px 18px 3px;
+  margin-bottom: 30px;
 }
-
+.upbtn {
+  margin: auto;
+  margin-top: 20px;
+}
 .deets {
   display: flex;
   flex-direction: column;
 }
+.updateformform {
+  display: flex;
+  flex-direction: column;
+}
+/* .inputField{
+  display: flex;
+  flex-direction: row;
+   align-items: center;
+  justify-content: center;
+  /* background-color: ; 
+} */
+.tagbio {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: auto;
+  margin-left: 25px;
+}
+.tagname {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: auto;
+  margin-left: 72px;
+}
+
 .minititle {
   display: flex;
   flex-direction: row;
+  font-size: larger;
+  /* margin: 0; */
+  /* font-weight: 1000; */
+}
+.biochange {
+  font-size: larger;
 }
 .pfpname {
   display: flex;
   flex-direction: row;
   justify-content: left;
   margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .profile-box {
@@ -56,15 +97,17 @@
   margin: 20px 60px 10px 0;
   margin-left: 0px;
   padding: 20px;
-  background-color: #000000;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
+  background-color: #283044;
+  border: 0.1rem solid #823fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  /* border-radius: 5px; */
   /* box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8); */
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     45deg,
     rgba(141, 68, 173, 0.548),
     rgba(67, 9, 90, 0.442)
-  );
+  ); */
 }
 #currentrating {
   margin: 0;
@@ -72,6 +115,23 @@
 #currentlearn {
   margin: 0;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+#currentlearn h2 {
+  margin-right: 10px;
+  font-size: x-large;
+}
+
+#currentknown {
+  margin: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+}
+#currentknown h2 {
+  margin-right: 10px;
+  font-size: x-large;
 }
 
 .profile-heading {
@@ -88,12 +148,7 @@
   padding: 10px;
 }
 
-.maintitle {
-  margin: 0;
-  font-weight: 200;
-}
-
-.profile-container {
+.profilepage-container {
   display: flex;
   position: relative;
   /* flex-direction: row; */
@@ -101,6 +156,7 @@
   align-items: flex-start;
   height: 80vh;
   margin-top: 20px;
+  font-size: x-large;
   /* margin: inherit; */
   /* margin: initial; */
   /* margin: unset; */
@@ -111,15 +167,18 @@
   width: 100%;
 } */
 .friendlist-container {
-  /* flex: 1; */
+  flex: 1;
   display: flex;
+  font-size: small;
   border-radius: 10px;
   margin-top: 20px;
-  width: 440px;
-  height: 500px;
-  background-color: rgb(38, 3, 44);
-  border: 1px;
+  width: 470px;
+  min-height: 500px;
+  background-color: #283044;
+  border: 0.1rem solid #823fff;
+  border-radius: 1rem;
+  padding: 1rem;
   padding-right: 300px;
   border-style: solid;
-  border-color: rgb(119, 119, 119);
+  /* overflow:hidden */
 }

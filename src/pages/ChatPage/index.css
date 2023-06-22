@@ -29,11 +29,15 @@
 .chat__main {
   height: 80%;
   flex: 0.8;
+  margin-left: 0px;
+  /* display: flex; */
+  align-self: center; 
+  justify-content: center;
 }
 
 .chat__mainHeader {
   width: 100%;
-  height: 10vh;
+  height: 17vh;
   display: flex;
   align-items: center;
   justify-content: space-between;

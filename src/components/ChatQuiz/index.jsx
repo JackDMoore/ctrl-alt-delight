@@ -9,8 +9,9 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
+import "./style.css";
 
-const API_KEY = "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";
+const API_KEY = import.meta.env.VITE_SOME_API_KEY;
 
 function ChatQuiz() {
   const [messages, setMessages] = useState([
@@ -103,58 +104,17 @@ function ChatQuiz() {
   return (
     <div className="App">
       <div style={{ position: "relative", height: "800px", width: "700px" }}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>
-          <select
-            id="languageDropdown"
-            aria-label="Select Language"
-            value={selectedLanguage}
-            onChange={handleLanguageChange}
-          >
-            <option value="">Select the language</option>
-            <option value="English">English</option>
-            <option value="French">French</option>
-            <option value="German">German</option>
-            <option value="Dutch">Dutch</option>
-            <option value="Italian">Italian</option>
-          </select>
-        </div>
-        <div>
-          <select
-            id="difficultyDropdown"
-            aria-label="Select Difficulty"
-            value={selectedDifficulty}
-            onChange={handleDifficultyChange}
-          >
-            <option value="">Select the difficulty</option>
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Advanced">Advanced</option>
-          </select>
-        </div>
-        <div>
-          <select
-            id="numQuestionsDropdown"
-            aria-label="Select Number of Questions"
-            value={selectedNumQuestions}
-            onChange={handleNumQuestionsChange}
-          >
-            <option value="">Select number of questions</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <MainContainer>
-          <div>
+        <div className="dropdown-container">
+          <div className="dropdown-containers">
             <select
+              id="languageDropdown"
               aria-label="Select Language"
-              className="consoleDropdown"
               value={selectedLanguage}
               onChange={handleLanguageChange}
+              className="select-container"
+              style={{ height: "40px", fontSize: "16px" }}
             >
+              <option value="">Language</option>
               <option value="English">English</option>
               <option value="French">French</option>
               <option value="German">German</option>
@@ -162,20 +122,39 @@ function ChatQuiz() {
               <option value="Italian">Italian</option>
             </select>
           </div>
-          <div>
+          <div className="dropdown-containers">
             <select
+              id="difficultyDropdown"
               aria-label="Select Difficulty"
-              className="consoleDropdown"
               value={selectedDifficulty}
               onChange={handleDifficultyChange}
+              className="select-container"
+              style={{ height: "40px", fontSize: "16px" }}
             >
+              <option value="">Difficulty</option>
               <option value="Beginner">Beginner</option>
               <option value="Intermediate">Intermediate</option>
               <option value="Advanced">Advanced</option>
             </select>
           </div>
-          <ChatContainer>
+          <div className="dropdown-containers">
+            <select
+              value={selectedNumQuestions}
+              onChange={handleNumQuestionsChange}
+              className="select-container"
+              style={{ height: "40px", fontSize: "16px" }}
+            >
+              <option value="">Number of questions</option>
+              <option value="3">3</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </div>
+        <MainContainer className="my-main-container">
+          <ChatContainer className="my-chat-container">
             <MessageList
+              className="my-message-list"
               scrollBehavior="smooth"
               typingIndicator={
                 isTyping ? (
@@ -185,7 +164,9 @@ function ChatQuiz() {
             >
               {messages.map((message, i) => {
                 console.log(message);
-                return <Message key={i} model={message} />;
+                return (
+                  <Message className="my-message" key={i} model={message} />
+                );
               })}
             </MessageList>
             <MessageInput placeholder="Type message here" onSend={handleSend} />

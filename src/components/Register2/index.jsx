@@ -77,10 +77,10 @@ const Register2 = () => {
   };
 
   return (
-    <div className="register-container">
-      <div className="register-box">
-        <h1 className="register-heading">Complete Registration</h1>
-        <form className="register-form">
+    <div className="login-container">
+      <div className="login-box">
+        <h1 className="login-heading">Complete Registration</h1>
+        <form className="login-form">
           <select
             aria-label="language you speak"
             className="languageDropdown"
@@ -134,7 +134,7 @@ const Register2 = () => {
             value={platform}
             className="inputField"
           /> */}
-          <button className="register-btn" onClick={gatherDetails}>
+          <button className="login-btn" onClick={gatherDetails}>
            <span> Register</span>
           </button>
           {message && <div className="message"> {message}</div>}

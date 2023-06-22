@@ -61,11 +61,11 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <div className="register-box">
-        <h1 className="register-heading">Register Page</h1>
+    <div className="login-container">
+      <div className="login-box">
+        <h1 className="login-heading">Register Page</h1>
 
-        <Form className="register-form" onSubmit={gatherDetails}>
+        <Form className="login-form" onSubmit={gatherDetails}>
           <Form.Group controlId="username">
           {/* <Form.Label>Username</Form.Label> */}
           <Form.Control
@@ -114,7 +114,7 @@ const Register = () => {
             required
           />
           </Form.Group> 
-          <Button /*className="button-49"*/ role="button" type="submit" variant="primary"className="profile-btn mt-3"><span> Register</span>
+          <Button /*className="button-49"*/ role="button" type="submit" variant="primary"className="login-btn"><span> Register</span>
           </Button>
           <div>
             {errorMessage && <div className="error"> {errorMessage}</div>}
