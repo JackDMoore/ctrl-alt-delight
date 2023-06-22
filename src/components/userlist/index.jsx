@@ -6,7 +6,6 @@ import ProfileCard from '../ProfileCard';
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
-    const [username, setUsername] = useState("");
     const [isLoading, setIsLoading] = useState(true);
     const [englishOnly, setEnglishOnly] = useState();
     const [frenchOnly, setFrenchOnly] = useState();
@@ -16,13 +15,14 @@ const UserList = () => {
     const [pcOnly, setPCOnly] = useState();
     const [playstationOnly, setPlaystationOnly] = useState();
     const [xboxOnly, setXboxOnly] = useState();
+    
+    const username = localStorage.getItem('username')
 
     useEffect(() => {
         async function loadUsers () {
             const response = await fetch("https://linguaplaya-be.onrender.com/users/getall");
             const userData = await response.json();
             setUsers(userData)
-            setUsername(userData.username)
             setIsLoading(false);
         }
 
