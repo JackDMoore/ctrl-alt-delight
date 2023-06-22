@@ -1,34 +1,134 @@
 .profile-card {
-flex:grid;
-position:relative;
-padding:20rem
+<<<<<<<<< Temporary merge branch 1
+<<<<<<< HEAD
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 150%;
+  background-color: #36404b;
 }
 
-.card-header {
-  flex:grid;
-  position:relative;
-  font-size: 160%;
-  right:0
+.profile-card-content {
+  margin: 16px;
+}
+=======
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+    background-color: #36404B;
+    box-sizing: border-box;
+    height: 300px;
+
+  }
+  
+  
+  .profile-card-content {
+    margin: 16px;
+  }
+  
+  .profile-header {
+    margin-bottom: 8px;
+=========
+    height: 700rem;
+>>>>>>>>> Temporary merge branch 2
+  }
+  
+  .left-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+  
+  .left-content h3 {
+    margin-bottom: 8px;
+  }
+  
+  .card-body {
+    display: flex;
+    height: 200rem
+  }
+>>>>>>> origin/staging
+
+<<<<<<<<< Temporary merge branch 1
+.profile-header {
+  margin-bottom: 8px;
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.left-content h3 {
+  margin-bottom: 8px;
+}
+
+.card-body {
+  display: flex;
+  margin-bottom: 8px;
+  margin: 16px;
+}
+
+.right-content {
+  position: absolute;
+  top: 16px;
+  right: 200px;
+}
+
+.right-content h4 {
+  margin-bottom: 8px;
 }
 
 .card-footer {
-  flex:grid;
-  position:absolute;
-  top:0;
-  right:0;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
-
-
-.learning-container {
-  flex:grid;
-  position:absolute;
-  left:30rem
-
+.rating {
+  font-weight: bold;
 }
+=========
+  .card-header {
+    display: grid;
+    position: absolute;
+    left: 60%;
+    top: 5rem;
+    font-size:140%
+  }
+  
+  
+  .card-footer {
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: right;
+    padding-top: 3rem;
+    right:0rem;
+    bottom:2rem;
+    margin: 1rem;
+  }
+  
+  .rating {
+    font-weight: bold;
+  }
+
+  .learning-container {
+    display: grid;
+    position: absolute;
+    left: 15.5rem;
+    top: 7.5rem
+  }
 
 .speaking-container {
   flex:grid;
@@ -42,8 +142,10 @@ padding:20rem
   left:1rem
 }
 
-.game-container {
-  flex:grid;
-  position:absolute;
-  left:8rem
-}
+  .game-container {
+    display: grid;
+    position: absolute;
+    left: 3.5rem;
+    top: 7.5rem
+  }
+>>>>>>>>> Temporary merge branch 2

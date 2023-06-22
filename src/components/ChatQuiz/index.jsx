@@ -9,9 +9,10 @@ import {
   MessageInput,
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
-
 import "./style.css";
-const API_KEY = "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";
+
+
+const API_KEY = import.meta.env.VITE_SOME_API_KEY;
 
 function ChatQuiz() {
   const [messages, setMessages] = useState([
@@ -108,7 +109,7 @@ function ChatQuiz() {
         <br></br>
         <br></br>
         <div>
-          <select value={selectedLanguage} onChange={handleLanguageChange}>
+          <select id="languageDropdown" aria-label="Select Language" value={selectedLanguage} onChange={handleLanguageChange}>
             <option value="">Select the language</option>
             <option value="English">English</option>
             <option value="French">French</option>
@@ -118,7 +119,7 @@ function ChatQuiz() {
           </select>
         </div>
         <div>
-          <select value={selectedDifficulty} onChange={handleDifficultyChange}>
+          <select id="difficultyDropdown" aria-label="Select Difficulty" value={selectedDifficulty} onChange={handleDifficultyChange}>
             <option value="">Select the difficulty</option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>

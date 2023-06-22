@@ -4,7 +4,25 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -806,115 +824,6 @@ label {
     }
   }
 
-  /* register page  */
-
-  .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .register-box {
-    width: 400px;
-    padding: 20px;
-    background-color: #283044;
-    border: 1px solid #ccc;
-    border-radius: 2rem;
-    box-shadow: 0 0 0.3rem 0.3rem rgba(79, 146, 255, 0.8);
-    background-image: linear-gradient(
-      45deg,
-      rgba(79, 146, 255, 0.8),
-      rgba(0, 0, 0, 0)
-    );
-  }
-
-  .register-heading {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #40e0d0;
-    text-shadow: 2px 2px 4px #000000;
-  }
-
-  .register-form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .inputField {
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
-  .languageDropdown {
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
-  .register-btn {
-    background-color: #9f7ff2;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-
-  .register-btn:hover {
-    background-color: #9d53c3;
-    color: white;
-  }
-
-  /* login Page */
-  .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
-  .login-box {
-    width: 400px;
-    padding: 20px;
-    background-color: #283044;
-    border: 1px solid #ccc;
-    border-radius: 2rem;
-    box-shadow: 0 0 0.3rem 0.3rem rgba(79, 146, 255, 0.8);
-    background-image: linear-gradient(
-      45deg,
-      rgba(79, 146, 255, 0.8),
-      rgba(0, 0, 0, 0)
-    );
-  }
-
-  .login-heading {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #40e0d0;
-    text-shadow: 2px 2px 4px #000000;
-  }
-
-  .login-form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .inputField {
-    margin-bottom: 10px;
-    padding: 10px;
-  }
-
-  .login-btn {
-    background-color: #9f7ff2;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-
-  .login-btn:hover {
-    background-color: #9d53c3;
-    color: white;
-  }
 
   /* ProfilePage */
   .profile-container {
@@ -1257,7 +1166,7 @@ label {
 }
 
 .flag-container {
-  display: inline-block;
+  display: flex;
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -1266,8 +1175,8 @@ label {
 }
 
 .flag-image {
-  width: 5rem;
-  height: 5rem;
+  width: 15rem;
+  height: 15rem;
   object-fit: cover;
   margin: 1rem;
 }
@@ -1277,8 +1186,8 @@ label {
 
   text-align: center;
   border-radius: 1rem;
-  background-color: #283044;
-  border: 1px solid #9d53c3;
+  /* background-color: #283044;
+  border: 1px solid #9d53c3; */
   color: white;
   padding: 15px;
   width: fit-content;
@@ -1365,6 +1274,8 @@ label {
 
 .flag-container:hover .flag-dropdown {
   display: block;
+  justify-content: center;
+  width: 20vw;
 }
 
 .flag-container:hover {
@@ -1445,19 +1356,18 @@ label {
   ); */
 }
 
-.login-box {
+/* .login-box {
   width: 400px;
   padding: 20px;
   background-color: #283044;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-shadow: 0 0 20px 10px rgba(79, 146, 255, 0.8);
   background-image: linear-gradient(
     45deg,
     rgba(79, 146, 255, 0.8),
     rgba(0, 0, 0, 0)
   );
-}
+} */
 
 .text-container h2 {
   text-align: center;

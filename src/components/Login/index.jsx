@@ -1,28 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   // const [errorMessage,setErrorMessage] = useState('')
-
   const inputRef = useRef();
-
   const navigate = useNavigate();
   useEffect(() => {
     inputRef.current.focus();
   }, []);
-
   function handleUsername(e) {
     setUsername(e.target.value);
   }
-
   function handlePassword(e) {
     setPassword(e.target.value);
   }
-
   async function gatherDetails(e) {
     e.preventDefault();
     try {
@@ -51,12 +44,10 @@ const Login = () => {
       // alert(error.response.data.error);
     }
   }
-
   return (
     <div className="login-container">
       <div className="login-box">
         <h1 className="login-heading">Login Page</h1>
-
         <form className="login-form">
           <input
             type="text"
@@ -97,5 +88,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;

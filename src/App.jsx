@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import PageWrapper from "./components/PageWrapper";
 import HomePage from "./pages/HomePage";
 import * as Pages from "./pages";

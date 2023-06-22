@@ -61,14 +61,15 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container">
-      <div className="register-box">
-        <h1 className="register-heading">Register Page</h1>
+    <div className="login-container">
+      <div className="login-box">
+        <h1 className="login-heading">Register Page</h1>
 
-        <Form className="register-form" onSubmit={gatherDetails}>
+        <Form className="login-form" onSubmit={gatherDetails}>
           <Form.Group controlId="username">
           {/* <Form.Label>Username</Form.Label> */}
           <Form.Control
+            aria-label = "Username"
             type="text"
             placeholder="Enter Username"
             value={username}
@@ -80,6 +81,7 @@ const Register = () => {
           <Form.Group controlId="password">
           {/* <Form.Label>password</Form.Label> */}
           <Form.Control
+            aria-label = "Password"
             type="text"
             placeholder="Enter Password"
             value={password}
@@ -91,6 +93,7 @@ const Register = () => {
           <Form.Group controlId="name">
           {/* <Form.Label>Name</Form.Label> */}
           <Form.Control
+            aria-label = "Name"
             type="text"
             placeholder="Enter Name"
             value={name}
@@ -102,6 +105,7 @@ const Register = () => {
           <Form.Group controlId="email">
           {/* <Form.Label>email</Form.Label> */}
           <Form.Control
+            aria-label = "Email"
             type="email"
             placeholder="Enter a email"
             value={email}
@@ -110,7 +114,7 @@ const Register = () => {
             required
           />
           </Form.Group> 
-          <Button /*className="button-49"*/ role="button" type="submit" variant="primary"className="profile-btn mt-3"><span> Register</span>
+          <Button /*className="button-49"*/ role="button" type="submit" variant="primary"className="login-btn"><span> Register</span>
           </Button>
           <div>
             {errorMessage && <div className="error"> {errorMessage}</div>}

@@ -12,8 +12,8 @@ describe('FriendList component', () => {
     cleanup();
   });
 
-  it('renders Connections heading', () => {
-    const headingElement = screen.getByText(/Connections/i);
+  it('renders Friend list heading', () => {
+    const headingElement = screen.getByText(/Friend list/i);
     expect(headingElement).toBeTruthy();
   });
 });
