@@ -1,70 +1,53 @@
 .profile-card {
-  height: 700rem;
+flex:grid;
+position:relative
+
 }
 
-.left-content {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 8px;
-}
-
-.left-content h3 {
-  margin-bottom: 8px;
-}
-
-.card-body {
-  display: flex;
-  height: 200rem;
+.profile-card {
+  flex:grid;
+  position:relative
 }
 
 .card-header {
-  display: grid;
-  position: absolute;
-  left: 60%;
-  top: 5rem;
-  font-size: 140%;
+  flex:grid;
+  position:relative;
+  font-size: 160%;
+  right:0
 }
 
 .card-footer {
-  position: absolute;
-  display: flex;
+  flex:grid;
+  position:absolute;
+  right:0;
   flex-direction: column;
-  align-items: center;
-  justify-content: right;
-  padding-top: 3rem;
-  right: 0rem;
-  bottom: 2rem;
-  margin: 1rem;
+  justify-content: center;
+  align-items: center
 }
 
-.rating {
-  font-weight: bold;
-}
+
 
 .learning-container {
-  display: grid;
-  position: absolute;
-  left: 15.5rem;
-  top: 7.5rem;
+  flex:grid;
+  position:absolute;
+  left:30rem
+
 }
 
 .speaking-container {
-  display: grid;
-  position: absolute;
-  left: 15.5rem;
-  top: 2rem;
+  flex:grid;
+  position:absolute;
+  left: 22rem
 }
 
 .platform-container {
-  display: grid;
-  position: absolute;
-  left: 3.5rem;
-  top: 2rem;
+  flex:grid;
+  position:absolute;
+  left:1rem
 }
 
 .game-container {
-  display: grid;
-  position: absolute;
-  left: 3.5rem;
-  top: 7.5rem;
+  flex:grid;
+  position:absolute;
+  left:8rem
 }
