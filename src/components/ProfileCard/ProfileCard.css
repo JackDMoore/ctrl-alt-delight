@@ -36,26 +36,26 @@
   .learning-container {
     flex:grid;
     position:absolute;
-    left:25rem
+    left:27rem
   
   }
   
   .speaking-container {
     flex:grid;
     position:absolute;
-    left: 20rem
+    left: 22rem
   }
   
   .platform-container {
     flex:grid;
     position:absolute;
-    left:39rem
+    left:41rem
   }
   
   .game-container {
     flex:grid;
     position:absolute;
-    left:46rem
+    left:48rem
   }
 
   .underline {

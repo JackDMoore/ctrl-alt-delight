@@ -58,20 +58,20 @@ const ProfileCard = ({
         <h3>{username}</h3>
       </div>
       <div className="platform-container">
-        <h4><span class="underline">Platform</span></h4>
+        <h4><span className="underline">Platform</span></h4>
         <h5>{platform}</h5>
       </div>
       <div className="game-container">
-        <h4><span class="underline">Plays</span></h4>
+        <h4><span className="underline">Plays</span></h4>
         <h5>{game_name}</h5>
       </div>
       <div className="speaking-container">
         
-        <h4><span class="underline">Speaks</span></h4>
+        <h4><span className="underline">Speaks</span></h4>
         <h5>{language_known}</h5>
       </div>
       <div className="learning-container">
-        <h4><span class="underline">Learning</span></h4>
+        <h4><span className="underline">Learning</span></h4>
         <h5>{language_learn}</h5>
       </div>
       <div className="card-footer">
