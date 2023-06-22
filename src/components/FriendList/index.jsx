@@ -32,7 +32,7 @@ return (
     <div className="friend-holder">
       <h1>Friend list</h1>
       <div>{displayUsers()}</div>
-      </div>
+    </div>
   </main>
 )
 }

@@ -9,10 +9,12 @@
   background-color: #36404B;
   box-sizing: border-box;
   height: 100px;
+  margin-left: 10px;
 }
   
   .profile-card-content {
     margin: 8px;
+
   }
   
   .profile-header {
