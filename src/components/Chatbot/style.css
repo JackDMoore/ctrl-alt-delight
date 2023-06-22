@@ -1,0 +1,47 @@
+.my-chat-container {
+  /* background-color: plum; */
+  /* height: 300px;
+  width: 200px; */
+  border-radius: 20px;
+  background-color: #283044;
+}
+
+.my-main-container {
+  background-color: #283044;
+  border: 0.1rem solid #823FFF;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.my-message-list {
+  background-color:  #36404b;;
+  border-radius: 20px;
+}
+
+.my-message-input {
+  background-color:  #36404b;;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+}
+
+.dropdown-containers {
+  flex: 1;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.select-container{
+  width: 200px;
+}
+
+.dropdown-containers{
+  background-color:  #36404b;
+}
+
+/* .my-message {
+  background-color: green;
+  border-radius: 20px;
+} */

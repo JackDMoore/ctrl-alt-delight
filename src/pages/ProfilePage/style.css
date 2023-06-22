@@ -5,8 +5,8 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer; */
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 /*   
   #updateform-btn:hover {
@@ -34,16 +34,15 @@
   padding: 18px 3px 18px 3px;
   margin-bottom: 30px;
 }
-.upbtn{
+.upbtn {
   margin: auto;
   margin-top: 20px;
-
 }
 .deets {
   display: flex;
   flex-direction: column;
 }
-.updateformform{
+.updateformform {
   display: flex;
   flex-direction: column;
 }
@@ -54,21 +53,20 @@
   justify-content: center;
   /* background-color: ; 
 } */
-.tagbio{
+.tagbio {
   display: flex;
-  align-items: center ;
-  justify-content:flex-start ;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: row;
-  margin:auto;
+  margin: auto;
   margin-left: 25px;
-
 }
-.tagname{
+.tagname {
   display: flex;
-  align-items: center ;
-  justify-content:flex-start ;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: row;
-  margin:auto;
+  margin: auto;
   margin-left: 72px;
 }
 
@@ -76,11 +74,10 @@
   display: flex;
   flex-direction: row;
   font-size: larger;
-    /* margin: 0; */
-    /* font-weight: 1000; */
-  
+  /* margin: 0; */
+  /* font-weight: 1000; */
 }
-.biochange{
+.biochange {
   font-size: larger;
 }
 .pfpname {
@@ -96,12 +93,12 @@
   /* position: grid; */
   min-height: 200px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin: 20px 60px 10px 0;
   margin-left: 0px;
   padding: 20px;
   background-color: #283044;
-  border: 0.1rem solid #823FFF;
+  border: 0.1rem solid #823fff;
   border-radius: 1rem;
   padding: 1rem;
   /* border-radius: 5px; */
@@ -111,7 +108,7 @@
     rgba(141, 68, 173, 0.548),
     rgba(67, 9, 90, 0.442)
   ); */
-} 
+}
 #currentrating {
   margin: 0;
 }
@@ -151,7 +148,6 @@
   padding: 10px;
 }
 
-
 .profilepage-container {
   display: flex;
   position: relative;
@@ -170,19 +166,19 @@
   margin-right: 10px;
   width: 100%;
 } */
-  .friendlist-container {
-    flex: 1;
-    display: flex;
-    font-size: small;
-    border-radius: 10px;
-    margin-top: 20px;    
-    width: 470px;
-    min-height: 500px;
-    background-color: #283044;
-    border: 0.1rem solid #823FFF;
-    border-radius: 1rem;
-    padding: 1rem;
-    padding-right: 300px;
-    border-style: solid;
-    /* overflow:hidden */
-  }
+.friendlist-container {
+  flex: 1;
+  display: flex;
+  font-size: small;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 470px;
+  min-height: 500px;
+  background-color: #283044;
+  border: 0.1rem solid #823fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-right: 300px;
+  border-style: solid;
+  /* overflow:hidden */
+}

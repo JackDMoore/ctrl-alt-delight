@@ -24,7 +24,7 @@ const WhatIsLinguaPlay = () => {
       <Container>
         <h1 className="whatislinguaplay-heading">What is LinguaPlay?</h1>
         <p className="whatislinguaplay-paragraph">
-          LinguaPlay is a language learning platform that combines the power of
+          LinguaPlaya is a language learning platform that combines the power of
           gaming with immersive language education. Our mission is to make
           learning languages fun, engaging, and effective for learners of all
           ages and proficiency levels.
@@ -64,6 +64,8 @@ const WhatIsLinguaPlay = () => {
         <Row className="justify-content-center mt-5">
           <Col xs={12} className="text-center">
             <div className="linguaplaya-container">
+              <h1>Global Connection</h1>
+
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
                 alt="Linguaplaya"
@@ -71,6 +73,8 @@ const WhatIsLinguaPlay = () => {
               />
             </div>
             <div className="flags-container">
+              <h2>Explore the world, connect with new and existing people</h2>
+              <h4>Connect - Play - Learn</h4>
               <div
                 className="flag-container"
                 onMouseEnter={() => setSelectedFlag("flag1")}

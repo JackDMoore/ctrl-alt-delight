@@ -29,7 +29,7 @@ const Hero = () => {
         <Card className="p-5 d-flex flex-column align-items-center hero-card bg-light w-75">
           <div className="overlay"></div>
           <h1 className="h1-hero">
-            Welcome to LinguaPlay: Where Language Learning and Gaming Unite!
+            Welcome to LinguaPlaya: Where Language Learning and Gaming Unite!
           </h1>
           <p className="p-hero">
             Ready to level up your language skills? Join LinguaPlay and embark
