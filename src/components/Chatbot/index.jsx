@@ -10,7 +10,6 @@ import {
 import ChatIcon from "../ChatIcon";
 import "../../styles.css";
 
-
 const API_KEY = import.meta.env.VITE_SOME_API_KEY;
 
 function Chatbot({ onClose }) {
@@ -107,7 +106,7 @@ function Chatbot({ onClose }) {
   }, []);
 
   return (
-    <div className="App">
+    <div className="chatbot-container">
       {chatVisible && (
         <div
           className="chat-container"
@@ -118,10 +117,10 @@ function Chatbot({ onClose }) {
             zIndex: "9999",
           }}
         >
-          <MainContainer>
-            <label>
-              Select language
-              <select value={selectedLanguage} onChange={handleLanguageChange}>
+            <label className="dropdown-containers">
+              <select value={selectedLanguage} onChange={handleLanguageChange} className="select-container"
+              style={{ height: "40px", fontSize: "16px" }}>
+                <option value="">Select language</option>
                 <option value="English">English</option>
                 <option value="French">French</option>
                 <option value="German">German</option>
@@ -129,8 +128,11 @@ function Chatbot({ onClose }) {
                 <option value="Italian">Italian</option>
               </select>
             </label>
-            <ChatContainer>
+          <MainContainer className="my-main-container">
+
+            <ChatContainer className="my-chat-container">
               <MessageList
+              className="my-message-list"
                 typingIndicator={
                   isTyping ? (
                     <TypingIndicator
@@ -141,7 +143,7 @@ function Chatbot({ onClose }) {
                 }
               >
                 {messages.map((message, i) => (
-                  <Message key={i} model={message} />
+                  <Message className="my-message" key={i} model={message} />
                 ))}
               </MessageList>
               <MessageInput
