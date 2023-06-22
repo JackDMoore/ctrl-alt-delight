@@ -33,6 +33,7 @@
     /* float: left; */
     display: flex;
     flex-direction: row;
+    margin-top: 10px;
   }
   
   /* .card-body {

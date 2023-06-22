@@ -5,6 +5,8 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer; */
+    justify-content: center;
+    align-items: center;
 }
 /*   
   #updateform-btn:hover {
@@ -21,7 +23,7 @@
   margin-left: 45px;
 }
 .edit-btn {
-  padding: 18px 3px 18px 3px;
+  padding: 12px 0px 12px 0px;
 }
 #backbtn {
   display: none;
@@ -29,7 +31,7 @@
   /* padding: 15px 5px 15px 5px; */
 }
 .back-btn {
-  padding: 18px 3px 18px 3px;
+  padding: 13px 3px 13px 3px;
 }
 
 .deets {
@@ -56,8 +58,10 @@
   margin: 20px 60px 10px 0;
   margin-left: 0px;
   padding: 20px;
-  background-color: #000000;
-  border: 1px solid #cccccc;
+  background-color: #283044;
+  border: 0.1rem solid #823FFF;
+  border-radius: 1rem;
+  padding: 1rem;
   border-radius: 5px;
   /* box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.8); */
   background-image: linear-gradient(
@@ -115,11 +119,13 @@
     display: flex;
     border-radius: 10px;
     margin-top: 20px;    
-    width: 440px;
-    height: 500px;
-    background-color: rgb(38, 3, 44);
-    border: 1px;
+    width: 470px;
+    min-height: 500px;
+    background-color: #283044;
+    border: 0.1rem solid #823FFF;
+    border-radius: 1rem;
+    padding: 1rem;
     padding-right: 300px;
     border-style: solid;
-    border-color: rgb(119, 119, 119);
+    /* overflow:hidden */
   }
