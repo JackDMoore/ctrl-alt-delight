@@ -17,7 +17,6 @@ const ChatPage = ({ socket }) => {
   }, [socket])
 
   useEffect(() => {
-    // 👇️ scroll to bottom every time messages change
     lastMessageRef.current?.scrollIntoView({behavior: 'smooth'});
   }, [messages]);
 
@@ -26,13 +25,6 @@ const ChatPage = ({ socket }) => {
     socket.on('roomLeft', () => setCurrentRoom(''));
   }, [socket]);
 
-  const handleJoinRoom = (roomName) => {
-    socket.emit('joinRoom', roomName);
-  };
-
-  const handleLeaveRoom = (roomName) => {
-    socket.emit('leaveRoom', roomName);
-  };
 
   return (
     <div className="chat">
@@ -43,5 +35,5 @@ const ChatPage = ({ socket }) => {
     </div>
   );
 };
-// currentRoom={currentRoom} handleJoinRoom={handleJoinRoom} handleLeaveRoom={handleLeaveRoom} currentRoom={currentRoom}
+
 export default ChatPage;
