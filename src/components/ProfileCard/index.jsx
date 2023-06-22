@@ -75,10 +75,10 @@ const ProfileCard = ({
           aria-label="connect-button"
           onClick={handleConnectClick}
         />
-        <MessageButton
+        {/* <MessageButton
           aria-label="message-button"
           onClick={handleMessageClick}
-        />
+        /> */}
       </div>
       {/* </div> */}
     </div>
