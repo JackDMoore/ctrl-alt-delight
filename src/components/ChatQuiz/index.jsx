@@ -18,7 +18,7 @@ function ChatQuiz() {
   const [messages, setMessages] = useState([
     {
       message:
-        "Hello, I'm LinguaBot! Please select the language you'd like to be quizzed on and the difficulty",
+        "Hello, I'm LinguaBot! Please select the language you'd like to be quizzed on, the number of questions and difficulty. Ready?",
       sentTime: "just now",
       sender: "ChatGPT",
     },
