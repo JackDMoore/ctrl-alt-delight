@@ -1,37 +1,5 @@
 .profile-card {
-  position: relative;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
-  width: 150%;
-  background-color: #36404b;
-}
-
-.profile-card-content {
-  margin: 16px;
-
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  width: 200%;
-  background-color: #36404b;
-  box-sizing: border-box;
-  height: 300px;
-}
-
-.profile-card-content {
-  margin: 16px;
-}
-
-.profile-header {
-  margin-bottom: 8px;
-  display: flex;
+  height: 700rem;
 }
 
 .left-content {

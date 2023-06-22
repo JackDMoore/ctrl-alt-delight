@@ -107,7 +107,7 @@ function ChatLearningPlan() {
         <br></br>
         <br></br>
         <div>
-          <select value={selectedLanguage} onChange={handleLanguageChange}>
+          <select data-testid="language-select" value={selectedLanguage} onChange={handleLanguageChange}>
             <option value="">Select the language</option>
             <option value="English">English</option>
             <option value="French">French</option>
@@ -117,7 +117,7 @@ function ChatLearningPlan() {
           </select>
         </div>
         <div>
-          <select value={selectedSkillLevel} onChange={handleSkillChange}>
+          <select data-testid="skill" value={selectedSkillLevel} onChange={handleSkillChange}>
             <option value="">Select your skill level</option>
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
@@ -125,7 +125,7 @@ function ChatLearningPlan() {
           </select>
         </div>
         <div>
-          <select value={selectedNumDay} onChange={handleNumDayChange}>
+          <select data-testid="days" value={selectedNumDay} onChange={handleNumDayChange}>
             <option value="">Select number of days</option>
             <option value="10">10</option>
             <option value="20">20</option>

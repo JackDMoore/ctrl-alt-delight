@@ -137,6 +137,32 @@ function ChatQuiz() {
           </select>
         </div>
         <MainContainer>
+          <div>
+            <select
+              aria-label="Select Language"
+              className="consoleDropdown"
+              value={selectedLanguage}
+              onChange={handleLanguageChange}
+            >
+              <option value="English">English</option>
+              <option value="French">French</option>
+              <option value="German">German</option>
+              <option value="Dutch">Dutch</option>
+              <option value="Italian">Italian</option>
+            </select>
+          </div>
+          <div>
+            <select
+              aria-label="Select Difficulty"
+              className="consoleDropdown"
+              value={selectedDifficulty}
+              onChange={handleDifficultyChange}
+            >
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
           <ChatContainer>
             <MessageList
               scrollBehavior="smooth"

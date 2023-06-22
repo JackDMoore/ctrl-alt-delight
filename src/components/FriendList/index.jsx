@@ -26,7 +26,6 @@ const FriendList = () => {
       <FriendCard key={id} username={user.child_user} />
     ));
   }
-
   return (
     <main>
       <div className="friend-holder">
@@ -36,5 +35,5 @@ const FriendList = () => {
     </main>
   );
 };
-
+// }
 export default FriendList;

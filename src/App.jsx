@@ -9,8 +9,6 @@ import "./App.css";
 const socket = socketIO.connect("https://chat-socket-api-lk2p.onrender.com/");
 
 const App = () => {
-  const [user, setUser] = useState(undefined);
-  const username = localStorage.getItem("username");
   return (
     <>
       <Routes>
