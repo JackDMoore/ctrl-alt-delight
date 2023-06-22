@@ -47,6 +47,7 @@ const ProfileCard = ({
 
   return (
     <div className="profile-card">
+      {/* <div className="card-body"> */}
       <div className="card-header">
         <h3>{username}</h3>
         <p>{/* <span className="rating"> Stars {user.rating}</span> */}</p>
@@ -79,6 +80,7 @@ const ProfileCard = ({
           onClick={handleMessageClick}
         />
       </div>
+      {/* </div> */}
     </div>
   );
 };
