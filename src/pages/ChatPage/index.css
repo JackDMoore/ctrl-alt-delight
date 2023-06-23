@@ -20,19 +20,21 @@
 }
 .chat {
   width: 200%;
-  height: 50vh;
+  height: 90vh;
   display: flex;
   display: flex;
   align-items: center; /* Add this */
-  justify-content: center; /* Add this */
+  justify-content: flex-start; /* Add this */
+  position: relative;
 }
 
 .chat__main {
   height: 80%;
   flex: 0.8;
-  margin-left: 0px;
+  margin-left: 10px;
   align-self: center; 
   justify-content: center;
+  top: 70px;
 }
 
 .chat__mainHeader {
