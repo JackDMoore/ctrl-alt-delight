@@ -151,6 +151,7 @@ function Chatbot({ onClose }) {
                 placeholder="Type message here"
                 onSend={handleSend}
               />
+
             </ChatContainer>
             <button className="chatbot-b" onClick={handleClose}>
               Close

@@ -29,7 +29,7 @@ function ChatQuiz() {
 
   const systemMessage = {
     role: "system",
-    content: `Make a ${selectedNumQuestions} question quiz that teaches individual words from${selectedLanguage} at the ${selectedDifficulty}.The quiz should be in English. Give a score at the end. 1 question at a time that the user responds to. Start as soon as the user says they're ready`,
+    content: `Make a ${selectedNumQuestions} question quiz that teaches individual words from${selectedLanguage} at the ${selectedDifficulty}.The quiz should be in English. Give a score at the end. 1 question at a time that the user responds to. Ask the first question when the user confirms they're ready, do not ask for further information.`,
   };
 
   const handleSend = async (message) => {
