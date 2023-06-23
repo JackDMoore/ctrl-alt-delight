@@ -24,7 +24,7 @@ const LearnLanguageFilter = (props) => {
   return (
   <div className="language-filters">
     <label>
-      English
+      English &nbsp;
       <input
         aria-label="English"
         type="checkbox"
@@ -33,7 +33,7 @@ const LearnLanguageFilter = (props) => {
       ></input>
     </label>
     <label>
-      French
+    &nbsp;&nbsp;&nbsp;French &nbsp;
       <input
         aria-label="French"
         type="checkbox"
@@ -42,7 +42,7 @@ const LearnLanguageFilter = (props) => {
       ></input>
     </label>
     <label>
-      German
+    &nbsp;&nbsp;&nbsp;German&nbsp;
       <input
         aria-label="German"
         type="checkbox"
@@ -51,7 +51,7 @@ const LearnLanguageFilter = (props) => {
       ></input>
     </label>
     <label>
-      Dutch
+    &nbsp;&nbsp;&nbsp;Dutch&nbsp;
       <input
         aria-label="Dutch"
         type="checkbox"
@@ -60,7 +60,7 @@ const LearnLanguageFilter = (props) => {
       ></input>
     </label>
     <label>
-      Italian
+    &nbsp;&nbsp;&nbsp;Italian&nbsp;
       <input
         aria-label="Italian"
         type="checkbox"

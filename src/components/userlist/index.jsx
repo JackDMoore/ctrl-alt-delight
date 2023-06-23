@@ -62,7 +62,7 @@ const UserList = () => {
 
     return (
         <main>
-            <div className='filter-connection'>
+            {/* <div className='filter-connection'> */}
             <LearnLanguageFilter
                 englishOnly={englishOnly}
                 frenchOnly={frenchOnly}
@@ -83,9 +83,10 @@ const UserList = () => {
                 setPlaystationOnly={setPlaystationOnly}
                 setXboxOnly={setXboxOnly}
             />
-            </div>
+            {/* </div> */}
+            <div className='user-width'>
             <div className="user-holder">{displayUsers()}</div>
-
+            </div>
         </main>
     )
 }
