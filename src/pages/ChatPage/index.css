@@ -19,18 +19,18 @@
   border-radius: 5px;
 }
 .chat {
-  width: 300%;
-  height: 80vh;
+  width: 200%;
+  height: 50vh;
   display: flex;
-  align-items: center;
-
+  display: flex;
+  align-items: center; /* Add this */
+  justify-content: center; /* Add this */
 }
 
 .chat__main {
   height: 80%;
   flex: 0.8;
   margin-left: 0px;
-  /* display: flex; */
   align-self: center; 
   justify-content: center;
 }
@@ -42,7 +42,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  background-color: #607eaa;
+  background-color: #823fff;
+  text-shadow: 4px 4px 4px #2f2f2f;
+  border: 0.1rem solid #823fff;
+  border-radius: 1rem
 }
 
 
@@ -53,6 +56,10 @@
   background-color: #fff;
   padding: 20px;
   overflow-y: scroll;
+  background-color: #283044;
+  border: 0.1rem solid #823fff;
+  border-radius: 1rem
+  ;
 }
 
 .message__container > * {
@@ -60,7 +67,7 @@
 }
 .chat__footer {
   padding: 10px;
-  background-color: #f9f5eb;
+  background-color: #823fff;
   height: 10vh;
 }
 .form {
@@ -80,14 +87,14 @@
 }
 
 .message__recipient {
-  background-color: #f5ccc2;
+  background-color: #646cff;
   width: 300px;
   padding: 10px;
   border-radius: 10px;
   font-size: 15px;
 }
 .message__sender {
-  background-color: rgb(194, 243, 194);
+  background-color: #563d7c;
   max-width: 300px;
   padding: 10px;
   border-radius: 10px;
@@ -103,36 +110,9 @@
   color: black
 }
 .message__status {
-  position: fixed;
+  position: flex;
   bottom: 50px;
   font-size: 13px;
   font-style: italic;
   color: black
 }
-
-.leaveChat__btn {
-  padding: 10px;
-  width: 150px;
-  border: none;
-  outline: none;
-  background-color: #d1512d;
-  cursor: pointer;
-  color: #eae3d2;
-}
-  .leaveChat__btn:active,
-  .leaveChat__btn:hover {
-    outline: 0;
-  }
-  
-  .leaveChat__btn {
-    background-color: rgb(5, 6, 45);
-    padding: 10px 20px;
-    border-radius: 6px;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
-  }
-  
-  .leaveChat__btn:hover {
-    background: none;
-  }
