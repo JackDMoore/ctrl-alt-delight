@@ -118,3 +118,58 @@
   font-style: italic;
   color: black
 }
+
+/* Custom Scrollbar */
+.chat__messages::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.chat__messages::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+.chat__messages::-webkit-scrollbar-thumb {
+  background-color: #823FFF;
+  border-radius: 1rem;
+}
+
+.chat__messages::-webkit-scrollbar-thumb:hover {
+  background-color: #823FFF;
+}
+
+.chat__messages::-webkit-scrollbar-thumb:active {
+  background-color: #823FFF;
+}
+
+.chat__messages::-webkit-scrollbar-thumb:vertical {
+  border-radius: 1rem;
+}
+
+.chat__messages::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 1rem;
+}
+
+.chat__messages::-webkit-scrollbar-corner {
+  background-color: #823FFF;
+}
+
+.chat__messages::-webkit-scrollbar-track-piece {
+  background-color: #823FFF;
+}
+
+.chat__messages::-webkit-scrollbar-button {
+  background-color: #823FFF;
+}
+
+.chat__messages::-webkit-scrollbar-button:start:decrement {
+  background-color: #823FFF;
+}
+
+.chat__messages::-webkit-scrollbar-button:end:increment {
+  background-color: #823FFF;
+}
+
+.chat__messages::-webkit-scrollbar-button:vertical:start:increment {
+  background-color: #823FFF;
+}
