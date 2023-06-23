@@ -1,8 +1,8 @@
 .profile-card {
   flex: grid;
   position: relative;
+  width:80%
 }
-
 
   .card-footer h3 {
     font-size: 160%;
@@ -36,7 +36,6 @@
     position:absolute;
     left:48rem
   }
-=======
 .profile-card {
   flex: grid;
   position: relative;

@@ -16,7 +16,7 @@ const ConsoleFilter = (props) => {
   return (
   <div className="language-filters">
     <label>
-      PC
+      PC &nbsp;
       <input
         type="checkbox"
         checked={props.pcOnly}
@@ -24,7 +24,7 @@ const ConsoleFilter = (props) => {
       ></input>
     </label>
     <label>
-      PlayStation
+    &nbsp;&nbsp; PlayStation &nbsp;
       <input
         type="checkbox"
         checked={props.playstationOnly}
@@ -32,7 +32,7 @@ const ConsoleFilter = (props) => {
       ></input>
     </label>
     <label>
-      Xbox
+    &nbsp;&nbsp; Xbox &nbsp;
       <input
         type="checkbox"
         checked={props.xboxOnly}

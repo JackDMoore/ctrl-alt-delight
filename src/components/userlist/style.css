@@ -1,6 +1,8 @@
-.filter-connection label {
-  margin-right:1rem;
-  font-size: 110%;
+.user-width {
+ width: 70%;
+ margin-left: auto;
+margin-right: auto;
+ 
 }
 
 input[type="checkbox"] {
@@ -10,7 +12,6 @@ input[type="checkbox"] {
   /* For iOS < 15 to remove gradient background */
   background-color: #fff;
   /* Not removed via appearance */
-  margin: 0;
   display: inline-flex
 }
 
@@ -27,9 +28,7 @@ input[type="checkbox"] {
   transform: translateY(-0.075em);
 }
 
-.form-control + .form-control {
-  margin-top: 1em;
-}
+
 
 
 input[type="checkbox"]::before {
@@ -43,8 +42,9 @@ input[type="checkbox"]::before {
 
 
 input[type="checkbox"] {
-  /* ...existing styles */
-  place-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -64,4 +64,4 @@ input[type="checkbox"]:checked::before {
 input[type="checkbox"]::before {
 
   background-color: #823FFF;
-}
+} 
