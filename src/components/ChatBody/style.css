@@ -4,16 +4,16 @@
 .message__container {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
+    /* justify-content: center !important;
+    align-items: center !important; */
     height: 500px !important;
     background-color: #283044 !important;
   }
   
   .chat__mainHeader {
     display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
+    /* justify-content: center !important;
+    align-items: center !important; */
     background-color: #283044 !important;
     border: 0.1rem solid #823FFF !important;
     border-radius: 1rem !important;
@@ -21,7 +21,7 @@
   }
  
 .message__sender{
-    background-color: #646cff !important;
+
     max-width: 300px;
     padding: 10px;
     border-radius: 10px;
@@ -30,19 +30,19 @@
 }
 
 .message__recipient {
-    background-color: #8238FF !important;
+
     width: 300px;
     padding: 10px;
     border-radius: 10px;
     font-size:  20px !important;
-}
+} 
 
 .leaveChat__btn {
     background-color: rgb(5, 6, 45);
     padding: 3px 3px !important;
     border-radius: 5px !important;
     width: 25% !important;
-    height: 30% !important;
+    height: 50% !important;
     transition: 300ms !important;
     background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb) !important;
 
@@ -70,17 +70,9 @@
     height: 100% !important;
     width: 100% !important;
     padding: 1rem !important;
-    overflow-y: scroll !important;
+    /* overflow-y: scroll !important; */
   }
-  
-  .chat__messages::-webkit-scrollbar {
-    width: 0.5rem !important;
-  }
-  
-  .chat__messages::-webkit-scrollbar-track {
-    background-color: #fff !important;
-    border-radius: 1rem !important;
-  }
+
   
   .chat__messages::-webkit-scrollbar-thumb {
     background-color: #823FFF !important;
@@ -127,3 +119,4 @@
     background-color: #823FFF !important;
 
 }
+

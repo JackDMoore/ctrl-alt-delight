@@ -22,7 +22,7 @@ const WhatIsLinguaPlay = () => {
   return (
     <div className="whatislinguaplay-container">
       <Container>
-        <h1 className="whatislinguaplay-heading">What is LinguaPlay?</h1>
+        <h1 className="whatislinguaplay-heading">What is LinguaPlaya?</h1>
         <p className="whatislinguaplay-paragraph">
           LinguaPlaya is a language learning platform that combines the power of
           gaming with immersive language education. Our mission is to make
